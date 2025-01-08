@@ -14,14 +14,6 @@ const ovo = Ovo({
 export const metadata = {
   title: "Dinesh Kumar | Personal Portfolio ",
   description: "",
-  icons: {
-    icon: [
-      {
-        url: '../public/icon.png',
-        href: '../public/icon.png'
-    },
-    ],
-  },
 };
 
 export default function RootLayout({ children }) {

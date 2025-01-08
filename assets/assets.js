@@ -48,6 +48,7 @@ import gmail from "./gmail.svg";
 import linkedin from "./linkedin.svg";
 import motion from "./motion.png";
 import vite from "./vite.svg";
+import canva from "./canva.svg";
 
 
 export const assets ={ 
@@ -101,6 +102,7 @@ export const assets ={
     linkedin,
     motion,
     vite,
+    canva,
 }
 
 
@@ -133,7 +135,6 @@ export const languageData = [
     assets.python,
     assets.java,
     assets.nodejs,
-    assets.mongodb,
     assets.tailwindcss,
     assets.vite,
     assets.nextjs,
@@ -148,6 +149,7 @@ export const toolsData = [
     {white: assets.colab, black: assets.colab},
     {white: assets.mongodb, black: assets.mongodb},
     {white: assets.figma, black: assets.figma},
+    {white: assets.canva, black: assets.canva},
     {white: assets.excel, black: assets.excel},
 ]
 
@@ -194,7 +196,7 @@ export const projectData = [
         title:'My Portfolio Website',
         description: 'Web Design',
         bgImage: '/portfolio_project.png',
-        link: 'https://dinesh-kumar-portfolio-website.netlify.app/'
+        link: 'https://dineshkumar-portfolio-website.netlify.app/'
     },
     {
         title:'Mens Look Website',
