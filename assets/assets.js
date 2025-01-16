@@ -187,8 +187,14 @@ export const educationData = [
 
 export const projectData = [
     {
+        title:'Netflix Clone',
+        description: 'Web Design',
+        bgImage: '/netflix_project.svg',
+        link: 'https://dineshkumarc-cloneflix.netlify.app/'
+    },
+    {
         title:'Study on Data Breach Detection using NLP and ML Methods ',
-        description: 'Machine Learning & Natural Language Processing',
+        description: 'Machine Learning & NLP',
         bgImage: '/ml_project.png',
         link: 'https://github.com/dineshkumarc9102/Dineshkumar_Study_on_Data_Breach_Detection_using_NLP_and_ML_Methods'
     },
