@@ -6,7 +6,7 @@ import { motion } from "motion/react"
 
 const Project = ({isDarkMode}) => {
   return (
-    <motion.div id='project' className='w-full px-[12%] py-10 scroll-mt-20'
+    <motion.div id='project' className='w-full px-[15%] py-10 scroll-mt-20'
     initial={{opacity: 0}}
     whileInView={{opacity: 1}}
     transition={{duration: 1 }}
@@ -48,7 +48,7 @@ const Project = ({isDarkMode}) => {
                 whileHover={{scale: 1.05}}
                 transition={{ duration: 0.3}}
                 >
-                    <div className='bg-white w-10/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 duration-500 group-hover:bottom-7'>
+                    <div className='bg-white w-11/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 duration-500 group-hover:bottom-7'>
                     <div>
                         <h2 className='font-semibold text-base'>{project.title}</h2>
                         <p className='text-sm text-gray-700 mt-1'>{project.description}</p>
