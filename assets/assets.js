@@ -187,6 +187,12 @@ export const educationData = [
 
 export const projectData = [
     {
+        title:'YouTube Clone',
+        description: 'Web Design',
+        bgImage: '/youtube_project.png',
+        link: 'https://dineshkumarc-youtube-clone.netlify.app/'
+    },
+    {
         title:'Netflix Clone',
         description: 'Web Design',
         bgImage: '/netflix_project.svg',
