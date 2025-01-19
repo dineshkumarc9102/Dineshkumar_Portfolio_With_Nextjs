@@ -49,6 +49,7 @@ import linkedin from "./linkedin.svg";
 import motion from "./motion.png";
 import vite from "./vite.svg";
 import canva from "./canva.svg";
+import firebase from "./firebase.svg"
 
 
 export const assets ={ 
@@ -103,6 +104,7 @@ export const assets ={
     motion,
     vite,
     canva,
+    firebase
 }
 
 
@@ -147,10 +149,11 @@ export const toolsData = [
     {white: assets.vscode, black: assets.vscode},
     {white: assets.github_white, black: assets.github_black},
     {white: assets.colab, black: assets.colab},
-    {white: assets.mongodb, black: assets.mongodb},
     {white: assets.figma, black: assets.figma},
     {white: assets.canva, black: assets.canva},
     {white: assets.excel, black: assets.excel},
+    {white: assets.firebase, black: assets.firebase},
+    {white: assets.mongodb, black: assets.mongodb},
 ]
 
 
@@ -186,6 +189,12 @@ export const educationData = [
 ]
 
 export const projectData = [
+    {
+        title:'Crypto Tracker',
+        description: 'Web Design',
+        bgImage: '/cryptotracker_project.png',
+        link: 'https://dineshkumarc-crypto-tracker.netlify.app/'
+    },
     {
         title:'YouTube Clone',
         description: 'Web Design',
