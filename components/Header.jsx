@@ -20,7 +20,7 @@ const Header = () => {
         transition={{duration: 0.6, delay:0.3 }}
         className='flex items-end gap-2 text-xl md:text-2xl mb-3 font-Ovo'>
         Hi! I'm Dinesh Kumar
-        <Image src={assets.hand_icon} alt='' className='w-6' />
+        {/* <Image src={assets.hand_icon} alt='' className='w-6' /> */}
         </motion.h3> 
 
         <motion.h1 
@@ -40,7 +40,7 @@ const Header = () => {
             initial={{y: 30, opacity: 0}}
             whileInView={{y: 0, opacity: 1}}
             transition={{duration: 0.6, delay:1 }}
-            href="#contact" className='px-10 py-3 border border-white rounded-full bg-black text-white flex items-center gap-2 dark:bg-transparent'>
+            href="#contact" className='px-10 py-3 border border-white rounded-full bg-black text-white flex items-center gap-2 dark:bg-transparent '>
             Contect Me 
             <Image src={assets.rigth_arrow_white} alt='' className='w-4' />
             </motion.a>
