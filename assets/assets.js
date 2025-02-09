@@ -9,6 +9,7 @@ import menu_white from "./menu_white.svg";
 import close_black from "./close_black.svg";
 import close_white from "./close_white.svg";
 import profile_img from "./profile_img.png";
+import profile from "./profie.png";
 import hand_icon from "./hand_icon.svg";
 import rigth_arrow_white from "./rigth_arrow_white.svg";
 import download_icon from "./download_icon.svg";
@@ -50,6 +51,7 @@ import motion from "./motion.png";
 import vite from "./vite.svg";
 import canva from "./canva.svg";
 import firebase from "./firebase.svg"
+import dp from './dp.png'
 
 
 export const assets ={ 
@@ -104,7 +106,9 @@ export const assets ={
     motion,
     vite,
     canva,
-    firebase
+    firebase,
+    profile,
+    dp
 }
 
 
