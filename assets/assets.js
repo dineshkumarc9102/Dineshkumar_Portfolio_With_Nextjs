@@ -50,8 +50,18 @@ import linkedin from "./linkedin.svg";
 import motion from "./motion.png";
 import vite from "./vite.svg";
 import canva from "./canva.svg";
-import firebase from "./firebase.svg"
-import dp from './dp.png'
+import firebase from "./firebase.svg";
+import dp from './dp.png';
+import home from './home.svg';
+import about from './about.svg';
+import education from './education.svg';
+import experience from './experience.svg';
+import contact from './contact.svg';
+import home_white from './home_white.svg';
+import about_white from './about_white.svg';
+import education_white from './education-white.svg'
+import experience_white from './experience_white.svg';
+import contact_white from './contact_white.svg';
 
 
 export const assets ={ 
@@ -108,7 +118,17 @@ export const assets ={
     canva,
     firebase,
     profile,
-    dp
+    dp,
+    home,
+    about,
+    education,
+    experience,
+    contact,
+    home_white,
+    about_white,
+    education_white,
+    experience_white,
+    contact_white,
 }
 
 

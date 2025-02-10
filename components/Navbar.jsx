@@ -5,6 +5,7 @@ import React, { useEffect, useRef, useState } from 'react'
 const Navbar = ({isDarkMode, setIsDarkMode}) => {
 
   const [isScroll, setIsScroll] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const sideMenuRef = useRef();
 
   const openMenu = () => {
@@ -98,18 +99,42 @@ const Navbar = ({isDarkMode, setIsDarkMode}) => {
         </div>
 
   {/* Mobile Menu */}
+         <ul
+           ref={sideMenuRef}
+           className= 'flex md:hidden flex-col gap-4 py-20 px-10 fixed -right-64 top-0 bottom-0 w-64 z-50 h-screen bg-rose-50 transition duration-500 dark:bg-darkHover dark:text-white'
+         >
+            <div className="absolute right-6 top-6 cursor-pointer" onClick={closeMenu}>
+               <Image src={isDarkMode ? assets.close_white : assets.close_black} alt="Close" className="w-6" />
+             </div>
 
-        <ul ref={sideMenuRef} className='flex md:hidden flex-col gap-4 py-20 px-10 fixed -right-64 top-0 bottom-0 w-64 z-50 h-screen bg-rose-50 transition duration-500 dark:bg-darkHover dark:text-white'>
-            
-            <div className='absolute right-6 top-6' onClick={closeMenu}>
-              <Image src={isDarkMode ? assets.close_white : assets.close_black} alt='' className='w-6 cursor-pointer' />
-            </div>
+            <div>
+             {[
+               { id: 'top', label: 'Home', icon: isDarkMode ? assets.home_white : assets.home },
+               { id: 'about', label: 'About', icon: isDarkMode ? assets.about_white : assets.about },
+               { id: 'education', label: 'Education', icon: isDarkMode ? assets.edu_icon_dark : assets.education },
+               { id: 'project', label: 'Project', icon: isDarkMode ? assets.experience_white : assets.experience },
+               { id: 'contact', label: 'Contact', icon: isDarkMode ? assets.contact_white : assets.contact },
+             ].map(({ id, label, icon }) => (
+               <li
+                 key={id}
+                 className="cursor-pointer flex flex-row items-center gap-4 p-4 group font-semibold rounded-full bg-cover 
+                 hover:border-b-2 border-darkHover focus:text-white transition-all ease-linear 
+                 dark:text-white/80 dark:hover:border-b-2 border-lightHover"
+               >
+                 <a className="font-Ovo flex items-center gap-2" onClick={closeMenu} href={`#${id}`}>
+                   <Image src={icon} alt={label} className="w-5" />
+                   {label}
+                 </a>
+               </li>
+             ))}
+           </div>
 
-            <li><a className='font-Ovo' onClick={closeMenu} href="#top">Home</a></li>
+            {/* <li><a className='font-Ovo' onClick={closeMenu} href="#top">Home</a></li>
             <li><a className='font-Ovo' onClick={closeMenu} href="#about">About me</a></li>
             <li><a className='font-Ovo' onClick={closeMenu} href="#education">Education</a></li>
             <li><a className='font-Ovo' onClick={closeMenu} href="#project">Project</a></li>
-            <li><a className='font-Ovo' onClick={closeMenu} href="#contact">Contact</a></li>
+            <li><a className='font-Ovo' onClick={closeMenu} href="#contact">Contact</a></li> */}
+
         </ul>
 
     </nav>

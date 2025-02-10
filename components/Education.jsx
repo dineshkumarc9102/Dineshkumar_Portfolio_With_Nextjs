@@ -45,12 +45,12 @@ const Education = () => {
              ))} */}
              {educationData.map(({ icon, title, university, duration, score }, index) => (
             <motion.div 
-             className="group relative rounded-2xl shadow-black cursor-pointer border border-gray-400 hover:bg-lightHover hover:shadow-black dark:hover:bg-darkHover dark:hover:shadow-white overflow-hidden duration-500 hover:rotate-12"
+             className="group relative rounded-2xl shadow-black cursor-pointer border border-gray-400 hover:bg-lightHover hover:shadow-black dark:hover:bg-darkHover dark:hover:shadow-white overflow-hidden duration-500 hover:rotate-12 hover:z-10"
              key={index}
             >
             <div className="absolute w-24 h-24 rounded-full bottom-32 right-16 duration-500 group-hover:translate-x-24 group-hover:w-12 group-hover:h-12"></div>
             <div className="absolute w-20 h-20 rounded-full top-20 right-16 duration-500 group-hover:translate-y-12 group-hover:-translate-x-32 group-hover:w-12 group-hover:h-12"></div>
-            <div className="rounded-2xl px-8 py-12">
+            <div className=" px-8 py-12">
               <Image src={icon} alt='' className='w-10 rounded-lg' />
                 <h1 className='text-lg my-4 text-gray dark:text-white'>{title}</h1>
                 <h2 className='text-lg my-4 text-gray-700 dark:text-white/80'>{university}</h2>
