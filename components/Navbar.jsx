@@ -44,6 +44,8 @@ const Navbar = ({isDarkMode, setIsDarkMode}) => {
             <li><a className='font-Ovo' href="#contact">Contact</a></li>
         </ul>
 
+        
+
         <div className='flex items-center gap-4'>
 
           {/* <button onClick={() => setIsDarkMode(prev => !prev)}>
@@ -58,12 +60,12 @@ const Navbar = ({isDarkMode, setIsDarkMode}) => {
               checked={isDarkMode}
               onChange={() => setIsDarkMode((prev) => !prev)}
             />
-            <div className="w-16 h-8 rounded-full ring-0 peer duration-500 outline-none bg-gray-200 overflow-hidden 
+            <div className="w-12 h-8 rounded-full ring-0 peer duration-500 outline-none bg-gray-200 overflow-hidden 
               before:flex before:items-center before:justify-center after:flex after:items-center after:justify-center 
               before:content-['🌑'] before:absolute before:h-6 before:w-6 before:top-1/2 before:bg-white before:rounded-full 
               before:left-1 before:-translate-y-1/2 before:transition-all before:duration-700 
               peer-checked:before:opacity-0 peer-checked:before:rotate-90 peer-checked:before:-translate-y-full 
-              shadow-md shadow-gray-400 peer-checked:shadow-md peer-checked:shadow-gray-700 peer-checked:bg-[#383838] 
+              shadow-gray-400 peer-checked:shadow-md  peer-checked:bg-[#383838] 
               after:content-['☀️'] after:absolute after:bg-[#1d1d1d] after:rounded-full after:top-[3px] after:right-1 
               after:translate-y-full after:w-6 after:h-6 after:opacity-0 after:transition-all after:duration-700 
               peer-checked:after:opacity-100 peer-checked:after:rotate-180 peer-checked:after:translate-y-0">
@@ -76,7 +78,7 @@ const Navbar = ({isDarkMode, setIsDarkMode}) => {
               Contact <Image src={isDarkMode ? assets.arrow_up_dark : assets.arrow_up} alt='' className='w-3' />
           </a> */}
 
-        <a href="#contact" className='hidden lg:flex items-center gap-3 px-10 py-2.5 border border-gray-500 rounded-full ml-4 font-Ovo dark:border-white/50'>
+        <a href="#contact" className='hidden lg:flex items-center gap-1 px-5 py-2.5 border border-gray-500 rounded-full ml-4 font-Ovo dark:border-white/50'>
         <button className="cursor-pointer group">
           <div className="relative overflow-hidden">
             <p className="group-hover:-translate-y-7 duration-[1.125s] ease-[cubic-bezier(0.19,1,0.22,1)]">
@@ -86,7 +88,7 @@ const Navbar = ({isDarkMode, setIsDarkMode}) => {
               Contact
             </p>
           </div>
-        </button> <Image src={isDarkMode ? assets.arrow_up_dark : assets.arrow_up} alt='' className='w-3' />
+        </button> <Image src={isDarkMode ? assets.arrow_up_dark : assets.arrow_up} alt='' className='w-5' />
         </a>
 
 

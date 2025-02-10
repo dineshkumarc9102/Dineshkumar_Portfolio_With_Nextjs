@@ -36,23 +36,24 @@ const Header = () => {
         </p>
 
         <div className='flex flex-col sm:flex-row items-center gap-4 mt-4'>
-            <motion.a 
+            {/* <motion.a 
             initial={{y: 30, opacity: 0}}
             whileInView={{y: 0, opacity: 1}}
             transition={{duration: 0.6, delay:1 }}
             href="#contact" className='px-10 py-3 border border-white rounded-full bg-black text-white flex items-center gap-2 dark:bg-transparent '>
             Contect Me 
             <Image src={assets.rigth_arrow_white} alt='' className='w-4' />
-            </motion.a>
+            </motion.a> */}
 
             <motion.a 
             initial={{y: 30, opacity: 0}}
             whileInView={{y: 0, opacity: 1}}
             transition={{duration: 0.6, delay:1.2 }}
-            href="/Dinesh Kumar_Resume.pdf" download className='px-10 py-3 border rounded-full border-gray-500 flex items-center gap-2 bg-white dark: text-black '>
+            href="/Dinesh Kumar_Resume.pdf" download className='px-10 py-3 border rounded-full border-gray-500 flex items-center gap-2 bg-black text-white dark:bg-transparent'>
             My Resume  
-            <Image src={assets.download_icon} alt='' className='w-4' />
+            <Image src={assets.download_icon} alt='' className=' w-5 h-5 animate-bounce '  />
             </motion.a>
+            
         </div>
 
     </div>

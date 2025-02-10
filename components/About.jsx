@@ -66,6 +66,8 @@ const About = ({isDarkMode}) => {
                     ))}
                 </motion.ul>
 
+                
+
                 <motion.h4 className='mt-6 mb-4 sm:my-6 text-gray-700 font-Ovo dark:text-white/80'
                 initial={{y: 20, opacity: 0}}
                 whileInView={{y: 0, opacity: 1}}
@@ -75,16 +77,20 @@ const About = ({isDarkMode}) => {
                 </motion.h4>
 
                 <motion.ul className='flex flex-wrap justify-center gap-3 sm:gap-5'
-                initial={{opacity: 0}}
-                whileInView={{opacity: 1}}
-                transition={{duration: 0.6, delay:1.5 }}
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ duration: 0.6, delay: 1.5 }}
                 >
-                    {languageData.map((language, index) => (
-                        <motion.li className='flex items-center justify-center w-10 sm:w-12 aspect-square border border-gray-400 rounded-lg cursor-pointer hover:-translate-y-1 duration-500' 
-                        key={index}
-                        whileHover={{scale: 1.1}}
-                            >
-                            <Image src={language} alt='language' className='w-5 sm:w-7'/>
+                    {languageData.map(({ icon, name }, index) => (
+                        <motion.li 
+                            className='group relative flex items-center justify-center w-10 sm:w-12 aspect-square border border-gray-400 rounded-lg cursor-pointer duration-100' 
+                            key={index}
+                            whileHover={{ scale: 1.1 }}
+                        >
+                            <Image src={icon} alt={name} className='w-5 sm:w-7' />
+                            <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 w-max px-2 py-1 font-semibold text-gray-700 font-Ovo text-xs text-black bg-lightHover rounded-md opacity-0 scale-90 transition-all duration-300 group-hover:opacity-100 group-hover:scale-100 dark:hover:bg-darkHover/50">
+                                {name}
+                            </span>
                         </motion.li>
                     ))}
                 </motion.ul>
@@ -100,15 +106,19 @@ const About = ({isDarkMode}) => {
                 <motion.ul className='flex flex-wrap justify-center gap-3 sm:gap-5'
                 initial={{opacity: 0}}
                 whileInView={{opacity: 1}}
-                transition={{duration: 0.5, delay:1.4 }}
+                transition={{duration: 0.5, delay:1.5 }}
                 >
-                    {toolsData.map(({black, white}, index) => (
-                        <motion.li className='flex items-center justify-center w-10 sm:w-12 aspect-square border border-gray-400 rounded-lg cursor-pointer hover:-translate-y-1 duration-500' 
+                    {toolsData.map(({iconBlack, iconWhite, name}, index) => ( 
+                        <motion.li className='group relative flex items-center justify-center w-10 sm:w-12 aspect-square border border-gray-400 rounded-lg cursor-pointer duration-100' 
                         key={index}
                         whileHover={{scale: 1.1}}
                         >
-                            <Image src={isDarkMode ? white : black} alt='Tool' className='w-5 sm:w-7'/>
+                            <Image src={isDarkMode ? iconWhite : iconBlack} alt='Tool' className='w-5 sm:w-7'/>
+                            <span className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 w-max px-2 py-1 font-semibold text-gray-700 font-Ovo text-xs text-black bg-lightHover rounded-md opacity-0 scale-90 transition-all duration-300 group-hover:opacity-100 group-hover:scale-100 dark:hover:bg-darkHover/50">
+                                {name}
+                            </span>
                         </motion.li>
+                        
                     ))}
                 </motion.ul>
 

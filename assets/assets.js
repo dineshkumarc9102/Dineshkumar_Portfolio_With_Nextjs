@@ -134,31 +134,63 @@ export const infoList = [
 ];
 
 export const languageData = [
-    assets.html,
-    assets.css,
-    assets.js,
-    assets.reactjs,
-    assets.python,
-    assets.java,
-    assets.nodejs,
-    assets.tailwindcss,
-    assets.vite,
-    assets.nextjs,
-    assets.motion,
-    
-    
-]
+    {
+        icon: assets.html,
+        name: "HTML"
+    },
+    {
+        icon: assets.css,
+        name: "CSS"
+    },
+    {
+        icon: assets.js,
+        name: "JavaScript"
+    },
+    {
+        icon: assets.reactjs,
+        name: "React"
+    },
+    {
+        icon: assets.python,
+        name: "Python"
+    },
+    {
+        icon: assets.java,
+        name: "Java"
+    },
+    {
+        icon: assets.nodejs,
+        name: "Node.js"
+    },
+    {
+        icon: assets.tailwindcss,
+        name: "Tailwind CSS"
+    },
+    {
+        icon: assets.vite,
+        name: "Vite"
+    },
+    {
+        icon: assets.nextjs,
+        name: "Next.js"
+    },
+    {
+        icon: assets.motion,
+        name: "Framer Motion"
+    }
+];
+
 
 export const toolsData = [
-    {white: assets.vscode, black: assets.vscode},
-    {white: assets.github_white, black: assets.github_black},
-    {white: assets.colab, black: assets.colab},
-    {white: assets.figma, black: assets.figma},
-    {white: assets.canva, black: assets.canva},
-    {white: assets.excel, black: assets.excel},
-    {white: assets.firebase, black: assets.firebase},
-    {white: assets.mongodb, black: assets.mongodb},
-]
+    { iconWhite: assets.vscode, iconBlack: assets.vscode, name: "VS Code" },
+    { iconWhite: assets.github_white, iconBlack: assets.github_black, name: "GitHub" },
+    { iconWhite: assets.colab, iconBlack: assets.colab, name: "Google Colab" },
+    { iconWhite: assets.figma, iconBlack: assets.figma, name: "Figma" },
+    { iconWhite: assets.canva, iconBlack: assets.canva, name: "Canva" },
+    { iconWhite: assets.excel, iconBlack: assets.excel, name: "Excel" },
+    { iconWhite: assets.firebase, iconBlack: assets.firebase, name: "Firebase" },
+    { iconWhite: assets.mongodb, iconBlack: assets.mongodb, name: "MongoDB" }
+];
 
 
 export const educationData = [
