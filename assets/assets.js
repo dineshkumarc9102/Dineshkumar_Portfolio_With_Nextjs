@@ -247,43 +247,58 @@ export const educationData = [
 export const projectData = [
     {
         title:'Crypto Tracker',
-        description: 'Web Design',
+        domain: 'Web Design', 
+        date: 'Jan - 2025',
+        description: 'CryptoTracker offers real-time cryptocurrency data, including prices, market cap, and trends, powered by the CoinGecko API.',
         bgImage: '/cryptotracker_project.png',
         link: 'https://dineshkumarc-crypto-tracker.netlify.app/'
     },
     {
         title:'YouTube Clone',
-        description: 'Web Design',
+        domain: 'Web Design',
+        date: 'Jan - 2025',
+        description: 'A YouTube clone using YouTube Data API v3 for seamless video streaming and in-app viewing.',
         bgImage: '/youtube_project.png',
         link: 'https://dineshkumarc-youtube-clone.netlify.app/'
     },
     {
         title:'Netflix Clone',
-        description: 'Web Design',
-        bgImage: '/netflix_project.svg',
+        domain: 'Web Design',
+        date: 'Jan - 2025',
+        description: 'A Netflix clone with TMDB API for a vast movie library and Firebase for secure authentication.',
+        bgImage: '/netflix_project.png',
         link: 'https://dineshkumarc-cloneflix.netlify.app/'
     },
     {
         title:'Study on Data Breach Detection using NLP and ML Methods ',
-        description: 'Machine Learning & NLP',
+        domain: 'Machine Learning & NLP',
+        date: 'Nov - 2024',
+        description: 'Conducted EDA and NLP on data breaches to uncover trends, extract patterns, and predict leak methods with 90.48% accuracy using Random Forest.',
         bgImage: '/ml_project.png',
         link: 'https://github.com/dineshkumarc9102/Dineshkumar_Study_on_Data_Breach_Detection_using_NLP_and_ML_Methods'
     },
-    {
-        title:'My Portfolio Website',
-        description: 'Web Design',
-        bgImage: '/portfolio_project.png',
-        link: 'https://dineshkumar-portfolio-website.netlify.app/'
-    },
+    
     {
         title:'Mens Look Website',
-        description: 'Web Design',
+        domain: 'Web Design',
+        date: 'Jul - 2024',
+        description: 'A static, visually appealing website for a local salon, showcasing services and incorporating interactive features to enhance the user experience.',
         bgImage: '/menslook_project.png',
         link: 'https://dineshkumarc-mens-look.netlify.app/'
     },
     {
+        title:'My Portfolio Website',
+        domain: 'Web Design',
+        date: 'Apr - 2024',
+        description: 'My portfolio showcases my projects and contributions. Explore, and feel free to reach out for collaborations!',
+        bgImage: '/portfolio_project.png',
+        link: 'https://dineshkumar-portfolio-website.netlify.app/'
+    },
+    {
         title:'Feature Selection and Classification Model for Cancer',
-        description: 'Machine Learning',
+        domain: 'Machine Learning',
+        date: 'Mar - 2023',
+        description: 'This project optimized algorithm selection for early-stage cancer detection using predictive analysis, confusion matrices, and entropy to minimize error rates.',
         bgImage: '/ml_project.png',
         link: 'https://github.com/dineshkumarc9102/Dineshkumar_Feature_Selection_And_Classification_Model_For_Cancer'
     },

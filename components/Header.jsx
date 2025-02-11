@@ -51,7 +51,7 @@ const Header = () => {
             transition={{duration: 0.6, delay:1.2 }}
             href="/Dinesh Kumar_Resume.pdf" download className='px-10 py-3 border rounded-full border-gray-500 flex items-center gap-2 bg-black text-white dark:bg-transparent'>
             My Resume  
-            <Image src={assets.download_icon} alt='' className=' w-5 h-5 animate-bounce '  />
+            <Image src={assets.download_icon} alt='' className=' w-5 h-5 motion-safe:animate-bounce'  />
             </motion.a>
             
         </div>
