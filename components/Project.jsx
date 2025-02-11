@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 const Project = ({ isDarkMode }) => {
   return (
-    <motion.div id='project' className='w-full px-[15%] py-10 scroll-mt-20'
+    <motion.div id='project' className='w-full flex flex-col items-center px-[5%] md:px-[10%] lg:px-[15%] py-10 scroll-mt-20'
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1 }}
@@ -36,7 +36,7 @@ const Project = ({ isDarkMode }) => {
       </motion.p>
 
       <motion.div 
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 place items-center my-10"
+          className="flex flex-wrap justify-center gap-5 my-10"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.9, duration: 0.6 }}
@@ -44,7 +44,7 @@ const Project = ({ isDarkMode }) => {
         {projectData.map(({title, bgImage, domain, date, description, link}, index) => (
           <motion.div 
             key={index} 
-            className="aspect-square rounded-lg relative cursor-pointer group relative duration-300 group relative h-96 w-50 [perspective:1000px] cursor-pointer"
+            className="flex justify-center items-center aspect-square rounded-lg cursor-pointer group duration-300 h-96 w-full max-w-xs [perspective:1000px]"
             initial={{scale:0.8, opacity: 0}}
             whileInView={{scale:1, opacity: 1}}
             transition={{duration: 0.9, }}
