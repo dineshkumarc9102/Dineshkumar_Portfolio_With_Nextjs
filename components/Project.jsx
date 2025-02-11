@@ -68,7 +68,7 @@ const Project = ({ isDarkMode }) => {
                       <div className="flex justify-between items-center mt-auto">
                           <Link 
                               target="_blank" 
-                              href={project.link || "#"} 
+                              href={link || "#"} 
                               className="px-4 py-2 bg-white text-purple-600 rounded-lg font-semibold hover:bg-opacity-90 transition"
                           >
                               Visit
