@@ -36,16 +36,19 @@ const Project = ({ isDarkMode }) => {
       </motion.p>
 
       <motion.div 
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 justify-items-center my-10"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 place items-center my-10"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.9, duration: 0.6 }}
       >
         {projectData.map(({title, bgImage, domain, date, description, link}, index) => (
           <motion.div 
-          key={index} 
-          className="aspect-square rounded-lg relative cursor-pointer group relative duration-300 group relative h-96 w-72 [perspective:1000px] cursor-pointer"
-      >
+            key={index} 
+            className="aspect-square rounded-lg relative cursor-pointer group relative duration-300 group relative h-96 w-50 [perspective:1000px] cursor-pointer"
+            initial={{scale:0.8, opacity: 0}}
+            whileInView={{scale:1, opacity: 1}}
+            transition={{duration: 0.9, }}
+          >
           {/* Front Side*/}
           <div className="absolute duration-1000 w-11/12 h-full [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
               <div 
@@ -59,7 +62,7 @@ const Project = ({ isDarkMode }) => {
               </div>
       
               {/* Back Side */}
-              <div className="absolute w-11/12 h-full rounded-xl bg-gradient-to-br from-pink-500 to-purple-500 p-6 text-white [transform:rotateY(180deg)] [backface-visibility:hidden]">
+              <div className="absolute w-11/12 h-full rounded-xl bg-gradient-to-br from-gray-900/95 to-gray-800/95 p-6 text-white shadow-[0_0_30px_rgba(79,70,229,0.15)] [transform:rotateY(180deg)] [backface-visibility:hidden]">
                   <div className="flex flex-col h-full">
                       {/* <div className="text-base font-bold mb-4 text-black"></div> */}
                       <p className="text-lg">{domain}</p>
@@ -83,13 +86,32 @@ const Project = ({ isDarkMode }) => {
         ))}
       </motion.div>
 
-      <motion.a target='_blank' href="https://github.com/dineshkumarc9102"
-        className='w-max flex items-center justify-center gap-2 text-gray-700 border-[0.5px] border-gray-700 rounded-full py-3 px-10 mx-auto my-20 hover:bg-lightHover duration-500 dark:text-white dark:border-white dark:hover:bg-darkHover '
+      <motion.a
+        target="_blank"
+        href="https://github.com/dineshkumarc9102"
+        className="w-max flex items-center justify-center gap-2 border-[0.5px] border-gray-700 rounded-full py-3 px-10 mx-auto my-20 hover:bg-lightHover duration-500 dark:text-white dark:border-white dark:hover:bg-darkHover"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ delay: 1.1, duration: 0.5 }}
       >
-        Show more  <Image src={isDarkMode ? assets.rigth_arrow_white : assets.right_arrow} alt='' className='w-4'/>
+        <div className="relative inline-block group">
+          <button className="text-sm font-semibold rounded-xl transition-all duration-300">
+            <span className="flex justify-center items-center gap-2">
+              More <Image src={isDarkMode ? assets.rigth_arrow_white : assets.right_arrow} alt="" className="w-4" />
+            </span>
+         </button>
+
+          {/* Tooltip */}
+          <div className="absolute invisible opacity-0 group-hover:visible group-hover:opacity-100 bottom-full left-1/2 -translate-x-1/2 translate-y-2 group-hover:translate-y-0 transition-all duration-300 ease-out w-72">
+            <div className="relative p-4 bg-darkHover dark:bg-lightHover backdrop-blur-md rounded-2xl border border-white/10 shadow-[0_0_30px_rgba(79,70,229,0.15)]">
+              <p className="text-sm text-gray-300 text-center dark:text-black">This will redirect to my GitHub profile.</p>
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-indigo-500/10 to-purple-500/10 blur-xl opacity-50"></div>
+              <div className="absolute -bottom-1.5 left-1/2 -translate-x-1/2 w-3 h-3 bg-darkHover dark:bg-lightHover rotate-45 border-r border-b border-white/10"></div>
+            </div>
+          </div>
+        </div>
+
+        {/* Show more  <Image src={isDarkMode ? assets.rigth_arrow_white : assets.right_arrow} alt='' className='w-4'/> */}
       </motion.a>
     </motion.div>
   );
