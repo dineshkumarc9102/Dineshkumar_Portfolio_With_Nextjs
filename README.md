@@ -9,7 +9,7 @@ Welcome to my portfolio! 🚀 This is a showcase of the projects I've worked on 
 
 ## 🚀 Explore My Work
 Check out my portfolio and dive into the projects:
-🔗 **[Live Portfolio](https://your-portfolio-link.com)**
+🔗 **[Live Portfolio]([https://your-portfolio-link.com](https://dineshkumar-portfolio-website.netlify.app/))**
 
 ---
 **Happy Exploring! 🚀😊**
