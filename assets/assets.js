@@ -246,6 +246,14 @@ export const educationData = [
 
 export const projectData = [
     {
+        title:'Chat App',
+        domain: 'Web App', 
+        date: 'Feb - 2025',
+        description: 'A real-time MERN chat app with one-on-one messaging, image sharing, and theme customization, powered by Socket.IO and Cloudinary.',
+        bgImage: '/chatapp-project.png',
+        link: 'https://dineshkumar-chat-app-using-mern.onrender.com/'
+    },
+    {
         title:'Crypto Tracker',
         domain: 'Web Design', 
         date: 'Jan - 2025',
