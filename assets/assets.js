@@ -65,6 +65,7 @@ import contact_white from './contact_white.svg';
 import netlify from './netlify.svg';
 import render from './render.svg';
 import render_dark from './render_dark.svg';
+import postman from './postman.svg';
 
 
 export const assets ={ 
@@ -135,6 +136,7 @@ export const assets ={
     netlify,
     render,
     render_dark,
+    postman,
 }
 
 
@@ -212,6 +214,7 @@ export const toolsData = [
     { iconWhite: assets.github_white, iconBlack: assets.github_black, name: "GitHub" },
     { iconWhite: assets.netlify, iconBlack: assets.netlify, name: "Netlify" },
     { iconWhite: assets.render_dark, iconBlack: assets.render, name: "Render" },
+    { iconWhite: assets.postman, iconBlack: assets.postman, name: "Postman" },
     { iconWhite: assets.colab, iconBlack: assets.colab, name: "Google Colab" },
     { iconWhite: assets.mongodb, iconBlack: assets.mongodb, name: "MongoDB" },
     { iconWhite: assets.firebase, iconBlack: assets.firebase, name: "Firebase" },
