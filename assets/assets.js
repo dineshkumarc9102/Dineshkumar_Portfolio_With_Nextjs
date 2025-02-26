@@ -62,6 +62,9 @@ import about_white from './about_white.svg';
 import education_white from './education-white.svg'
 import experience_white from './experience_white.svg';
 import contact_white from './contact_white.svg';
+import netlify from './netlify.svg';
+import render from './render.svg';
+import render_dark from './render_dark.svg';
 
 
 export const assets ={ 
@@ -129,6 +132,9 @@ export const assets ={
     education_white,
     experience_white,
     contact_white,
+    netlify,
+    render,
+    render_dark,
 }
 
 
@@ -204,12 +210,14 @@ export const languageData = [
 export const toolsData = [
     { iconWhite: assets.vscode, iconBlack: assets.vscode, name: "VS Code" },
     { iconWhite: assets.github_white, iconBlack: assets.github_black, name: "GitHub" },
+    { iconWhite: assets.netlify, iconBlack: assets.netlify, name: "Netlify" },
+    { iconWhite: assets.render_dark, iconBlack: assets.render, name: "Render" },
     { iconWhite: assets.colab, iconBlack: assets.colab, name: "Google Colab" },
+    { iconWhite: assets.mongodb, iconBlack: assets.mongodb, name: "MongoDB" },
+    { iconWhite: assets.firebase, iconBlack: assets.firebase, name: "Firebase" },
     { iconWhite: assets.figma, iconBlack: assets.figma, name: "Figma" },
     { iconWhite: assets.canva, iconBlack: assets.canva, name: "Canva" },
     { iconWhite: assets.excel, iconBlack: assets.excel, name: "Excel" },
-    { iconWhite: assets.firebase, iconBlack: assets.firebase, name: "Firebase" },
-    { iconWhite: assets.mongodb, iconBlack: assets.mongodb, name: "MongoDB" }
 ];
 
 
