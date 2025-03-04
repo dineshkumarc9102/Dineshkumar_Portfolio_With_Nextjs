@@ -258,7 +258,7 @@ export const educationData = [
 export const projectData = [
     {
         title:'Chat App',
-        domain: 'Web App', 
+        domain: 'MERN Stack', 
         date: 'Feb - 2025',
         description: 'A real-time MERN chat app with one-on-one messaging, image sharing, and theme customization, powered by Socket.IO and Cloudinary.',
         bgImage: '/chatapp-project.png',
@@ -266,7 +266,7 @@ export const projectData = [
     },
     {
         title:'Crypto Tracker',
-        domain: 'Web Design', 
+        domain: 'Dynamic Web App', 
         date: 'Jan - 2025',
         description: 'CryptoTracker offers real-time cryptocurrency data, including prices, market cap, and trends, powered by the CoinGecko API.',
         bgImage: '/cryptotracker_project.png',
@@ -274,7 +274,7 @@ export const projectData = [
     },
     {
         title:'YouTube Clone',
-        domain: 'Web Design',
+        domain: 'Dynamic Web App',
         date: 'Jan - 2025',
         description: 'A YouTube clone using YouTube Data API v3 for seamless video streaming and in-app viewing.',
         bgImage: '/youtube_project.png',
@@ -282,7 +282,7 @@ export const projectData = [
     },
     {
         title:'Netflix Clone',
-        domain: 'Web Design',
+        domain: 'Dynamic Web App',
         date: 'Jan - 2025',
         description: 'A Netflix clone with TMDB API for a vast movie library and Firebase for secure authentication.',
         bgImage: '/netflix_project.png',
@@ -293,13 +293,13 @@ export const projectData = [
         domain: 'Machine Learning & NLP',
         date: 'Nov - 2024',
         description: 'Conducted EDA and NLP on data breaches to uncover trends, extract patterns, and predict leak methods with 90.48% accuracy using Random Forest.',
-        bgImage: '/ml_project.png',
+        bgImage: '/nlp_project.png',
         link: 'https://github.com/dineshkumarc9102/Dineshkumar_Study_on_Data_Breach_Detection_using_NLP_and_ML_Methods'
     },
     
     {
         title:'Mens Look Website',
-        domain: 'Web Design',
+        domain: 'Static Website',
         date: 'Jul - 2024',
         description: 'A static, visually appealing website for a local salon, showcasing services and incorporating interactive features to enhance the user experience.',
         bgImage: '/menslook_project.png',
@@ -307,7 +307,7 @@ export const projectData = [
     },
     {
         title:'My Portfolio Website',
-        domain: 'Web Design',
+        domain: 'Static Website',
         date: 'Apr - 2024',
         description: 'My portfolio showcases my projects and contributions. Explore, and feel free to reach out for collaborations!',
         bgImage: '/portfolio_project.png',

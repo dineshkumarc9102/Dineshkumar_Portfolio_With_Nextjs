@@ -52,7 +52,7 @@ const Project = ({ isDarkMode }) => {
           {/* Front Side*/}
           <div className="absolute duration-1000 w-11/12 h-full [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
               <div 
-                  className="border border-gray-500 rounded-md absolute  left-1/2 -translate-x-1/2 py-3 px-5 duration-500 absolute w-11/12 h-full rounded-xl bg-cover bg-center p-6 text-white [backface-visibility:hidden]" 
+                  className="border border-gray-500 rounded-md absolute  left-1/2 -translate-x-1/2 py-3 px-5 duration-500 absolute w-11/12 h-full rounded-xl bg-cover bg-center p-6 text-white [backface-visibility:hidden] " 
                   style={{ backgroundImage: `url(${bgImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
               >
                   <div className="flex flex-col h-full ">
