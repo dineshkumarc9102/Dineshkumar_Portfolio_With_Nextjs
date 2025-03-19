@@ -12,7 +12,7 @@ const ovo = Ovo({
 });
 
 export const metadata = {
-  title: "Dinesh Kumar | Personal Portfolio ",
+  title: "Dinesh Kumar Portfolio ",
   description: "",
 };
 
