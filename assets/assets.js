@@ -257,6 +257,14 @@ export const educationData = [
 
 export const projectData = [
     {
+        title:'Parkinson Disease Prediction using Machine Learning',
+        domain: 'Machine Learning & MERN Stack',
+        date: 'Mar - 2025',
+        description: 'This project using Machine Learning with a web-based interface built with React, Flask, and Node.js for real-time predictions and user history tracking.',
+        bgImage: '/ml_project.png',
+        link: 'https://github.com/dineshkumarc9102/Dineshkumar_Parkinson-s_Disease_Prediction'
+    },
+    {
         title:'Chat App',
         domain: 'MERN Stack', 
         date: 'Feb - 2025',
