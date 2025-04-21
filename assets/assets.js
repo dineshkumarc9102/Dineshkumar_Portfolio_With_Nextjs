@@ -66,7 +66,8 @@ import netlify from './netlify.svg';
 import render from './render.svg';
 import render_dark from './render_dark.svg';
 import postman from './postman.svg';
-
+import new_profile from './newProfile.jpg';
+import new_profile_image from './newDP.jpg';
 
 export const assets ={ 
     icon,
@@ -137,6 +138,8 @@ export const assets ={
     render,
     render_dark,
     postman,
+    new_profile,
+    new_profile_image,
 }
 
 

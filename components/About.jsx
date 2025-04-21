@@ -37,7 +37,7 @@ const About = ({isDarkMode}) => {
             whileInView={{scale:1, opacity: 1}}
             transition={{duration: 0.6, }}
             >
-                <Image src={assets.user_img} alt='' className='w-full rounded-3xl scale-100 transition-all duration-300 hover:scale-110' />
+                <Image src={assets.new_profile_image} alt='' className='w-full rounded-3xl scale-100 transition-all duration-300 hover:scale-110' />
             </motion.div>
 
             <motion.div className='flex-1'

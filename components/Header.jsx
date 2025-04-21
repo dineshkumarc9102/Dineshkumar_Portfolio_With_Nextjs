@@ -11,7 +11,7 @@ const Header = () => {
         whileInView={{ scale: 1}}
         transition={{duration: 0.8, type: 'spring', stiffness: 100 }}
         >
-            <Image src={assets.profile_img} alt='' className='rounded-full w-32' />
+            <Image src={assets.new_profile} alt='' className='rounded-full w-32' />
         </motion.div>
 
         <motion.h3 
@@ -28,7 +28,7 @@ const Header = () => {
         whileInView={{y: 0, opacity: 1}}
         transition={{duration: 0.8, delay:0.5 }}
         className='text-3xl sm:text-6xl lg:text-[66px] font-Ovo'>
-        Web Designer & Frontend Developer
+        Web Designer & Developer
         </motion.h1>
 
         <p className='max-w-2xl mx-auto font-Ovo'>
