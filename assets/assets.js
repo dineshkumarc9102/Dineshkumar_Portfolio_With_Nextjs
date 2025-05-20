@@ -231,28 +231,28 @@ export const educationData = [
     {
         icon: assets.vit,
         title: 'Master of Computer Applications',
-        university: 'Vellore Institute of Technology',
+        university: 'Vellore Institute of Technology - Vellore',
         duration: '2023 - 2025',
-        score: '8.29/10'
+        score: '8.43/10'
     },
     {
         icon: assets.vit,
         title: 'Bachelor of Computer Applications',
-        university: 'Vellore Institute of Technology',
+        university: 'Vellore Institute of Technology - Vellore',
         duration: '2020 - 2023',
         score: '8.49/10'
     },
     {
         icon: assets.rbm,
         title: 'Higher Secondary',
-        university: 'Rathinagiri Bageerathan Matriculation Higher Secondary School',
+        university: 'Rathinagiri Bageerathan Matriculation Higher Secondary School - Ranipet',
         duration: '2019 - 2020',
         score: '71%'
     },
     {
         icon: assets.rbm,
         title: 'Secondary Education',
-        university: 'Rathinagiri Bageerathan Matriculation Higher Secondary School',
+        university: 'Rathinagiri Bageerathan Matriculation Higher Secondary School - Ranipet',
         duration: '2017 - 2018',
         score: '84%'
     },
