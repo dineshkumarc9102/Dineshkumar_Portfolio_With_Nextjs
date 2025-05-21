@@ -260,6 +260,14 @@ export const educationData = [
 
 export const projectData = [
     {
+        title:'Scribbly',
+        domain: 'MERN Stack',
+        date: 'May - 2025',
+        description: 'A modern and responsive notes-taking application built with the MERN stack. Scribbly allows you to create, view, update, and delete notes with a clean UI and smooth UX.',
+        bgImage: '/scribbly_project.png',
+        link: 'https://dineshkumar-scribbly-using-mern.onrender.com/'
+    },
+    {
         title:'Parkinson Disease Prediction using Machine Learning',
         domain: 'Machine Learning & MERN Stack',
         date: 'Mar - 2025',
