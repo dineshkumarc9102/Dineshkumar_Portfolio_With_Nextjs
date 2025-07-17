@@ -68,6 +68,16 @@ import render_dark from './render_dark.svg';
 import postman from './postman.svg';
 import new_profile from './newProfile.jpg';
 import new_profile_image from './newDP.jpg';
+import achi_dark from './achievement_dark.svg';
+import achi_white from './achievement_white.svg';
+import dlc from './dlc.png';
+import aic from './aic.png';
+import mlc from './mlc.png';
+import networkc from './networkc.png';
+import webc from './webc.png';
+import pythonc from './pythonc.png';
+import excelc from './excelc.png';
+import gitc from './gitc.png';
 
 export const assets ={ 
     icon,
@@ -140,6 +150,16 @@ export const assets ={
     postman,
     new_profile,
     new_profile_image,
+    achi_dark,
+    achi_white,
+    dlc,
+    aic,
+    mlc,
+    networkc,
+    webc,
+    pythonc,
+    gitc,
+    excelc,
 }
 
 
@@ -345,4 +365,65 @@ export const projectData = [
     //     description: 'Mobile App',
     //     bgImage: './argo_project.png',
     // },
+]
+
+
+export const certificateData = [
+    
+    {
+        title:'Fundamentals of Deep Learning',
+        issuer: 'NVIDIA',
+        date: '2024',
+        bgImage: assets.dlc,
+        link: 'https://drive.google.com/file/d/1L9HDH4-ruS9d2U8PPDaiZik9k8qFlS0G/view?usp=drive_link'
+    },
+    {
+        title:'Work Smarter with Microsoft Excel',
+        issuer: 'MicrosoftCoursera',
+        date: '2024',
+        bgImage: assets.excelc,
+        link: 'https://drive.google.com/file/d/1V1nIJEtPskZnyiHuosmBVZjbacCFUKpC/view?usp=drive_link'
+    },
+    {
+        title:'Introduction to AI',
+        issuer: 'IBM - Coursera',
+        date: '2024',
+        bgImage: assets.aic,
+        link: 'https://drive.google.com/file/d/1uRh2dSZUsitapaXUIqdjkQxLZNa0d9K7/view?usp=drive_link'
+    },
+    {
+        title:'Introduction to Git and GitHub',
+        issuer: 'Google - Coursera',
+        date: '2024',
+        bgImage: assets.gitc,
+        link: 'https://drive.google.com/file/d/1mOOHNiqPaFNXyZSG77DHS25nOWj_lR3Y/view?usp=drive_link'
+    },
+    {
+        title:'Machine Learning with Python',
+        issuer: 'IBM - Coursera',
+        date: '2023',
+        bgImage: assets.mlc,
+        link: 'https://drive.google.com/file/d/1vSPOUdL4QUkPSrWXM6ZBEDjpQYRRnxSS/view?usp=drive_link'
+    },
+    {
+        title:'Networking Cardinals',
+        issuer: 'VIT',
+        date: '2023',
+        bgImage: assets.networkc,
+        link: 'https://drive.google.com/file/d/1C31zURnNN2gJDcimWStHwYWD82eY5q5f/view?usp=drive_link'
+    },
+    {
+        title:'Indroduction to Web Development',
+        issuer: 'IBM - Coursera',
+        date: '2023',
+        bgImage: assets.webc,
+        link: 'https://drive.google.com/file/d/1NJCT7I2-nj1GboYJZFuKw95D0oIoEIS7/view?usp=drive_link'
+    },
+    {
+        title:'Python Programming',
+        issuer: 'VIT',
+        date: 'June - 2022',
+        bgImage: assets.pythonc,
+        link: 'https://drive.google.com/file/d/1A--lMjqnbiWoMyJ3cU3m87dNUQA5a-Xh/view?usp=drive_link'
+    },
 ]

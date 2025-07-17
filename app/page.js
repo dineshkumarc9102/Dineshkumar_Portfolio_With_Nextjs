@@ -5,6 +5,7 @@ import Education from "@/components/Education";
 import Header from "@/components/Header";
 import Navbar from "@/components/Navbar";
 import Project from "@/components/Project";
+import Achivements from "@/components/Achivements";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import { useEffect, useState } from "react";
@@ -38,6 +39,7 @@ export default function Home() {
     <About isDarkMode={isDarkMode} />
     <Education isDarkMode={isDarkMode} />
     <Project isDarkMode={isDarkMode} />
+    <Achivements isDarkMode={isDarkMode} />
     <Contact isDarkMode={isDarkMode} />
     <Footer isDarkMode={isDarkMode} />
     

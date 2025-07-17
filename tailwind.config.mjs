@@ -25,7 +25,18 @@ export default {
 
       gridTemplateColumns:{
         'auto': 'repeat(auto-fit, minmax(200px, 1fr))'
-      }
+      },
+      
+      keyframes: {
+        shine: {
+          '0%': { backgroundPosition: '200% center' },
+          '100%': { backgroundPosition: '-200% center' },
+        },
+      },
+
+      animation: {
+        shine: 'shine 2s linear infinite',
+      },
     },
   },
   darkMode: 'selector',
