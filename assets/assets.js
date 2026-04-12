@@ -78,6 +78,11 @@ import webc from './webc.png';
 import pythonc from './pythonc.png';
 import excelc from './excelc.png';
 import gitc from './gitc.png';
+import powerbi from './Power-BI.svg';
+import sap from './SAP.svg';
+import xd from './XD.svg';
+import TVSmotor from './TVS.svg';
+import logo from './logo.svg';
 
 export const assets ={ 
     icon,
@@ -160,6 +165,11 @@ export const assets ={
     pythonc,
     gitc,
     excelc,
+    powerbi,
+    sap,
+    xd,
+    TVSmotor,
+    logo
 }
 
 
@@ -233,6 +243,11 @@ export const languageData = [
 
 
 export const toolsData = [
+    { iconWhite: assets.excel, iconBlack: assets.excel, name: "Excel" },
+    { iconWhite: assets.powerbi, iconBlack: assets.powerbi, name: "Power BI" },
+    { iconWhite: assets.sap, iconBlack: assets.sap, name: "SAP" },
+    { iconWhite: assets.xd, iconBlack: assets.xd, name: "Adobe XD" },
+    { iconWhite: assets.figma, iconBlack: assets.figma, name: "Figma" },
     { iconWhite: assets.vscode, iconBlack: assets.vscode, name: "VS Code" },
     { iconWhite: assets.github_white, iconBlack: assets.github_black, name: "GitHub" },
     { iconWhite: assets.netlify, iconBlack: assets.netlify, name: "Netlify" },
@@ -241,10 +256,18 @@ export const toolsData = [
     { iconWhite: assets.colab, iconBlack: assets.colab, name: "Google Colab" },
     { iconWhite: assets.mongodb, iconBlack: assets.mongodb, name: "MongoDB" },
     { iconWhite: assets.firebase, iconBlack: assets.firebase, name: "Firebase" },
-    { iconWhite: assets.figma, iconBlack: assets.figma, name: "Figma" },
     { iconWhite: assets.canva, iconBlack: assets.canva, name: "Canva" },
-    { iconWhite: assets.excel, iconBlack: assets.excel, name: "Excel" },
 ];
+
+
+export const experienceData = [
+  {
+    icon: assets.TVSmotor,
+    title: "Executive Trainee",
+    company: "TVS Motor Company",
+    duration: "2025 - Present",
+    description: "Experienced in SAP for business operations, Adobe XD for UI/UX design, and Microsoft Excel for data analysis, reporting, and visualization."  },
+]
 
 
 export const educationData = [

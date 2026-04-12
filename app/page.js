@@ -1,6 +1,7 @@
 'use client'
 
 import About from "@/components/About";
+import Experience from "@/components/Experience";
 import Education from "@/components/Education";
 import Header from "@/components/Header";
 import Navbar from "@/components/Navbar";
@@ -37,6 +38,7 @@ export default function Home() {
     <Navbar isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
     <Header isDarkMode={isDarkMode} />
     <About isDarkMode={isDarkMode} />
+    <Experience isDarkMode={isDarkMode} />
     <Education isDarkMode={isDarkMode} />
     <Project isDarkMode={isDarkMode} />
     <Achivements isDarkMode={isDarkMode} />

@@ -34,12 +34,13 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
 
       <nav className={`w-full fixed px-5 lg:px-8 xl:px-[8%] py-4 flex items-center justify-between z-50 ${isScroll ? "bg-white bg-opacity-50 backdrop-blur-lg shadow-sm dark:bg-darkTheme dark:shadow-white/20" : ""}`} >
         <a href="#top">
-          <Image src={assets.icon} alt='' className='w-20 h-16 cursor-pointer mr-14 rounded-full ' />
+          <Image src={assets.logo} alt='' className='w-200 h-16 cursor-pointer mr-14 rounded-full ' />
         </a>
 
         <ul className={`hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3  ${isScroll ? " " : "bg-white shadow-sm bg-opacity-50 dark:border dark:border-white/50 dark:bg-transparent"} `}>
           {/* <li><a className='font-Ovo hover:border-b-2 border-darkHover dark:hover:text-purple-300 transition' href="#top">Home</a></li> */}
           <li><a className='font-Ovo hover:border-b-2 border-darkHover dark:hover:text-purple-300 transition' href="#about">About</a></li>
+          <li><a className='font-Ovo hover:border-b-2 border-darkHover dark:hover:text-purple-300 transition' href="#about">Experience</a></li>
           <li><a className='font-Ovo hover:border-b-2 border-darkHover dark:hover:text-purple-300 transition' href="#education">Education</a></li>
           <li><a className='font-Ovo hover:border-b-2 border-darkHover dark:hover:text-purple-300 transition' href="#project">Project</a></li>
           <li><a className='font-Ovo hover:border-b-2 border-darkHover dark:hover:text-purple-300 transition' href="#achivements">Certification</a></li>
@@ -112,6 +113,7 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
             {[
               { id: 'top', label: 'Home', icon: isDarkMode ? assets.home_white : assets.home },
               { id: 'about', label: 'About', icon: isDarkMode ? assets.about_white : assets.about },
+              { id: 'experience', label: 'Experience', icon: isDarkMode ? assets.experience_white : assets.experience },
               { id: 'education', label: 'Education', icon: isDarkMode ? assets.edu_icon_dark : assets.education },
               { id: 'project', label: 'Project', icon: isDarkMode ? assets.experience_white : assets.experience },
               { id: 'achivements', label: 'Certification', icon: isDarkMode ? assets.achi_dark : assets.achi_white },

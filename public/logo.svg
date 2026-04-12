@@ -1,0 +1,47 @@
+<svg width="220" height="100" viewBox="0 0 400 140" xmlns="http://www.w3.org/2000/svg">
+
+  <defs>
+    <!-- Gradient -->
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6"></stop>
+      <stop offset="100%" stop-color="#06b6d4"></stop>
+    </linearGradient>
+
+    <!-- Glow -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3.5" result="coloredBlur"></feGaussianBlur>
+      <feMerge>
+        <feMergeNode in="coloredBlur"></feMergeNode>
+        <feMergeNode in="SourceGraphic"></feMergeNode>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- DK Text -->
+  <text x="30" y="80" font-size="64" font-weight="700" fill="url(#grad)" font-family="Poppins, sans-serif" filter="url(#glow)">
+    DK
+  </text>
+
+  <!-- Animated Orbit Line -->
+  <path d="M40 75 Q160 0 300 70" stroke="url(#grad)" stroke-width="4" fill="none" stroke-linecap="round" filter="url(#glow)">
+
+    <!-- Animation -->
+    <animate attributeName="stroke-dasharray" from="0,400" to="400,0" dur="2s" repeatCount="indefinite"></animate>
+  </path>
+
+  <!-- Moving Dot -->
+  <circle r="5" fill="#06b6d4">
+    <animateMotion dur="2s" repeatCount="indefinite">
+      <mpath href="#orbitPath"></mpath>
+    </animateMotion>
+  </circle>
+
+  <!-- Hidden Path for Motion -->
+  <path id="orbitPath" d="M40 75 Q160 0 300 70" fill="none"></path>
+
+  <!-- Name -->
+  <text x="30" y="115" font-size="20" fill="#6b7280" font-family="Poppins, sans-serif" letter-spacing="2">
+    DINESH KUMAR
+  </text>
+
+</svg>
