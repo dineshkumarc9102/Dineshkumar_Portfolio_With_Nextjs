@@ -35,8 +35,8 @@ const Experience = () => {
             {/* Timeline */}
             <div className="relative my-16">
 
-                {/* Center Vertical Line */}
-                <div className="absolute left-1/2 top-0 transform -translate-x-1/2 w-1 h-full bg-gray-300"></div>
+                {/* LINE */}
+                <div className="absolute left-4 md:left-1/2 top-0 transform md:-translate-x-1/2 w-1 h-full bg-gray-300"></div>
 
                 {experienceData.map((item, index) => (
                     <motion.div
@@ -52,47 +52,48 @@ const Experience = () => {
                             {/* LEFT SIDE CARD */}
                             <motion.div
                                 whileHover={{ scale: 1.05 }}
-                                className="group relative w-[45%] rounded-2xl cursor-pointer border border-gray-400 overflow-hidden duration-500 hover:bg-lightHover hover:shadow-black dark:hover:bg-darkHover dark:hover:shadow-white"
+                                className="group relative w-[75%] md:w-[45%] ml-12 md:ml-0 rounded-2xl cursor-pointer border border-gray-400 overflow-hidden duration-500 hover:bg-lightHover hover:shadow-black dark:hover:bg-darkHover dark:hover:shadow-white"
                             >
 
                                 {/* Animated circles */}
                                 <div className="absolute w-24 h-24 rounded-full bottom-32 right-16 duration-500 group-hover:translate-x-24 group-hover:w-12 group-hover:h-12"></div>
                                 <div className="absolute w-20 h-20 rounded-full top-20 right-16 duration-500 group-hover:translate-y-12 group-hover:-translate-x-32 group-hover:w-12 group-hover:h-12"></div>
-                                <div className="px-8 py-10 flex flex-col items-start">
+
+                                <div className="px-6 py-8 md:px-8 md:py-10 flex flex-col items-start">
 
                                     <Image
                                         src={item.icon}
                                         alt="company logo"
-                                        width={50}
-                                        height={50}
+                                        width={40}
+                                        height={40}
                                         className="mb-3"
                                     />
 
-                                    <h1 className="text-lg font-semibold text-gray dark:text-white">
+                                    <h1 className="text-base md:text-lg font-semibold text-gray dark:text-white">
                                         {item.title}
                                     </h1>
 
-                                    <h2 className="text-gray-700 dark:text-white/80">
+                                    <h2 className="text-sm md:text-base text-gray-700 dark:text-white/80">
                                         {item.company}
                                     </h2>
 
-                                    <h4 className="text-sm text-gray-500 my-2">
+                                    <h4 className="text-xs md:text-sm text-gray-500 my-2">
                                         {item.duration}
                                     </h4>
 
-                                    <p className="text-sm text-gray dark:text-white text-justify leading-6">
+                                    <p className="text-xs md:text-sm text-gray dark:text-white text-justify leading-5 md:leading-6">
                                         {item.description}
                                     </p>
 
                                 </div>
                             </motion.div>
 
-                            {/* CENTER DOT */}
-                            <div className="absolute left-1/2 transform -translate-x-1/2 top-6 z-10">
-                                <div className="w-6 h-6 bg-black dark:bg-white rounded-full border-4 border-white dark:border-black"></div>
+                            {/* DOT */}
+                            <div className="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 top-6 z-10">
+                                <div className="w-4 h-4 md:w-6 md:h-6 bg-black dark:bg-white rounded-full border-4 border-white dark:border-black"></div>
                             </div>
 
-                            {/* EMPTY RIGHT SPACE */}
+                            {/* EMPTY RIGHT SPACE (UNCHANGED) */}
                             <div className="w-[55%]"></div>
 
                         </div>

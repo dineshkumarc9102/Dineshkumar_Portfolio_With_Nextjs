@@ -40,7 +40,7 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
         <ul className={`hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3  ${isScroll ? " " : "bg-white shadow-sm bg-opacity-50 dark:border dark:border-white/50 dark:bg-transparent"} `}>
           {/* <li><a className='font-Ovo hover:border-b-2 border-darkHover dark:hover:text-purple-300 transition' href="#top">Home</a></li> */}
           <li><a className='font-Ovo hover:border-b-2 border-darkHover dark:hover:text-purple-300 transition' href="#about">About</a></li>
-          <li><a className='font-Ovo hover:border-b-2 border-darkHover dark:hover:text-purple-300 transition' href="#about">Experience</a></li>
+          <li><a className='font-Ovo hover:border-b-2 border-darkHover dark:hover:text-purple-300 transition' href="#experience">Experience</a></li>
           <li><a className='font-Ovo hover:border-b-2 border-darkHover dark:hover:text-purple-300 transition' href="#education">Education</a></li>
           <li><a className='font-Ovo hover:border-b-2 border-darkHover dark:hover:text-purple-300 transition' href="#project">Project</a></li>
           <li><a className='font-Ovo hover:border-b-2 border-darkHover dark:hover:text-purple-300 transition' href="#achivements">Certification</a></li>
