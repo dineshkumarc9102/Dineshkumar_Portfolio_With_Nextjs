@@ -82,7 +82,8 @@ import powerbi from './Power-BI.svg';
 import sap from './SAP.svg';
 import xd from './XD.svg';
 import TVSmotor from './TVS.svg';
-import logo from './logo.svg';
+import logo_white from './DK logo.svg';
+import logo_black from './DK logo black.svg';
 
 export const assets ={ 
     icon,
@@ -169,7 +170,8 @@ export const assets ={
     sap,
     xd,
     TVSmotor,
-    logo
+    logo_white,
+    logo_black
 }
 
 

@@ -14,6 +14,9 @@ const ovo = Ovo({
 export const metadata = {
   title: "Dinesh Kumar Portfolio ",
   description: "",
+  icons: {
+    icon: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({ children }) {
