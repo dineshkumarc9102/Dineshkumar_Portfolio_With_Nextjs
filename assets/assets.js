@@ -305,6 +305,14 @@ export const educationData = [
 
 export const projectData = [
     {
+        title:'Dashboard Website',
+        domain: 'Power BI & ReactJS',
+        date: 'May - 2026',
+        description: 'A modern financial dashboard built with React, Vite, Tailwind CSS, Node.js, Express, JWT Authentication, and Power BI Embedded. Features secure login, salary tracking, post office investment monitoring, stock portfolio analytics, and interactive data visualizations in a responsive user interface.',
+        bgImage: '/dashboard_project.png',
+        link: 'https://dineshkumar-dashboard-website.netlify.app/'
+    },
+    {
         title:'Scribbly',
         domain: 'MERN Stack',
         date: 'May - 2025',
