@@ -102,31 +102,6 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
             </div>
           </label>
 
-
-          {/* ✅ Contact Button */}
-          <a
-            href="#contact"
-            className='hidden lg:flex items-center gap-1 px-5 py-2.5 border border-gray-500 rounded-full ml-4 font-Ovo dark:border-white/50'
-          >
-            <button className="group cursor-pointer">
-              <div className="relative overflow-hidden">
-                <p className="group-hover:-translate-y-7 duration-[1.125s] ease-[cubic-bezier(0.19,1,0.22,1)]">
-                  Contact
-                </p>
-                <p className="absolute top-7 left-0 group-hover:top-0 duration-[1.125s] ease-[cubic-bezier(0.19,1,0.22,1)]">
-                  Contact
-                </p>
-              </div>
-            </button>
-
-            <Image
-              src={isDarkMode ? assets.arrow_up_dark : assets.arrow_up}
-              alt=""
-              className="w-5"
-            />
-          </a>
-
-
           {/* ✅ Mobile Menu Button */}
           <button className='block md:hidden ml-3' onClick={openMenu}>
             <Menu className="w-6 h-6" />
