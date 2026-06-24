@@ -79,7 +79,6 @@ const Education = () => {
 
             {/* ✅ University */}
             <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-white/70 mt-1">
-              <Building className="w-4 h-4 group-hover:scale-110 transition" />
               {university}
             </div>
 
