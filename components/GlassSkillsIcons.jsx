@@ -3,10 +3,10 @@ import React from 'react';
 
 const GlassSkillsIcons = ({ items, isDarkMode }) => {
   const getBackgroundStyle = () => {
-    const lightGradient = "rgba(245, 208, 255, 1)";
-    const darkGradient = "rgba(28,0,53,255)";
-    return { background: isDarkMode ? darkGradient : lightGradient };
-  };
+  const lightGradient = "rgba(229, 231, 234)"; 
+  const darkGradient = "rgba(255 255 255 / 0.1)";
+  return { background: isDarkMode ? darkGradient : lightGradient };
+};
 
   return (
     <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-10 place-items-center py-10">
