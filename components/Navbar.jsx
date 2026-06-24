@@ -1,38 +1,58 @@
-import { assets } from '@/assets/assets'
-import Image from 'next/image'
 import React, { useEffect, useRef, useState } from 'react'
+import Image from 'next/image'
+
+import {
+  Home,
+  User,
+  Briefcase,
+  GraduationCap,
+  Folder,
+  Award,
+  Mail,
+  Menu,
+  X
+} from "lucide-react"
+
+import { assets } from '@/assets/assets'
+
 
 const Navbar = ({ isDarkMode, setIsDarkMode }) => {
 
-  const [isScroll, setIsScroll] = useState(false);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const sideMenuRef = useRef();
+  const [isScroll, setIsScroll] = useState(false)
+  const sideMenuRef = useRef(null)
 
+  // ✅ Open Menu
   const openMenu = () => {
     sideMenuRef.current.style.transform = 'translateX(-16rem)'
   }
 
+  // ✅ Close Menu
   const closeMenu = () => {
     sideMenuRef.current.style.transform = 'translateX(16rem)'
   }
 
+  // ✅ Scroll Effect
   useEffect(() => {
-    window.addEventListener('scroll', () => {
-      if (scrollY > 50) {
-        setIsScroll(true);
-      } else {
-        setIsScroll(false);
-      }
-    })
+    const handleScroll = () => {
+      setIsScroll(window.scrollY > 50)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
   }, [])
+
 
   return (
     <>
-      {/* <div className='fixed top-0 right-0 w-11/12 -z-10 translate-y-[-80%] dark:hidden'>
-      <Image src={assets.gradient_bg} alt='' className='w-full' />
-    </div> */}
+      <nav
+        className={`w-full fixed px-5 lg:px-8 xl:px-[8%] py-4 flex items-center justify-between z-50 
+        ${isScroll
+            ? "bg-white bg-opacity-50 backdrop-blur-lg shadow-sm dark:bg-darkTheme dark:shadow-white/20"
+            : ""
+          }`}
+      >
 
-      <nav className={`w-full fixed px-5 lg:px-8 xl:px-[8%] py-4 flex items-center justify-between z-50 ${isScroll ? "bg-white bg-opacity-50 backdrop-blur-lg shadow-sm dark:bg-darkTheme dark:shadow-white/20" : ""}`} >
+        {/* ✅ Logo */}
         <a href="#top">
           <Image
             src={isDarkMode ? assets.logo_white : assets.logo_black}
@@ -41,25 +61,28 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
           />
         </a>
 
-        <ul className={`hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3  ${isScroll ? " " : "bg-white shadow-sm bg-opacity-50 dark:border dark:border-white/50 dark:bg-transparent"} `}>
-          {/* <li><a className='font-Ovo hover:border-b-2 border-darkHover dark:hover:text-purple-300 transition' href="#top">Home</a></li> */}
-          <li><a className='font-Ovo hover:border-b-2 border-darkHover dark:hover:text-purple-300 transition' href="#about">About</a></li>
-          <li><a className='font-Ovo hover:border-b-2 border-darkHover dark:hover:text-purple-300 transition' href="#experience">Experience</a></li>
-          <li><a className='font-Ovo hover:border-b-2 border-darkHover dark:hover:text-purple-300 transition' href="#education">Education</a></li>
-          <li><a className='font-Ovo hover:border-b-2 border-darkHover dark:hover:text-purple-300 transition' href="#project">Project</a></li>
-          <li><a className='font-Ovo hover:border-b-2 border-darkHover dark:hover:text-purple-300 transition' href="#achivements">Certification</a></li>
-          <li><a className='font-Ovo hover:border-b-2 border-darkHover dark:hover:text-purple-300 transition' href="#contact">Contact</a></li>
+
+        {/* ✅ Desktop Menu */}
+        <ul
+          className={`hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3
+          ${isScroll
+              ? ""
+              : "bg-white shadow-sm bg-opacity-50 dark:border dark:border-white/50 dark:bg-transparent"
+            }`}
+        >
+          <li><a className="font-Ovo hover:border-b-2 border-darkHover dark:hover:text-purple-300 transition" href="#about">About</a></li>
+          <li><a className="font-Ovo hover:border-b-2 border-darkHover dark:hover:text-purple-300 transition" href="#experience">Experience</a></li>
+          <li><a className="font-Ovo hover:border-b-2 border-darkHover dark:hover:text-purple-300 transition" href="#education">Education</a></li>
+          <li><a className="font-Ovo hover:border-b-2 border-darkHover dark:hover:text-purple-300 transition" href="#project">Project</a></li>
+          <li><a className="font-Ovo hover:border-b-2 border-darkHover dark:hover:text-purple-300 transition" href="#achivements">Certification</a></li>
+          <li><a className="font-Ovo hover:border-b-2 border-darkHover dark:hover:text-purple-300 transition" href="#contact">Contact</a></li>
         </ul>
 
 
-
+        {/* ✅ Right Section */}
         <div className='flex items-center gap-4'>
 
-          {/* <button onClick={() => setIsDarkMode(prev => !prev)}>
-            <Image src={isDarkMode ? assets.sun_icon : assets.moon_icon} alt='' className='w-6'/>
-          </button> */}
-
-
+          {/* ✅ Theme Toggle */}
           <label className="relative inline-flex items-center cursor-pointer">
             <input
               className="sr-only peer"
@@ -80,13 +103,12 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
           </label>
 
 
-
-          {/* <a href="#contact" className='hidden lg:flex items-center gap-3 px-10 py-2.5 border border-gray-500 rounded-full ml-4 font-Ovo dark:border-white/50'>
-              Contact <Image src={isDarkMode ? assets.arrow_up_dark : assets.arrow_up} alt='' className='w-3' />
-          </a> */}
-
-          <a href="#contact" className='hidden lg:flex items-center gap-1 px-5 py-2.5 border border-gray-500 rounded-full ml-4 font-Ovo dark:border-white/50'>
-            <button className="cursor-pointer group">
+          {/* ✅ Contact Button */}
+          <a
+            href="#contact"
+            className='hidden lg:flex items-center gap-1 px-5 py-2.5 border border-gray-500 rounded-full ml-4 font-Ovo dark:border-white/50'
+          >
+            <button className="group cursor-pointer">
               <div className="relative overflow-hidden">
                 <p className="group-hover:-translate-y-7 duration-[1.125s] ease-[cubic-bezier(0.19,1,0.22,1)]">
                   Contact
@@ -95,53 +117,68 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
                   Contact
                 </p>
               </div>
-            </button> <Image src={isDarkMode ? assets.arrow_up_dark : assets.arrow_up} alt='' className='w-5' />
+            </button>
+
+            <Image
+              src={isDarkMode ? assets.arrow_up_dark : assets.arrow_up}
+              alt=""
+              className="w-5"
+            />
           </a>
 
 
+          {/* ✅ Mobile Menu Button */}
           <button className='block md:hidden ml-3' onClick={openMenu}>
-            <Image src={isDarkMode ? assets.menu_white : assets.menu_black} alt='' className='w-6' />
+            <Menu className="w-6 h-6" />
           </button>
+
         </div>
 
-        {/* Mobile Menu */}
+
+        {/* ✅ Mobile Menu */}
         <ul
           ref={sideMenuRef}
-          className='flex md:hidden flex-col gap-4 py-20 px-10 fixed -right-64 top-0 bottom-0 w-64 z-50 h-screen bg-rose-50 transition duration-500 dark:bg-darkHover dark:text-white'
+          className='flex md:hidden flex-col gap-4 py-20 px-10 fixed -right-64 top-0 bottom-0 w-64 z-50 h-screen
+          bg-white dark:bg-black/90 backdrop-blur-xl
+          text-gray-800 dark:text-white transition duration-500'
         >
+
+          {/* Close */}
           <div className="absolute right-6 top-6 cursor-pointer" onClick={closeMenu}>
-            <Image src={isDarkMode ? assets.close_white : assets.close_black} alt="Close" className="w-6" />
+            <X className="w-6 h-6" />
           </div>
 
-          <div>
-            {[
-              { id: 'top', label: 'Home', icon: isDarkMode ? assets.home_white : assets.home },
-              { id: 'about', label: 'About', icon: isDarkMode ? assets.about_white : assets.about },
-              { id: 'experience', label: 'Experience', icon: isDarkMode ? assets.experience_white : assets.experience },
-              { id: 'education', label: 'Education', icon: isDarkMode ? assets.edu_icon_dark : assets.education },
-              { id: 'project', label: 'Project', icon: isDarkMode ? assets.experience_white : assets.experience },
-              { id: 'achivements', label: 'Certification', icon: isDarkMode ? assets.achi_dark : assets.achi_white },
-              { id: 'contact', label: 'Contact', icon: isDarkMode ? assets.contact_white : assets.contact },
-            ].map(({ id, label, icon }) => (
-              <li
-                key={id}
-                className="cursor-pointer flex flex-row items-center gap-4 p-4 group font-semibold rounded-full bg-cover 
-                 hover:border-b-2 border-darkHover focus:text-white transition-all ease-linear 
-                 dark:text-white/80 dark:hover:border-b-2 border-lightHover"
+
+          {/* Links */}
+          {[
+            { id: 'top', label: 'Home', icon: <Home className="w-5 h-5" /> },
+            { id: 'about', label: 'About', icon: <User className="w-5 h-5" /> },
+            { id: 'experience', label: 'Experience', icon: <Briefcase className="w-5 h-5" /> },
+            { id: 'education', label: 'Education', icon: <GraduationCap className="w-5 h-5" /> },
+            { id: 'project', label: 'Project', icon: <Folder className="w-5 h-5" /> },
+            { id: 'achivements', label: 'Certification', icon: <Award className="w-5 h-5" /> },
+            { id: 'contact', label: 'Contact', icon: <Mail className="w-5 h-5" /> },
+          ].map(({ id, label, icon }) => (
+
+            <li
+              key={id}
+              className="flex items-center gap-4 p-4 font-semibold rounded-xl cursor-pointer
+              bg-transparent hover:bg-gray-100 dark:hover:bg-white/10
+              hover:scale-[1.02] active:scale-[0.98]
+              transition-all duration-300
+            text-gray-800 dark:text-white"
+            >
+              <a
+                href={`#${id}`}
+                onClick={closeMenu}
+                className="flex items-center gap-3 w-full"
               >
-                <a className="font-Ovo flex items-center gap-2" onClick={closeMenu} href={`#${id}`}>
-                  <Image src={icon} alt={label} className="w-5" />
-                  {label}
-                </a>
-              </li>
-            ))}
-          </div>
+                <span className="text-purple-500">{icon}</span>
+                {label}
+              </a>
+            </li>
 
-          {/* <li><a className='font-Ovo' onClick={closeMenu} href="#top">Home</a></li>
-            <li><a className='font-Ovo' onClick={closeMenu} href="#about">About me</a></li>
-            <li><a className='font-Ovo' onClick={closeMenu} href="#education">Education</a></li>
-            <li><a className='font-Ovo' onClick={closeMenu} href="#project">Project</a></li>
-            <li><a className='font-Ovo' onClick={closeMenu} href="#contact">Contact</a></li> */}
+          ))}
 
         </ul>
 
