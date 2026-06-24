@@ -26,7 +26,7 @@ import github_white from "./github_white.svg";
 import github_black from "./github_black.svg";
 import mongodb from "./mongodb.svg";
 import figma from "./figma.svg";
-import vit from "./vit.png";
+import vit from "./vit.svg";
 import rbm from "./rbm.png";
 import send_icon from "./send_icon.svg";
 import right_arrow from "./right_arrow.svg"
@@ -85,7 +85,7 @@ import TVSmotor from './TVS.svg';
 import logo_white from './DK logo.svg';
 import logo_black from './DK logo black.svg';
 
-export const assets ={ 
+export const assets = {
     icon,
     arrow_up,
     arrow_up_dark,
@@ -196,79 +196,61 @@ export const infoList = [
     },
 ];
 
-export const languageData = [
-    {
-        icon: assets.html,
-        name: "HTML"
-    },
-    {
-        icon: assets.css,
-        name: "CSS"
-    },
-    {
-        icon: assets.js,
-        name: "JavaScript"
-    },
-    {
-        icon: assets.reactjs,
-        name: "React"
-    },
-    {
-        icon: assets.python,
-        name: "Python"
-    },
-    {
-        icon: assets.java,
-        name: "Java"
-    },
-    {
-        icon: assets.nodejs,
-        name: "Node.js"
-    },
-    {
-        icon: assets.tailwindcss,
-        name: "Tailwind CSS"
-    },
-    {
-        icon: assets.vite,
-        name: "Vite"
-    },
-    {
-        icon: assets.nextjs,
-        name: "Next.js"
-    },
-    {
-        icon: assets.motion,
-        name: "Framer Motion"
-    }
+export const frontendData = [
+    { iconLight: assets.html, iconDark: assets.html, name: "HTML" },
+    { iconLight: assets.css, iconDark: assets.css, name: "CSS" },
+    { iconLight: assets.js, iconDark: assets.js, name: "JavaScript" },
+    { iconLight: assets.reactjs, iconDark: assets.reactjs, name: "React" },
+    { iconLight: assets.nextjs, iconDark: assets.nextjs, name: "Next.js" },
+    { iconLight: assets.tailwindcss, iconDark: assets.tailwindcss, name: "Tailwind CSS" },
+    { iconLight: assets.motion, iconDark: assets.motion, name: "Framer Motion" },
+    { iconLight: assets.vite, iconDark: assets.vite, name: "Vite" }
 ];
 
 
-export const toolsData = [
-    { iconWhite: assets.excel, iconBlack: assets.excel, name: "Excel" },
-    { iconWhite: assets.powerbi, iconBlack: assets.powerbi, name: "Power BI" },
-    { iconWhite: assets.sap, iconBlack: assets.sap, name: "SAP" },
-    { iconWhite: assets.xd, iconBlack: assets.xd, name: "Adobe XD" },
-    { iconWhite: assets.figma, iconBlack: assets.figma, name: "Figma" },
-    { iconWhite: assets.vscode, iconBlack: assets.vscode, name: "VS Code" },
-    { iconWhite: assets.github_white, iconBlack: assets.github_black, name: "GitHub" },
-    { iconWhite: assets.netlify, iconBlack: assets.netlify, name: "Netlify" },
-    { iconWhite: assets.render_dark, iconBlack: assets.render, name: "Render" },
-    { iconWhite: assets.postman, iconBlack: assets.postman, name: "Postman" },
-    { iconWhite: assets.colab, iconBlack: assets.colab, name: "Google Colab" },
-    { iconWhite: assets.mongodb, iconBlack: assets.mongodb, name: "MongoDB" },
-    { iconWhite: assets.firebase, iconBlack: assets.firebase, name: "Firebase" },
-    { iconWhite: assets.canva, iconBlack: assets.canva, name: "Canva" },
+export const backendData = [
+    { iconLight: assets.nodejs, iconDark: assets.nodejs, name: "Node.js" },
+    { iconLight: assets.python, iconDark: assets.python, name: "Python" },
 ];
+
+export const dataData = [
+    { iconLight: assets.excel, iconDark: assets.excel, name: "Excel" },
+    { iconLight: assets.powerbi, iconDark: assets.powerbi, name: "Power BI" },
+    { iconLight: assets.colab, iconDark: assets.colab, name: "Google Colab" }
+];
+
+export const designData = [
+    { iconLight: assets.xd, iconDark: assets.xd, name: "Adobe XD" },
+    { iconLight: assets.figma, iconDark: assets.figma, name: "Figma" },
+    { iconLight: assets.canva, iconDark: assets.canva, name: "Canva" }
+];
+
+export const platformData = [
+    { iconLight: assets.github_black, iconDark: assets.github_white, name: "GitHub" },
+    { iconLight: assets.sap, iconDark: assets.sap, name: "SAP" },
+    { iconLight: assets.netlify, iconDark: assets.netlify, name: "Netlify" },
+    { iconLight: assets.render, iconDark: assets.render_dark, name: "Render" },
+    { iconLight: assets.postman, iconDark: assets.postman, name: "Postman" },
+    { iconLight: assets.mongodb, iconDark: assets.mongodb, name: "MongoDB" },
+    { iconLight: assets.firebase, iconDark: assets.firebase, name: "Firebase" },
+
+];
+
 
 
 export const experienceData = [
-  {
-    icon: assets.TVSmotor,
-    title: "Executive Trainee",
-    company: "TVS Motor Company",
-    duration: "2025 - Present",
-    description: "Experienced in SAP for business operations, Adobe XD for UI/UX design, and Microsoft Excel for data analysis, reporting, and visualization."  },
+    {
+        icon: assets.TVSmotor,
+        title: "Executive Trainee",
+        company: "TVS Motor Company",
+        duration: "2025 - Present",
+        description: "Driving digital transformation initiatives by working on SAP operations, data analysis using Excel, and UI/UX design with Adobe XD to convert business processes into efficient digital solutions.",
+        skills: [
+            { icon: assets.excel, name: "Excel" },
+            { icon: assets.sap, name: "SAP" },
+            { icon: assets.xd, name: "Adobe XD" },
+        ]
+    },
 ]
 
 
@@ -305,7 +287,7 @@ export const educationData = [
 
 export const projectData = [
     {
-        title:'Dashboard Website',
+        title: 'Dashboard Website',
         domain: 'Power BI & ReactJS',
         date: 'May - 2026',
         description: 'A modern financial dashboard built with React, Vite, Tailwind CSS, Node.js, Express, JWT Authentication, and Power BI Embedded. Features secure login, salary tracking, post office investment monitoring, stock portfolio analytics, and interactive data visualizations in a responsive user interface.',
@@ -313,7 +295,7 @@ export const projectData = [
         link: 'https://dineshkumar-dashboard-website.netlify.app/'
     },
     {
-        title:'Scribbly',
+        title: 'Scribbly',
         domain: 'MERN Stack',
         date: 'May - 2025',
         description: 'A modern and responsive notes-taking application built with the MERN stack. Scribbly allows you to create, view, update, and delete notes with a clean UI and smooth UX.',
@@ -321,7 +303,7 @@ export const projectData = [
         link: 'https://dineshkumar-scribbly-using-mern.onrender.com/'
     },
     {
-        title:'Parkinson Disease Prediction using Machine Learning',
+        title: 'Parkinson Disease Prediction using Machine Learning',
         domain: 'Machine Learning & MERN Stack',
         date: 'Mar - 2025',
         description: 'This project using Machine Learning with a web-based interface built with React, Flask, and Node.js for real-time predictions and user history tracking.',
@@ -329,23 +311,23 @@ export const projectData = [
         link: 'https://github.com/dineshkumarc9102/Dineshkumar_Parkinson-s_Disease_Prediction'
     },
     {
-        title:'Chat App',
-        domain: 'MERN Stack', 
+        title: 'Chat App',
+        domain: 'MERN Stack',
         date: 'Feb - 2025',
         description: 'A real-time MERN chat app with one-on-one messaging, image sharing, and theme customization, powered by Socket.IO and Cloudinary.',
         bgImage: '/chatapp-project.png',
         link: 'https://dineshkumar-chat-app-using-mern.onrender.com/'
     },
     {
-        title:'Crypto Tracker',
-        domain: 'Dynamic Web App', 
+        title: 'Crypto Tracker',
+        domain: 'Dynamic Web App',
         date: 'Jan - 2025',
         description: 'CryptoTracker offers real-time cryptocurrency data, including prices, market cap, and trends, powered by the CoinGecko API.',
         bgImage: '/cryptotracker_project.png',
         link: 'https://dineshkumarc-crypto-tracker.netlify.app/'
     },
     {
-        title:'YouTube Clone',
+        title: 'YouTube Clone',
         domain: 'Dynamic Web App',
         date: 'Jan - 2025',
         description: 'A YouTube clone using YouTube Data API v3 for seamless video streaming and in-app viewing.',
@@ -353,7 +335,7 @@ export const projectData = [
         link: 'https://dineshkumarc-youtube-clone.netlify.app/'
     },
     {
-        title:'Netflix Clone',
+        title: 'Netflix Clone',
         domain: 'Dynamic Web App',
         date: 'Jan - 2025',
         description: 'A Netflix clone with TMDB API for a vast movie library and Firebase for secure authentication.',
@@ -361,16 +343,16 @@ export const projectData = [
         link: 'https://dineshkumarc-cloneflix.netlify.app/'
     },
     {
-        title:'Study on Data Breach Detection using NLP and ML Methods ',
+        title: 'Study on Data Breach Detection using NLP and ML Methods ',
         domain: 'Machine Learning & NLP',
         date: 'Nov - 2024',
         description: 'Conducted EDA and NLP on data breaches to uncover trends, extract patterns, and predict leak methods with 90.48% accuracy using Random Forest.',
         bgImage: '/nlp_project.png',
         link: 'https://github.com/dineshkumarc9102/Dineshkumar_Study_on_Data_Breach_Detection_using_NLP_and_ML_Methods'
     },
-    
+
     {
-        title:'Mens Look Website',
+        title: 'Mens Look Website',
         domain: 'Static Website',
         date: 'Jul - 2024',
         description: 'A static, visually appealing website for a local salon, showcasing services and incorporating interactive features to enhance the user experience.',
@@ -378,7 +360,7 @@ export const projectData = [
         link: 'https://dineshkumarc-mens-look.netlify.app/'
     },
     {
-        title:'My Portfolio Website',
+        title: 'My Portfolio Website',
         domain: 'Static Website',
         date: 'Apr - 2024',
         description: 'My portfolio showcases my projects and contributions. Explore, and feel free to reach out for collaborations!',
@@ -386,7 +368,7 @@ export const projectData = [
         link: 'https://dineshkumar-portfolio-website.netlify.app/'
     },
     {
-        title:'Feature Selection and Classification Model for Cancer',
+        title: 'Feature Selection and Classification Model for Cancer',
         domain: 'Machine Learning',
         date: 'Mar - 2023',
         description: 'This project optimized algorithm selection for early-stage cancer detection using predictive analysis, confusion matrices, and entropy to minimize error rates.',
@@ -402,58 +384,58 @@ export const projectData = [
 
 
 export const certificateData = [
-    
+
     {
-        title:'Fundamentals of Deep Learning',
+        title: 'Fundamentals of Deep Learning',
         issuer: 'NVIDIA',
         date: '2024',
         bgImage: assets.dlc,
         link: 'https://drive.google.com/file/d/1L9HDH4-ruS9d2U8PPDaiZik9k8qFlS0G/view?usp=drive_link'
     },
     {
-        title:'Work Smarter with Microsoft Excel',
-        issuer: 'MicrosoftCoursera',
+        title: 'Work Smarter with Microsoft Excel',
+        issuer: 'Microsoft - Coursera',
         date: '2024',
         bgImage: assets.excelc,
         link: 'https://drive.google.com/file/d/1V1nIJEtPskZnyiHuosmBVZjbacCFUKpC/view?usp=drive_link'
     },
     {
-        title:'Introduction to AI',
+        title: 'Introduction to AI',
         issuer: 'IBM - Coursera',
         date: '2024',
         bgImage: assets.aic,
         link: 'https://drive.google.com/file/d/1uRh2dSZUsitapaXUIqdjkQxLZNa0d9K7/view?usp=drive_link'
     },
     {
-        title:'Introduction to Git and GitHub',
+        title: 'Introduction to Git and GitHub',
         issuer: 'Google - Coursera',
         date: '2024',
         bgImage: assets.gitc,
         link: 'https://drive.google.com/file/d/1mOOHNiqPaFNXyZSG77DHS25nOWj_lR3Y/view?usp=drive_link'
     },
     {
-        title:'Machine Learning with Python',
+        title: 'Machine Learning with Python',
         issuer: 'IBM - Coursera',
         date: '2023',
         bgImage: assets.mlc,
         link: 'https://drive.google.com/file/d/1vSPOUdL4QUkPSrWXM6ZBEDjpQYRRnxSS/view?usp=drive_link'
     },
     {
-        title:'Networking Cardinals',
+        title: 'Networking Cardinals',
         issuer: 'VIT',
         date: '2023',
         bgImage: assets.networkc,
         link: 'https://drive.google.com/file/d/1C31zURnNN2gJDcimWStHwYWD82eY5q5f/view?usp=drive_link'
     },
     {
-        title:'Indroduction to Web Development',
+        title: 'Indroduction to Web Development',
         issuer: 'IBM - Coursera',
         date: '2023',
         bgImage: assets.webc,
         link: 'https://drive.google.com/file/d/1NJCT7I2-nj1GboYJZFuKw95D0oIoEIS7/view?usp=drive_link'
     },
     {
-        title:'Python Programming',
+        title: 'Python Programming',
         issuer: 'VIT',
         date: 'June - 2022',
         bgImage: assets.pythonc,
