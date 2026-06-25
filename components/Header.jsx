@@ -98,7 +98,7 @@ const Header = ({ isDarkMode }) => {
           initial={{ y: 30, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6, delay: 1.2 }}
-          href="/DineshKumar_Resume.pdf"
+          href="/Dinesh_Kumar_Resume.pdf"
           download
           className='group flex items-center gap-2 px-8 py-3 rounded-full
           bg-gray-200 dark:bg-white/10
