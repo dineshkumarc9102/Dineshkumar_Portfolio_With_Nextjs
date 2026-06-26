@@ -77,7 +77,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Image src={assets.github_white} alt="GitHub" className='w-6' />
+                <Image src={assets.github} alt="GitHub" className='w-6' />
               </a>
 
             </li>
