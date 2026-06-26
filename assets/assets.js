@@ -1,200 +1,174 @@
-import icon from "./icon.png";
-import arrow_up from "./arrow_up.svg";
-import arrow_up_dark from "./arrow_up_dark.svg";
-import gradient_bg from "./gradient_bg.png";
-import moon_icon from "./moon_icon.svg";
-import sun_icon from "./sun_icon.svg";
-import menu_black from "./menu_black.svg";
-import menu_white from "./menu_white.svg";
-import close_black from "./close_black.svg";
-import close_white from "./close_white.svg";
+// =======================
+// ✅ PROFILE / PERSONAL
+// =======================
 import profile_img from "./profile_img.png";
-import profile from "./profie.png";
-import hand_icon from "./hand_icon.svg";
-import rigth_arrow_white from "./rigth_arrow_white.svg";
-import download_icon from "./download_icon.svg";
-import user_img from "./user_img.png";
-import code_icon from "./code_icon.svg";
-import code_icon_dark from "./code_icon_dark.svg";
-import edu_icon from "./edu_icon.svg";
-import edu_icon_dark from "./edu_icon_dark.svg";
-import project_icon from "./project_icon.svg";
-import project_icon_dark from "./project_icon_dark.svg";
-import vscode from "./vscode.svg";
-import github from "./github.svg";
-import github_white from "./github_white.svg";
-import github_black from "./github_black.svg";
-import mongodb from "./mongodb.svg";
-import figma from "./figma.svg";
-import vit from "./vit.svg";
-import rbm from "./rbm.png";
-import send_icon from "./send_icon.svg";
-import right_arrow from "./right_arrow.svg"
-import email_icon from "./email_icon.svg";
-import linkedin_icon from "./linkedin_icon.svg";
+import new_profile from "./newProfile.jpg";
+import new_profile_image from "./newDP.jpg";
+
+// =======================
+// ✅ SOCIAL / CONTACT
+// =======================
+import github from "./GitHub.svg";
+import linkedin from "./linkedin.svg";
+import gmail from "./gmail.svg";
+import youtube from "./youtube_project.svg"
+
+// =======================
+// ✅ TECH STACK (CORE)
+// =======================
 import html from "./html.svg";
 import css from "./css.svg";
 import js from "./js.svg";
 import java from "./java.svg";
-import python from "./python.svg";
+import python from "./Python.svg";
+import sql from "./sql.svg"
 import reactjs from "./reactjs.svg";
 import nodejs from "./nodejs.svg";
+import express from "./Express.svg";
 import nextjs from "./nextjs.svg";
-import excel from "./excel.svg";
-import tailwindcss from "./tailwindcss.svg";
-import framer from "./framermotion-.svg";
-import colab from "./googlecolab.svg";
+import tailwindcss from "./Tailwind CSS.svg";
+import mongodb from "./MongoDB.svg";
 import mysql from "./mysql.svg";
-import gmail from "./gmail.svg";
-import linkedin from "./linkedin.svg";
-import motion from "./motion.png";
-import vite from "./vite.svg";
-import canva from "./canva.svg";
-import firebase from "./firebase.svg";
-import dp from './dp.png';
-import home from './home.svg';
-import about from './about.svg';
-import education from './education.svg';
-import experience from './experience.svg';
-import contact from './contact.svg';
-import home_white from './home_white.svg';
-import about_white from './about_white.svg';
-import education_white from './education-white.svg'
-import experience_white from './experience_white.svg';
-import contact_white from './contact_white.svg';
-import netlify from './netlify.svg';
-import render from './render.svg';
-import render_dark from './render_dark.svg';
-import postman from './postman.svg';
-import new_profile from './newProfile.jpg';
-import new_profile_image from './newDP.jpg';
-import achi_dark from './achievement_dark.svg';
-import achi_white from './achievement_white.svg';
-import dlc from './dlc.png';
-import aic from './aic.png';
-import mlc from './mlc.png';
-import networkc from './networkc.png';
-import webc from './webc.png';
-import pythonc from './pythonc.png';
-import excelc from './excelc.png';
-import gitc from './gitc.png';
-import powerbi from './Power-BI.svg';
-import sap from './SAP.svg';
-import xd from './XD.svg';
-import TVSmotor from './TVS.svg';
-import logo_white from './DK logo.svg';
-import logo_black from './DK logo black.svg';
+import firebase from "./Firebase.svg";
+import powerbi from "./Power-BI.svg";
+import excel from "./excel.svg";
+import colab from "./googlecolab.svg";
+import jupyter from "./Jupyter.svg"
+import scikit from "./scikit-learn.svg"
+import numpy from "./NumPy.svg"
+import pandas from "./Pandas.svg"
+import matplot from "./matplotlib.svg"
+import socket_io from "./Socket.io.svg"
+import tmdb from "./tmdb.svg"
+import cg from "./cg.svg"
+import flask from "./Flask.svg"
+import ml from "./ml.png"
 
+// =======================
+// ✅ TOOLS / DESIGN
+// =======================
+import figma from "./Figma.svg";
+import canva from "./Canva.svg";
+import xd from "./XD.svg";
+import motion from "./motion.png";
+import framer from "./framermotion.svg";
+import vite from "./vite.svg";
+
+// =======================
+// ✅ PLATFORMS / DEV TOOLS
+// =======================
+import vscode from "./vscode.svg";
+import postman from "./Postman.svg";
+import netlify from "./netlify.svg";
+import render from "./render.svg";
+import sap from "./SAP.svg";
+
+// =======================
+// ✅ EDUCATION / COMPANY
+// =======================
+import vit from "./vit.svg";
+import rbm from "./rbm.png";
+import TVSmotor from "./TVS.svg";
+
+// =======================
+// ✅ CERTIFICATES
+// =======================
+import dlc from "./dlc.png";
+import aic from "./aic.png";
+import mlc from "./mlc.png";
+import networkc from "./networkc.png";
+import webc from "./webc.png";
+import pythonc from "./pythonc.png";
+import excelc from "./excelc.png";
+import gitc from "./gitc.png";
+
+// =======================
+// ✅ BRANDING
+// =======================
+import logo_white from "./DK logo.svg";
+import logo_black from "./DK logo black.svg";
+
+// =======================
+// ✅ EXPORT ALL 
+// =======================
 export const assets = {
-    icon,
-    arrow_up,
-    arrow_up_dark,
-    gradient_bg,
-    moon_icon,
-    menu_black,
-    menu_white,
-    close_black,
-    close_white,
+
+    // ✅ profile
     profile_img,
-    hand_icon,
-    rigth_arrow_white,
-    download_icon,
-    user_img,
-    code_icon,
-    code_icon_dark,
-    edu_icon,
-    edu_icon_dark,
-    project_icon,
-    project_icon_dark,
-    vscode,
+    new_profile,
+    new_profile_image,
+
+    // ✅ social
     github,
-    github_white,
-    github_black,
-    mongodb,
-    figma,
-    vit,
-    rbm,
-    send_icon,
-    right_arrow,
-    email_icon,
-    linkedin_icon,
-    sun_icon,
+    linkedin,
+    gmail,
+    youtube,
+
+    // ✅ tech
     html,
     css,
     js,
     java,
     python,
+    sql,
     reactjs,
     nodejs,
+    express,
     nextjs,
     tailwindcss,
-    framer,
+    mongodb,
+    mysql,
+    firebase,
+    powerbi,
     excel,
     colab,
-    mysql,
-    gmail,
-    linkedin,
-    motion,
-    vite,
+    jupyter,
+    scikit,
+    numpy,
+    pandas,
+    matplot,
+    socket_io,
+    tmdb,
+    cg,
+    flask,
+    ml,
+
+    // ✅ tools
+    figma,
     canva,
-    firebase,
-    profile,
-    dp,
-    home,
-    about,
-    education,
-    experience,
-    contact,
-    home_white,
-    about_white,
-    education_white,
-    experience_white,
-    contact_white,
+    xd,
+    motion,
+    framer,
+    vite,
+
+    // ✅ platforms
+    vscode,
+    postman,
     netlify,
     render,
-    render_dark,
-    postman,
-    new_profile,
-    new_profile_image,
-    achi_dark,
-    achi_white,
+    sap,
+
+    // ✅ education
+    vit,
+    rbm,
+    TVSmotor,
+
+    // ✅ certificates
     dlc,
     aic,
     mlc,
     networkc,
     webc,
     pythonc,
-    gitc,
     excelc,
-    powerbi,
-    sap,
-    xd,
-    TVSmotor,
+    gitc,
+
+    // ✅ branding
     logo_white,
     logo_black
-}
+};
 
-
-
-
-
-export const infoList = [
-    // {
-    //     icon: assets.code_icon, iconDark: assets.code_icon_dark,
-    //     title: 'Languages',
-    //     description: 'HTML, CSS, JavaScript, React Js, Next Js'
-    // },
-    {
-        icon: assets.edu_icon, iconDark: assets.edu_icon_dark,
-        title: 'Education',
-        description: 'BCA, MCA'
-    },
-    {
-        icon: assets.project_icon, iconDark: assets.project_icon_dark,
-        title: 'Projects',
-        description: 'Build more than 5 projects'
-    },
-];
+// -----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 export const frontendData = [
     { iconLight: assets.html, iconDark: assets.html, name: "HTML" },
@@ -207,7 +181,6 @@ export const frontendData = [
     { iconLight: assets.vite, iconDark: assets.vite, name: "Vite" }
 ];
 
-
 export const backendData = [
     { iconLight: assets.nodejs, iconDark: assets.nodejs, name: "Node.js" },
     { iconLight: assets.python, iconDark: assets.python, name: "Python" },
@@ -216,7 +189,7 @@ export const backendData = [
 export const dataData = [
     { iconLight: assets.excel, iconDark: assets.excel, name: "Excel" },
     { iconLight: assets.powerbi, iconDark: assets.powerbi, name: "Power BI" },
-    { iconLight: assets.colab, iconDark: assets.colab, name: "Google Colab" }
+    { iconLight: assets.sql, iconDark: assets.sql, name: "SQL" },
 ];
 
 export const designData = [
@@ -226,16 +199,17 @@ export const designData = [
 ];
 
 export const platformData = [
-    { iconLight: assets.github_black, iconDark: assets.github_white, name: "GitHub" },
+    { iconLight: assets.github, iconDark: assets.github, name: "GitHub" },
     { iconLight: assets.sap, iconDark: assets.sap, name: "SAP" },
     { iconLight: assets.netlify, iconDark: assets.netlify, name: "Netlify" },
-    { iconLight: assets.render, iconDark: assets.render_dark, name: "Render" },
+    { iconLight: assets.render, iconDark: assets.render, name: "Render" },
     { iconLight: assets.postman, iconDark: assets.postman, name: "Postman" },
     { iconLight: assets.mongodb, iconDark: assets.mongodb, name: "MongoDB" },
     { iconLight: assets.firebase, iconDark: assets.firebase, name: "Firebase" },
+    { iconLight: assets.colab, iconDark: assets.colab, name: "Google Colab" },
+    { iconLight: assets.jupyter, iconDark: assets.jupyter, name: "Jupyter Notbook" },
 
 ];
-
 
 
 export const experienceData = [
@@ -287,66 +261,74 @@ export const educationData = [
 
 export const projectData = [
     {
-        title: 'Dashboard Website',
+        title: 'Financial Intelligence Dashboard',
         domain: 'Power BI & ReactJS',
+        tech: ["ReactJS", "NodeJS", "ExpressJS", "JWT", "Power BI"],
         date: 'May - 2026',
-        description: 'A modern financial dashboard built with React, Vite, Tailwind CSS, Node.js, Express, JWT Authentication, and Power BI Embedded. Features secure login, salary tracking, post office investment monitoring, stock portfolio analytics, and interactive data visualizations in a responsive user interface.',
+        description: 'Financial dashboard for salary tracking, investments, and portfolio analytics with interactive reports.',
         bgImage: '/dashboard_project.png',
         link: 'https://dineshkumar-dashboard-website.netlify.app/'
     },
     {
         title: 'Scribbly',
         domain: 'MERN Stack',
+        tech: ["MongoDB", "ExpressJS", "ReactJS", "NodeJS"],
         date: 'May - 2025',
-        description: 'A modern and responsive notes-taking application built with the MERN stack. Scribbly allows you to create, view, update, and delete notes with a clean UI and smooth UX.',
+        description: 'Full-stack notes app with CRUD operations and a clean, responsive user interface.',
         bgImage: '/scribbly_project.png',
         link: 'https://dineshkumar-scribbly-using-mern.onrender.com/'
     },
     {
         title: 'Parkinson Disease Prediction using Machine Learning',
         domain: 'Machine Learning & MERN Stack',
+        tech: ["Python", "Flask", "ReactJS", "NodeJS", "Scikit-learn"],
         date: 'Mar - 2025',
-        description: 'This project using Machine Learning with a web-based interface built with React, Flask, and Node.js for real-time predictions and user history tracking.',
+        description: 'ML-powered web application for Parkinson’s disease prediction with real-time analysis.',
         bgImage: '/ml_project.png',
         link: 'https://github.com/dineshkumarc9102/Dineshkumar_Parkinson-s_Disease_Prediction'
     },
     {
         title: 'Chat App',
         domain: 'MERN Stack',
+        tech: ["MongoDB", "ExpressJS", "ReactJS", "NodeJS", "Socket.IO"],
         date: 'Feb - 2025',
-        description: 'A real-time MERN chat app with one-on-one messaging, image sharing, and theme customization, powered by Socket.IO and Cloudinary.',
+        description: 'Real-time chat application with messaging, image sharing, and customizable themes.',
         bgImage: '/chatapp-project.png',
         link: 'https://dineshkumar-chat-app-using-mern.onrender.com/'
     },
     {
         title: 'Crypto Tracker',
         domain: 'Dynamic Web App',
+        tech: ["ReactJS", "JavaScript", "CoinGecko API", "CSS"],
         date: 'Jan - 2025',
-        description: 'CryptoTracker offers real-time cryptocurrency data, including prices, market cap, and trends, powered by the CoinGecko API.',
+        description: 'Cryptocurrency tracker displaying live prices, market trends, and coin statistics.',
         bgImage: '/cryptotracker_project.png',
         link: 'https://dineshkumarc-crypto-tracker.netlify.app/'
     },
     {
         title: 'YouTube Clone',
         domain: 'Dynamic Web App',
+        tech: ["ReactJS", "JavaScript", "YouTube Data API"],
         date: 'Jan - 2025',
-        description: 'A YouTube clone using YouTube Data API v3 for seamless video streaming and in-app viewing.',
+        description: 'Video streaming platform with search, recommendations, and embedded playback.',
         bgImage: '/youtube_project.png',
         link: 'https://dineshkumarc-youtube-clone.netlify.app/'
     },
     {
         title: 'Netflix Clone',
         domain: 'Dynamic Web App',
+        tech: ["ReactJS", "Firebase", "TMDB API"],
         date: 'Jan - 2025',
-        description: 'A Netflix clone with TMDB API for a vast movie library and Firebase for secure authentication.',
+        description: 'Movie streaming application featuring authentication and dynamic content browsing.',
         bgImage: '/netflix_project.png',
         link: 'https://dineshkumarc-cloneflix.netlify.app/'
     },
     {
         title: 'Study on Data Breach Detection using NLP and ML Methods ',
         domain: 'Machine Learning & NLP',
+        tech: ["Pandas", "Scikit-learn", "NLP", "Machine Learning"],
         date: 'Nov - 2024',
-        description: 'Conducted EDA and NLP on data breaches to uncover trends, extract patterns, and predict leak methods with 90.48% accuracy using Random Forest.',
+        description: 'Analyzed breach datasets and achieved 90.48% prediction accuracy using NLP techniques.',
         bgImage: '/nlp_project.png',
         link: 'https://github.com/dineshkumarc9102/Dineshkumar_Study_on_Data_Breach_Detection_using_NLP_and_ML_Methods'
     },
@@ -354,32 +336,30 @@ export const projectData = [
     {
         title: 'Mens Look Website',
         domain: 'Static Website',
+        tech: ["HTML", "CSS", "JavaScript"],
         date: 'Jul - 2024',
-        description: 'A static, visually appealing website for a local salon, showcasing services and incorporating interactive features to enhance the user experience.',
+        description: 'Salon website showcasing services, pricing, and customer-focused design.',
         bgImage: '/menslook_project.png',
         link: 'https://dineshkumarc-mens-look.netlify.app/'
     },
     {
         title: 'My Portfolio Website',
         domain: 'Static Website',
+        tech: ["NextJS", "Tailwind CSS", "Framer Motion"],
         date: 'Apr - 2024',
-        description: 'My portfolio showcases my projects and contributions. Explore, and feel free to reach out for collaborations!',
+        description: 'Personal portfolio highlighting projects, skills, and professional achievements.',
         bgImage: '/portfolio_project.png',
         link: 'https://dineshkumar-portfolio-website.netlify.app/'
     },
     {
         title: 'Feature Selection and Classification Model for Cancer',
         domain: 'Machine Learning',
+        tech: ["Python", "Scikit-learn", "Pandas", "NumPy"],
         date: 'Mar - 2023',
-        description: 'This project optimized algorithm selection for early-stage cancer detection using predictive analysis, confusion matrices, and entropy to minimize error rates.',
+        description: 'Cancer prediction model using feature selection and classification techniques.',
         bgImage: '/ml_project.png',
         link: 'https://github.com/dineshkumarc9102/Dineshkumar_Feature_Selection_And_Classification_Model_For_Cancer'
     },
-    // {
-    //     title: 'Agro Mobile Application',
-    //     description: 'Mobile App',
-    //     bgImage: './argo_project.png',
-    // },
 ]
 
 
