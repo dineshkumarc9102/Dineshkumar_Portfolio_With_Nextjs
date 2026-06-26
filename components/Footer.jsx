@@ -68,7 +68,7 @@ const Footer = () => {
           <div className="relative w-14 h-14 group text-center overflow-hidden">
 
             <li className='flex justify-center items-center w-14 h-14 rounded-full 
-            bg-gradient-to-r from-gray-800 to-black text-white
+            bg-gray-200 to-black text-white
             transition-all duration-300 absolute top-0 
             group-hover:scale-[0.7] group-hover:origin-top'>
 
