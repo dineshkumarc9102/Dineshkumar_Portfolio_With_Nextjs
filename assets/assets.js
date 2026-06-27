@@ -269,15 +269,15 @@ export const projectData = [
         bgImage: '/dashboard_project.png',
         link: 'https://dineshkumar-dashboard-website.netlify.app/'
     },
-    {
-        title: 'Scribbly',
-        domain: 'MERN Stack',
-        tech: ["MongoDB", "ExpressJS", "ReactJS", "NodeJS"],
-        date: 'May - 2025',
-        description: 'Full-stack notes app with CRUD operations and a clean, responsive user interface.',
-        bgImage: '/scribbly_project.png',
-        link: 'https://dineshkumar-scribbly-using-mern.onrender.com/'
-    },
+    // {
+    //     title: 'Scribbly',
+    //     domain: 'MERN Stack',
+    //     tech: ["MongoDB", "ExpressJS", "ReactJS", "NodeJS"],
+    //     date: 'May - 2025',
+    //     description: 'Full-stack notes app with CRUD operations and a clean, responsive user interface.',
+    //     bgImage: '/scribbly_project.png',
+    //     link: 'https://dineshkumar-scribbly-using-mern.onrender.com/'
+    // },
     {
         title: 'Parkinson Disease Prediction using Machine Learning',
         domain: 'Machine Learning & MERN Stack',
