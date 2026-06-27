@@ -1,7 +1,6 @@
 // =======================
 // ✅ PROFILE / PERSONAL
 // =======================
-import profile_img from "./profile_img.png";
 import new_profile from "./newProfile.jpg";
 import new_profile_image from "./newDP.jpg";
 
@@ -94,8 +93,7 @@ import logo_black from "./DK logo black.svg";
 // =======================
 export const assets = {
 
-    // ✅ profile
-    profile_img,
+    // ✅ profile 
     new_profile,
     new_profile_image,
 
