@@ -53,6 +53,7 @@ import xd from "./XD.svg";
 import motion from "./motion.png";
 import framer from "./framermotion.svg";
 import vite from "./vite.svg";
+import restapi from "./restapi.svg";
 
 // =======================
 // ✅ PLATFORMS / DEV TOOLS
@@ -140,6 +141,7 @@ export const assets = {
     motion,
     framer,
     vite,
+    restapi,
 
     // ✅ platforms
     vscode,
@@ -183,6 +185,7 @@ export const frontendData = [
 
 export const backendData = [
     { iconLight: assets.nodejs, iconDark: assets.nodejs, name: "Node.js" },
+    { iconLight: assets.restapi, iconDark: assets.restapi, name: "Rest API" },
     { iconLight: assets.python, iconDark: assets.python, name: "Python" },
 ];
 
