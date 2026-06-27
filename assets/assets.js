@@ -170,7 +170,7 @@ export const assets = {
 
 // -----------------------------------------------------------------------------------------------------------------------------------------------------------
 
-export const frontendData = [
+export const skills = [
     { iconLight: assets.html, iconDark: assets.html, name: "HTML" },
     { iconLight: assets.css, iconDark: assets.css, name: "CSS" },
     { iconLight: assets.js, iconDark: assets.js, name: "JavaScript" },
@@ -178,28 +178,20 @@ export const frontendData = [
     { iconLight: assets.nextjs, iconDark: assets.nextjs, name: "Next.js" },
     { iconLight: assets.tailwindcss, iconDark: assets.tailwindcss, name: "Tailwind CSS" },
     { iconLight: assets.motion, iconDark: assets.motion, name: "Framer Motion" },
-    { iconLight: assets.vite, iconDark: assets.vite, name: "Vite" }
-];
-
-export const backendData = [
+    { iconLight: assets.vite, iconDark: assets.vite, name: "Vite" },
+    
     { iconLight: assets.nodejs, iconDark: assets.nodejs, name: "Node.js" },
     { iconLight: assets.restapi, iconDark: assets.restapi, name: "Rest API" },
     { iconLight: assets.python, iconDark: assets.python, name: "Python" },
-];
 
-export const dataData = [
     { iconLight: assets.excel, iconDark: assets.excel, name: "Excel" },
     { iconLight: assets.powerbi, iconDark: assets.powerbi, name: "Power BI" },
     { iconLight: assets.sql, iconDark: assets.sql, name: "SQL" },
-];
 
-export const designData = [
     { iconLight: assets.xd, iconDark: assets.xd, name: "Adobe XD" },
     { iconLight: assets.figma, iconDark: assets.figma, name: "Figma" },
-    { iconLight: assets.canva, iconDark: assets.canva, name: "Canva" }
-];
+    { iconLight: assets.canva, iconDark: assets.canva, name: "Canva" },
 
-export const platformData = [
     { iconLight: assets.github, iconDark: assets.github, name: "GitHub" },
     { iconLight: assets.sap, iconDark: assets.sap, name: "SAP" },
     { iconLight: assets.netlify, iconDark: assets.netlify, name: "Netlify" },
