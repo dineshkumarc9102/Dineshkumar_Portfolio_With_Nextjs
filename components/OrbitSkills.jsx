@@ -4,65 +4,82 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { skills } from "@/assets/assets";
-import { RotateCcw } from "lucide-react";
-
 
 const OrbitSkills = ({ isDarkMode }) => {
   const [isMobile, setIsMobile] = useState(false);
-  const [resetKey, setResetKey] = useState(0);
+  const [activeSkill, setActiveSkill] = useState(null);
 
-  // ✅ Safe screen detection (client only)
+  // Screen detection
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 640);
     };
 
-    handleResize(); // initial
+    handleResize();
     window.addEventListener("resize", handleResize);
 
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // ✅ Split skills
+  // Split skills
   const layer1 = skills.slice(0, 8);
   const layer2 = skills.slice(8, 16);
   const layer3 = skills.slice(16);
 
-  // ✅ Dynamic radius
-  const radius1 = isMobile ? 60 : 150;
-  const radius2 = isMobile ? 110 : 240;
-  const radius3 = isMobile ? 160 : 330;
+  // Dynamic radius
+  const radius1 = isMobile ? 55 : 150;
+  const radius2 = isMobile ? 95 : 240;
+  const radius3 = isMobile ? 135 : 330;
 
   const renderLayer = (items, radius, scale = 1) => {
     return items.map((skill, index) => {
       const angle = (index / items.length) * 2 * Math.PI;
-      const x = Number((radius * Math.cos(angle)).toFixed(2));
-      const y = Number((radius * Math.sin(angle)).toFixed(2));
+
+      const x = radius * Math.cos(angle);
+      const y = radius * Math.sin(angle);
 
       return (
         <motion.div
           key={index}
-          className="absolute flex flex-col items-center justify-center
-          w-10 h-10 sm:w-20 sm:h-20 rounded-full
-          bg-white/5 dark:bg-white/20 backdrop-blur-lg
-          border border-white/10 shadow-md"
-          style={{
-            transform: `translate(${x}px, ${y}px) scale(${scale})`
+          className={`
+            absolute flex items-center justify-center
+            w-9 h-9 sm:w-20 sm:h-20 rounded-full
+            backdrop-blur-lg
+            border shadow-md cursor-pointer
+            ${
+              isDarkMode
+                ? "bg-white/10 border-white/10"
+                : "bg-white border-purple-200"
+            }
+          `}
+          initial={{ x, y, scale }}
+          animate={{ x, y, scale }}
+          whileHover={{
+            scale: scale * 1.25,
+            y: y - 10,
+            rotate: [0, -8, 8, 0],
+            borderColor: "#a855f7",
+            backgroundColor: "rgba(168,85,247,0.12)",
+            boxShadow: [
+              "0 0 0px rgba(168,85,247,0)",
+              "0 0 40px rgba(168,85,247,.8)",
+              "0 0 70px rgba(99,102,241,.7)",
+            ],
+            transition: {
+              duration: 0.45,
+              ease: "easeOut",
+            },
           }}
-          whileHover={{ scale: 1.2 }}
+          onHoverStart={() => setActiveSkill(skill.name)}
+          onHoverEnd={() => setActiveSkill(null)}
         >
           <Image
             src={isDarkMode ? skill.iconDark : skill.iconLight}
             alt={skill.name}
-            width={18}
-            height={18}
-            className="sm:w-7 sm:h-7"
+            width={24}
+            height={24}
+            className="w-5 h-5 sm:w-7 sm:h-7"
           />
-
-          {/* ✅ Hide text on mobile */}
-          <span className="hidden sm:block text-[10px] mt-1 text-center">
-            {skill.name}
-          </span>
         </motion.div>
       );
     });
@@ -70,45 +87,70 @@ const OrbitSkills = ({ isDarkMode }) => {
 
   return (
     <div
-      key={resetKey}
-      className="relative flex items-center justify-center w-full h-full overflow-visible px-4"
+      className="
+        relative
+        flex
+        items-center
+        justify-center
+        w-full
+        min-h-[360px]
+        sm:min-h-[700px]
+        overflow-visible
+        px-2
+        sm:px-4
+      "
     >
+      {/* Rings */}
+      <div className="absolute w-[110px] h-[110px] sm:w-[300px] sm:h-[300px] border border-white/10 rounded-full" />
+      <div className="absolute w-[190px] h-[190px] sm:w-[450px] sm:h-[450px] border border-white/10 rounded-full" />
+      <div className="absolute w-[270px] h-[270px] sm:w-[600px] sm:h-[600px] border border-white/10 rounded-full" />
 
-      {/* ✅ Responsive rings */}
-      <div className="absolute w-[200px] h-[200px] sm:w-[300px] sm:h-[300px] border border-white/10 rounded-full" />
-      <div className="absolute w-[320px] h-[320px] sm:w-[450px] sm:h-[450px] border border-white/10 rounded-full" />
-      <div className="absolute w-[320px] h-[320px] sm:w-[600px] sm:h-[600px] border border-white/10 rounded-full" />
-      {/* ✅ Center */}
+      {/* Center Circle */}
       <motion.div
-        className="w-16 h-16 sm:w-24 sm:h-24 rounded-full flex items-center justify-center
-        bg-purple-500/20 border border-purple-400/30 backdrop-blur
-        shadow-[0_0_40px_rgba(168,85,247,0.6)]"
-        animate={{ scale: [1, 1.08, 1] }}
-        transition={{ repeat: Infinity, duration: 2 }}
+        className={`
+          w-[90px] h-[90px] sm:w-[100px] sm:h-[100px]
+          rounded-full
+          flex items-center justify-center
+          backdrop-blur
+          border
+          ${
+            isDarkMode
+              ? "bg-gradient-to-r from-violet-500/20 to-fuchsia-500/20 border-purple-400/30"
+              : "bg-white border-purple-300 shadow-lg"
+          }
+        `}
+        animate={{
+          scale: [1, 1.08, 1],
+        }}
+        transition={{
+          repeat: Infinity,
+          duration: 2,
+        }}
       >
-        <span className="text-purple-300 text-sm sm:text-xl font-bold">
-          Skills
-        </span>
+        <motion.span
+          key={activeSkill || "TECH STACK"}
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.25 }}
+          className={`
+            text-[9px] sm:text-lg
+            font-semibold
+            px-1
+            ${
+              isDarkMode
+                ? "text-purple-300"
+                : "text-purple-700"
+            }
+          `}
+        >
+          {activeSkill || "TECH STACK"}
+        </motion.span>
       </motion.div>
 
-      {/* ✅ Layers */}
+      {/* Skill Layers */}
       {renderLayer(layer1, radius1, 1)}
       {renderLayer(layer2, radius2, 0.95)}
       {renderLayer(layer3, radius3, 0.88)}
-      <div className="absolute -bottom-10 sm:bottom-4 z-50">
-        <button
-          onClick={() => setResetKey(prev => prev + 1)}
-          className="group flex items-center gap-2 p-3 sm:p-2 rounded-full
-        bg-gray-200 dark:bg-white/10
-          border border-gray-200 dark:border-white/10
-        text-gray-800 dark:text-white
-          backdrop-blur-md
-          hover:bg-gradient-to-r hover:from-indigo-500/10 hover:to-purple-500/10
-          transition duration-300 hover:scale-105"
-        >
-          <RotateCcw className="w-5 h-5 sm:w-7 sm:h-7" />
-        </button>
-      </div>
     </div>
   );
 };
