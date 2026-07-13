@@ -48,7 +48,14 @@ const Education = () => {
 
           <motion.div
             key={index}
-            whileHover={{ scale: 1.05 }}
+            whileHover={{
+              scale: 1.03,
+              y: -8,
+            }}
+            transition={{
+              type: "spring",
+              stiffness: 250,
+            }}
             className="group relative rounded-2xl p-6 cursor-pointer
             backdrop-blur-xl bg-white/50 dark:bg-white/5
             border border-gray-200 dark:border-white/10
@@ -57,6 +64,7 @@ const Education = () => {
             hover:bg-lightHover hover:shadow-black
             dark:hover:bg-darkHover dark:hover:shadow-white"
           >
+            
 
             {/* ✅ Icon */}
             <div className="w-14 h-14 flex items-center justify-center rounded-xl 
@@ -69,6 +77,8 @@ const Education = () => {
                 className="object-contain"
               />
             </div>
+
+            
 
 
             {/* ✅ Title */}
