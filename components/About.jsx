@@ -61,7 +61,7 @@ const About = () => {
   return (
     <motion.div
       id="about"
-      className="w-full px-6 sm:px-[12%] py-10 scroll-mt-20"
+      className="relative w-full px-6 sm:px-[12%] py-10 scroll-mt-20"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
     >
@@ -95,11 +95,6 @@ const About = () => {
               className="w-full rounded-3xl transition-all duration-300 group-hover:scale-105"
             />
 
-
-            {/* Glow Effect */}
-            <div className="absolute inset-0 rounded-3xl 
-            bg-gradient-to-tr from-blue-500/30 via-transparent to-purple-500/30
-            opacity-0 group-hover:opacity-100 transition blur-xl" />
           </div>
         </div>
 
@@ -109,54 +104,126 @@ const About = () => {
 
           {/* ✅ About Text */}
           <p className="mb-6 text-sm sm:text-base text-justify font-Ovo leading-relaxed text-gray-700 dark:text-white/80">
-            I’m a Front-End Developer and Product Enthusiast currently working as an Executive Trainee at TVS Motor Company, where I contribute to digital transformation by turning business requirements into scalable digital solutions. 
-             <br /><br />
+            I’m a Front-End Developer and Product Enthusiast currently working as an Executive Trainee at TVS Motor Company, where I contribute to digital transformation by turning business requirements into scalable digital solutions.
+            <br /><br />
             I work at the intersection of business, data, and technology, collaborating with stakeholders, designers, and developers to build dashboards and enterprise applications that streamline workflows and improve efficiency. From requirement analysis and workflow design to UAT validation and release, I’m actively involved throughout the product lifecycle.
-             <br /><br />
+            <br /><br />
             I specialize in React, Node.js, and Tailwind CSS, with hands-on experience building data-driven dashboards and integrating tools like Power BI. Alongside development, I have experience in SAP operations (user access, role management, data maintenance), which gives me a strong understanding of enterprise systems.
-             <br /><br />
+            <br /><br />
             I’m passionate about building user-centric, data-driven products and continuously exploring ways to create intuitive, scalable, and impactful digital experiences.
           </p>
 
 
           {/* ✅ Quick Overview */}
-          <div className="grid grid-cols-2 sm:flex sm:flex-wrap gap-3 mt-6 justify-center">
-            <div className="flex items-center gap-2 px-3 py-2 sm:px-4 sm:py-3 rounded-xl bg-gray-100 dark:bg-white/10 border border-gray-200 dark:border-white/10 text-xs sm:text-sm">
+
+
+          <div className="flex flex-wrap justify-center gap-6 mt-8">
+
+            <motion.div
+              className="px-4 py-2 rounded-full
+               border border-purple-500
+               bg-purple-500/10
+               text-purple-600 dark:text-purple-300
+               text-sm font-medium"
+              animate={{
+                y: [0, -10, 0],
+                rotate: [-3, 3, -3],
+              }}
+
+              transition={{
+                duration: 4,
+                repeat: Infinity,
+              }}
+            >
               <FolderKanban className="w-4 h-4 text-purple-500" />
               <span><Count end={5} />+ Projects</span>
-            </div>
+            </motion.div>
 
-            <div className="flex items-center gap-2 px-3 py-2 sm:px-4 sm:py-3 rounded-xl bg-gray-100 dark:bg-white/10 border border-gray-200 dark:border-white/10 text-xs sm:text-sm">
-              <Briefcase className="w-4 h-4 text-pink-500" />
-              <span><Count end={7} />+ Months of Experience</span>
-            </div>
+            <motion.div
+              className="px-4 py-2 rounded-full
+               border border-pink-500
+               bg-pink-500/10
+               text-pink-600 dark:text-pink-300
+               text-sm font-medium"
+              animate={{
+                y: [0, -10, 0],
+                rotate: [3, -3, 3],
+              }}
+              transition={{
+                duration: 5,
+                repeat: Infinity,
+              }}
+              >
+                <Briefcase className="w-4 h-4 text-pink-500" />
+            <span><Count end={7} />+ Months of Experience</span>
+          </motion.div>
 
-            <div className="flex items-center gap-2 px-3 py-2 sm:px-4 sm:py-3 rounded-xl bg-gray-100 dark:bg-white/10 border border-gray-200 dark:border-white/10 text-xs sm:text-sm">
-              <Code className="w-4 h-4 text-emerald-500" />
-              <span><Count end={15} />+ Tech</span>
-            </div>
 
-          </div>
+          <motion.div
+            className="px-4 py-2 rounded-full
+               border border-emerald-500
+               bg-emerald-500/10
+               text-emerald-600 dark:text-emerald-300
+               text-sm font-medium"
+            animate={{
+              y: [0, -10, 0],
+              rotate: [-2, 2, -2],
+            }}
+            transition={{
+              duration: 4.5,
+              repeat: Infinity,
+            }}
+          >
+            <Code className="w-4 h-4 text-emerald-500" />
+            <span><Count end={15} />+ Tech</span>
+
+          </motion.div>
+
 
         </div>
 
-      </motion.div>
 
-
-      {/* ✅ Skills Section */}
-      <div className="text-center mt-16">
-        <h3 className="text-2xl font-Ovo mb-10">
-          Skills & Tools
-        </h3>
-
-        {/* ✅ ORBIT WRAPPER FIX */}
-        <div className="relative flex justify-center items-center h-[450px] sm:h-[850px] overflow-visible">
-          <OrbitSkills />
-
-        </div>
       </div>
 
-    </motion.div>
+
+
+    </motion.div >
+
+  {/* ✅ Skills Section */ }
+  < div className="text-center mt-16" >
+    <h3 className="text-2xl font-Ovo mb-10">
+      Skills & Tools
+    </h3>
+
+    {/* ✅ ORBIT WRAPPER FIX */}
+    <div className="relative flex justify-center items-center h-[450px] sm:h-[850px] overflow-hidden">
+
+      <motion.div
+        className="absolute inset-0 opacity-30"
+        style={{
+          backgroundImage:
+            "radial-gradient(circle at center, rgba(148,163,184,1) 2px, transparent 1px)",
+          backgroundSize: "20px 20px",
+        }}
+        animate={{
+          backgroundPosition: ["0px 40px", "0px 0px"],
+        }}
+        transition={{
+          duration: 1,
+          repeat: Infinity,
+          ease: "linear",
+        }}
+      />
+
+      {/* Orbit Skills */}
+      <div className="relative z-10">
+        <OrbitSkills />
+      </div>
+
+    </div>
+  </div >
+
+    </motion.div >
   );
 };
 
