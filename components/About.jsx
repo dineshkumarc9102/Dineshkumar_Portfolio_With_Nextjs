@@ -109,16 +109,13 @@ const About = () => {
 
           {/* ✅ About Text */}
           <p className="mb-6 text-sm sm:text-base text-justify font-Ovo leading-relaxed text-gray-700 dark:text-white/80">
-            I'm Dinesh Kumar, a Front-End Developer and UI/UX enthusiast passionate about
-            building scalable, high-performance web applications with modern design principles.
-            Currently at TVS Motor Company, I contribute to digital transformation initiatives
-            involving SAP systems, enterprise dashboards, and data-driven solutions.
-
-            <br /><br />
-
-            I specialize in React, Tailwind CSS, and full-stack dashboard development, with
-            hands-on experience integrating Power BI and optimizing user workflows. I focus on
-            transforming complex business requirements into intuitive, impactful user experiences.
+            I’m a Front-End Developer and Product Enthusiast currently working as an Executive Trainee at TVS Motor Company, where I contribute to digital transformation by turning business requirements into scalable digital solutions. 
+             <br /><br />
+            I work at the intersection of business, data, and technology, collaborating with stakeholders, designers, and developers to build dashboards and enterprise applications that streamline workflows and improve efficiency. From requirement analysis and workflow design to UAT validation and release, I’m actively involved throughout the product lifecycle.
+             <br /><br />
+            I specialize in React, Node.js, and Tailwind CSS, with hands-on experience building data-driven dashboards and integrating tools like Power BI. Alongside development, I have experience in SAP operations (user access, role management, data maintenance), which gives me a strong understanding of enterprise systems.
+             <br /><br />
+            I’m passionate about building user-centric, data-driven products and continuously exploring ways to create intuitive, scalable, and impactful digital experiences.
           </p>
 
 
