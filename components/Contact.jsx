@@ -39,10 +39,32 @@ const Contact = () => {
   return (
     <motion.div
       id='contact'
-      className='w-full px-[6%] sm:px-[10%] md:px-[12%] py-16 scroll-mt-20'
-      initial={{ opacity: 0 }}
+      className='relative overflow-hidden w-full px-[6%] sm:px-[10%] md:px-[12%] py-16 scroll-mt-20' initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
     >
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+
+        <motion.div
+          className="absolute inset-x-0 top-20 h-[800px]"
+          style={{
+            backgroundImage: `
+        linear-gradient(to right, rgba(148,163,184,0.5) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(148,163,184,0.5) 1px, transparent 1px)`,
+            backgroundSize: "80px 80px",
+            transform: "perspective(1200px) rotateX(75deg)",
+            transformOrigin: "top center",
+          }}
+          animate={{
+            backgroundPositionY: ["0px", "160px"],
+          }}
+          transition={{
+            repeat: Infinity,
+            duration: 2,
+            ease: "linear",
+          }}
+        />
+
+      </div>
 
       {/* ✅ Heading */}
       <h4 className='text-center mb-2 text-lg font-Ovo'>
