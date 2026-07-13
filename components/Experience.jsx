@@ -2,9 +2,19 @@ import { experienceData } from '@/assets/assets'
 import Image from 'next/image'
 import React from 'react'
 import { Building2, Calendar, FileText } from "lucide-react"
-import { motion } from "motion/react"
+import { motion, useScroll, useTransform } from "motion/react"
 
 const Experience = () => {
+
+    const timelineRef = React.useRef(null);
+
+    const { scrollYProgress } = useScroll({
+        target: timelineRef,
+        offset: ["start center", "end center"],
+    });
+
+    const progressY = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+
     return (
         <motion.div
             id='experience'
@@ -27,11 +37,58 @@ const Experience = () => {
             </p>
 
             {/* Timeline */}
-            <div className="relative mt-16">
+            <div
+                ref={timelineRef}
+                className="relative mt-16"
+            >
 
                 {/* Vertical Line */}
-                <div className="absolute left-2 sm:left-4 md:left-1/2 top-0 w-[2px] h-full bg-gray-300 dark:bg-gray-600 md:-translate-x-1/2"></div>
+                {/* Base Line */}
+                <div
+                    className="absolute left-2 sm:left-4 md:left-1/2 top-0 w-[2px] h-full bg-gray-300 dark:bg-purple-900/40 md:-translate-x-1/2"
+                />
 
+                {/* Progress Line */}
+                <motion.div
+                    className="
+    absolute left-2 sm:left-4 md:left-1/2
+    top-0 w-[2px]
+    bg-gray-500
+    dark:bg-purple-500
+    md:-translate-x-1/2
+    origin-top
+  "
+                    style={{
+                        height: progressY,
+                    }}
+                />
+
+                {/* Moving Dot */}
+                <motion.div
+                    className="
+    absolute left-2 sm:left-4 md:left-1/2
+    w-5 h-5 rounded-full
+    bg-gray-500
+    dark:bg-purple-500
+    shadow-[0_0_15px_rgba(107,114,128,0.6)]
+    dark:shadow-[0_0_25px_rgba(168,85,247,0.8)]
+    md:-translate-x-1/2
+    z-20
+  "
+                    style={{
+                        top: progressY,
+                        marginTop: "-10px",
+                    }}
+                >
+                    <span
+                        className="absolute inset-0 rounded-full
+      bg-gray-500
+      dark:bg-purple-500
+      animate-ping
+      opacity-50
+    "
+                    />
+                </motion.div>
                 {experienceData.map((item, index) => {
 
                     const isCurrent = index === 0
@@ -46,7 +103,6 @@ const Experience = () => {
                         >
 
                             {/* Node */}
-                            <div className="absolute left-2 sm:left-4 md:left-1/2 top-6 w-3 h-3 md:w-5 md:h-5 bg-gray-400 dark:bg-gray-500 rounded-full md:-translate-x-1/2 border-4 border-white dark:border-black"></div>
 
                             {/* Branch */}
                             <div
@@ -72,15 +128,21 @@ const Experience = () => {
 
                                 {/* Card */}
                                 <motion.div
-                                    whileHover={{ scale: 1.05 }}
+                                    whileHover={{ scale: 1.05, y: -8, }}
                                     className={`
-                                        relative group w-full rounded-2xl
-                                        backdrop-blur-xl bg-white/50 dark:bg-white/5
-                                        border border-gray-200 dark:border-white/10
-                                        shadow-lg hover:shadow-xl
-                                        transition duration-300 hover:bg-lightHover hover:shadow-black dark:hover:bg-darkHover dark:hover:shadow-white
-                                        ${isCurrent ? "ring-2 ring-gray-200" : ""}
-                                    `}
+  relative group w-full rounded-2xl
+  backdrop-blur-xl bg-white/50 dark:bg-white/5
+  border border-gray-200 dark:border-white/10
+  shadow-lg
+  hover:shadow-2xl
+  hover:border-purple-400/50
+  dark:hover:border-purple-500/40
+  transition-all duration-500
+  hover:bg-lightHover
+  dark:hover:bg-darkHover
+  overflow-hidden
+  ${isCurrent ? "ring-2 ring-gray-200" : ""}
+`}
                                 >
 
                                     {/* Current Dot */}
