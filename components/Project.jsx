@@ -179,8 +179,8 @@ const Project = () => {
       whileInView={{ opacity: 1 }}
     >
 
-      <h4 className="text-center text-lg mb-2">Work & Experience</h4>
-      <h2 className="text-center text-3xl sm:text-5xl">My Projects</h2>
+      <h4 className="text-center text-lg mb-2 font-Ovo">Work & Experience</h4>
+      <h2 className="text-center text-3xl sm:text-5xl font-Ovo">My Projects</h2>
 
       <p className="text-center max-w-2xl mx-auto mt-5 mb-12 text-gray-600 dark:text-white/70">
         Explore my projects showcasing real-world applications.
