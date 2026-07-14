@@ -27,7 +27,7 @@ const Education = () => {
       </motion.h4>
 
       <motion.h2
-        className='text-center text-5xl font-Ovo'
+        className='text-center text-3xl sm:text-5xl font-Ovo'
         initial={{ y: -20, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.5, duration: 0.5 }}
