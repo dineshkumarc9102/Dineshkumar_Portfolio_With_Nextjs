@@ -4,28 +4,33 @@ import { motion } from "motion/react"
 import { Download } from "lucide-react"
 import { assets } from '@/assets/assets'
 import ShinyText from './ShinyText'
-import Particles from './Particles'
-
+import GlitterWrap from './GlitterWrap'
 
 const Header = ({ isDarkMode }) => {
   return (
     <div className='relative w-full h-screen overflow-hidden'>
 
       {/* ✅ Particle Background */}
-      {isDarkMode && (
-        <div className='absolute inset-0 z-0'>
-          <Particles
-            particleColors={['#ffffff']}
-            particleCount={800}
-            particleSpread={10}
-            speed={0.1}
-            particleBaseSize={100}
-            moveParticlesOnHover
-            alphaParticles={false}
-            disableRotation={false}
-          />
-        </div>
-      )}
+      {/* ✅ Glitter Warp Background */}
+{isDarkMode && (
+  <div className="absolute inset-0 z-0">
+    <GlitterWrap
+      particleCount={500}
+      color1="#ffffff"
+      color2="#ffffff"
+      color3="#ffffff"
+      speed={3}
+      density={100}
+      starSize={20}
+      focalDepth={10}
+      turbulence={0}
+      brightness={100}
+      glitterIntensity={3}
+      trailAmount={50}
+      reverse={false}
+    />
+  </div>
+)}
 
 
       {/* ✅ Header Content */}
