@@ -92,7 +92,7 @@ const Contact = () => {
           {/* Name */}
           <div className="flex items-center gap-2 p-3 rounded-lg
             bg-white/70 dark:bg-white/10
-            border border-gray-200 dark:border-white/10 backdrop-blur-md">
+            border border-gray-500 dark:border-white backdrop-blur-md">
 
             <User className="w-4 h-4 text-gray-500" />
 
@@ -109,7 +109,7 @@ const Contact = () => {
           {/* Email */}
           <div className="flex items-center gap-2 p-3 rounded-lg
             bg-white/70 dark:bg-white/10
-            border border-gray-200 dark:border-white/10 backdrop-blur-md">
+            border border-gray-500 dark:border-white backdrop-blur-md">
 
             <Mail className="w-4 h-4 text-gray-500" />
 
@@ -128,7 +128,7 @@ const Contact = () => {
         {/* ✅ Message */}
         <div className="flex items-start gap-2 p-4 rounded-lg mb-6
           bg-white/70 dark:bg-white/10
-          border border-gray-200 dark:border-white/10 backdrop-blur-md">
+          border border-gray-500 dark:border-white backdrop-blur-md">
 
           <MessageSquare className="w-4 h-4 mt-1 text-gray-500" />
 
