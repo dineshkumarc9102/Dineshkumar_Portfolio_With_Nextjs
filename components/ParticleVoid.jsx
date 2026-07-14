@@ -32,7 +32,9 @@ export default function ParticleVoid(props) {
     } = props
 
     // Void color is fixed (the void is a solid black hole).
-    const color = "#000000"
+    const color = document.documentElement.classList.contains("dark")
+    ? "#000000"
+    : "#ffffff"
 
     // Direction + speed → signed flow rate along Z. "inside" pulls particles
     // toward the void, "outside" pushes them away.
