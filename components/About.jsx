@@ -12,6 +12,10 @@ const OrbitSkills = dynamic(() => import("./OrbitSkills"), {
   ssr: false,
 });
 
+const ParticleVoid = dynamic(() => import("./ParticleVoid"), {
+  ssr: false,
+});
+
 
 // ✅ Counter Component
 const Count = ({ end, duration = 1000 }) => {
@@ -153,75 +157,71 @@ const About = () => {
                 duration: 5,
                 repeat: Infinity,
               }}
-              >
-                <Briefcase className="w-4 h-4 text-pink-500" />
-            <span><Count end={7} />+ Months of Experience</span>
-          </motion.div>
+            >
+              <Briefcase className="w-4 h-4 text-pink-500" />
+              <span><Count end={7} />+ Months of Experience</span>
+            </motion.div>
 
 
-          <motion.div
-            className="px-4 py-2 rounded-full
+            <motion.div
+              className="px-4 py-2 rounded-full
                border border-emerald-500
                bg-emerald-500/10
                text-emerald-600 dark:text-emerald-300
                text-sm font-medium"
-            animate={{
-              y: [0, -10, 0],
-              rotate: [-2, 2, -2],
-            }}
-            transition={{
-              duration: 4.5,
-              repeat: Infinity,
-            }}
-          >
-            <Code className="w-4 h-4 text-emerald-500" />
-            <span><Count end={15} />+ Tech</span>
-
-          </motion.div>
-
-
+              animate={{
+                y: [0, -10, 0],
+                rotate: [-2, 2, -2],
+              }}
+              transition={{
+                duration: 4.5,
+                repeat: Infinity,
+              }}
+            >
+              <Code className="w-4 h-4 text-emerald-500" />
+              <span><Count end={15} />+ Tech</span>
+            </motion.div>
+          </div>
         </div>
 
 
-      </div>
 
+      </motion.div >
 
+      {/* ✅ Skills Section */}
+      < div className="text-center mt-16" >
+        <h3 className="text-2xl font-Ovo mb-10">
+          Skills & Tools
+        </h3>
 
-    </motion.div >
+        {/* ✅ ORBIT WRAPPER FIX */}
+        <div className="relative flex justify-center items-center h-[450px] sm:h-[850px] overflow-hidden">
 
-  {/* ✅ Skills Section */ }
-  < div className="text-center mt-16" >
-    <h3 className="text-2xl font-Ovo mb-10">
-      Skills & Tools
-    </h3>
+          <div className="absolute inset-0">
+            <ParticleVoid
+              style={{
+                width: "100%",
+                height: "100%",
+              }}
+              x={50}
+              y={50}
+              radius={100}
+              density={30}
+              gap={40}
+              particleSize={4}
+              colors={["#ffffff"]}
+              direction="inside"
+              speed={2}
+            />
+          </div>
 
-    {/* ✅ ORBIT WRAPPER FIX */}
-    <div className="relative flex justify-center items-center h-[450px] sm:h-[850px] overflow-hidden">
+          {/* Orbit Skills */}
+          <div className="relative z-10">
+            <OrbitSkills />
+          </div>
 
-      <motion.div
-        className="absolute inset-0 opacity-30"
-        style={{
-          backgroundImage:
-            "radial-gradient(circle at center, rgba(148,163,184,1) 2px, transparent 1px)",
-          backgroundSize: "20px 20px",
-        }}
-        animate={{
-          backgroundPosition: ["0px 40px", "0px 0px"],
-        }}
-        transition={{
-          duration: 1,
-          repeat: Infinity,
-          ease: "linear",
-        }}
-      />
-
-      {/* Orbit Skills */}
-      <div className="relative z-10">
-        <OrbitSkills />
-      </div>
-
-    </div>
-  </div >
+        </div>
+      </div >
 
     </motion.div >
   );
