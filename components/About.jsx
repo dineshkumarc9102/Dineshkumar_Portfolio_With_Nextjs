@@ -205,7 +205,7 @@ const About = () => {
               }}
               x={50}
               y={50}
-              radius={100}
+              radius={40}
               density={30}
               gap={40}
               particleSize={4}
