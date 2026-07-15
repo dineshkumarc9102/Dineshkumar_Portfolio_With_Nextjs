@@ -25,16 +25,14 @@ export default function ParticleVoid(props) {
         density = 30,
         gap = 40,
         particleSize = 10,
-        colors = ["#fffff"],
+        colors = ["#ffffff"],
         direction = "inside",
         speed = 2,
         style,
     } = props
 
     // Void color is fixed (the void is a solid black hole).
-    const color = document.documentElement.classList.contains("dark")
-    ? "#000000"
-    : "#ffffff"
+    
 
     // Direction + speed → signed flow rate along Z. "inside" pulls particles
     // toward the void, "outside" pushes them away.
@@ -200,7 +198,7 @@ export default function ParticleVoid(props) {
             ctx.globalAlpha = 1.0
 
             // ─── 2. Draw Centre (Solid Circle) ────────────────
-            ctx.fillStyle = color
+             
             ctx.beginPath()
             ctx.arc(centreCx, centreCy, radius, 0, Math.PI * 2)
             ctx.fill()
@@ -246,7 +244,6 @@ const COMPONENT_DEFAULTS = {
     density: 30,
     gap: 40,
     particleSize: 10,
-    colors: ["#ffffff"],
     direction: "inside",
     speed: 5,
 }
