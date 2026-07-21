@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import { motion } from "framer-motion"
+import Image from "next/image";
+import { assets } from "@/assets/assets";
 import { User, Mail, MessageSquare, Send } from "lucide-react"
 
 
@@ -45,17 +47,17 @@ const Contact = () => {
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
 
         <motion.div
-          className="absolute inset-x-0 top-20 h-[800px]"
+          className="absolute inset-x-0 top-10 h-[1100px]"
           style={{
             backgroundImage: `
-        linear-gradient(to right, rgba(148,163,184,0.5) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(148,163,184,0.5) 1px, transparent 1px)`,
+            linear-gradient(to right, rgba(148,163,184,0.5) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(148,163,184,0.5) 1px, transparent 1px)`,
             backgroundSize: "80px 80px",
-            transform: "perspective(1200px) rotateX(75deg)",
+            transform: "perspective(1500px) rotateX(75deg)",
             transformOrigin: "top center",
           }}
           animate={{
-            backgroundPositionY: ["0px", "160px"],
+            backgroundPositionY: ["0px", "150px"],
           }}
           transition={{
             repeat: Infinity,
@@ -85,6 +87,7 @@ const Contact = () => {
         onSubmit={onSubmit}
         className='max-w-2xl mx-auto'
       >
+
 
         {/* ✅ Inputs */}
         <div className='grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6'>
@@ -161,6 +164,97 @@ const Contact = () => {
         <p className={`mt-4 text-center ${resultColor}`}>
           {result}
         </p>
+
+        {/* ================= Social Links ================= */}
+        <div className="mt-12">
+          <p className="text-center text-gray-600 dark:text-white/70 mb-8">
+            Or connect with me
+          </p>
+
+          <div className="flex justify-center items-center gap-8 sm:gap-10 flex-wrap">
+
+            {/* Gmail */}
+            <div className="relative w-14 h-16 group overflow-hidden text-center">
+              <div
+                className="absolute top-0 left-0 w-14 h-14 rounded-full
+                bg-[#CEB3DB] flex items-center justify-center
+                transition-all duration-300
+                group-hover:scale-75 group-hover:origin-top"
+              >
+                <a href="mailto:dineshkumarc9102@gmail.com">
+                  <Image src={assets.gmail} alt="Gmail" className="w-6" />
+                </a>
+              </div>
+
+              <span
+                className="absolute -bottom-8 left-1/2 -translate-x-1/2
+                text-xs font-medium whitespace-nowrap
+                text-gray-700 dark:text-white/70
+                transition-all duration-300
+                group-hover:bottom-0"
+              >
+                Gmail
+              </span>
+            </div>
+
+            {/* LinkedIn */}
+            <div className="relative w-14 h-16 group overflow-hidden text-center">
+              <div
+                className="absolute top-0 left-0 w-14 h-14 rounded-full
+                bg-[#0077B5] flex items-center justify-center
+                transition-all duration-300
+                group-hover:scale-75 group-hover:origin-top"
+              >
+                <a
+                  href="https://www.linkedin.com/in/dinesh-kumarc/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Image src={assets.linkedin} alt="LinkedIn" className="w-6" />
+                </a>
+              </div>
+
+              <span
+                className="absolute -bottom-8 left-1/2 -translate-x-1/2
+                text-xs font-medium whitespace-nowrap
+                text-gray-700 dark:text-white/70
+                transition-all duration-300
+                group-hover:bottom-0"
+              >
+                LinkedIn
+              </span>
+            </div>
+
+            {/* GitHub */}
+            <div className="relative w-14 h-16 group overflow-hidden text-center">
+              <div
+                className="absolute top-0 left-0 w-14 h-14 rounded-full
+                bg-gray-200 dark:bg-gray-200 flex items-center justify-center
+                transition-all duration-300
+                group-hover:scale-75 group-hover:origin-top"
+              >
+                <a
+                  href="https://github.com/dineshkumarc9102"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Image src={assets.github} alt="GitHub" className="w-6" />
+                </a>
+              </div>
+
+              <span
+                className="absolute -bottom-8 left-1/2 -translate-x-1/2
+                text-xs font-medium whitespace-nowrap
+                text-gray-700 dark:text-white/70
+                transition-all duration-300
+                group-hover:bottom-0"
+              >
+                GitHub
+              </span>
+            </div>
+
+          </div>
+        </div>
 
       </motion.form>
 
