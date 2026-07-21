@@ -61,7 +61,27 @@ const Count = ({ end, duration = 1000 }) => {
   return <span ref={ref}>{count}</span>;
 };
 
+
+const getExperienceMonths = () => {
+  const startDate = new Date(2025, 10, 19);
+  const today = new Date();
+
+  let months =
+    (today.getFullYear() - startDate.getFullYear()) * 12 +
+    (today.getMonth() - startDate.getMonth());
+
+  // Don't count the current month until the 19th arrives
+  if (today.getDate() < startDate.getDate()) {
+    months--;
+  }
+
+  return Math.max(months, 0);
+};
+
 const About = () => {
+
+  const experienceMonths = getExperienceMonths();
+
   return (
     <motion.div
       id="about"
@@ -121,10 +141,35 @@ const About = () => {
           {/* ✅ Quick Overview */}
 
 
-          <div className="flex flex-wrap justify-center gap-6 mt-8">
+          <div className="flex flex-wrap justify-center gap-6 mt-8 min-h-[52px]">
 
             <motion.div
-              className="px-4 py-2 rounded-full
+              className="flex items-center gap-2 px-4 py-2 rounded-full
+               border border-emerald-500
+               bg-emerald-500/10
+               text-emerald-600 dark:text-emerald-300
+               text-sm font-medium"
+              animate={{
+                y: [0, -10, 0],
+                rotate: [-2, 2, -2],
+              }}
+              transition={{
+                duration: 4.5,
+                repeat: Infinity,
+                repeatType: "reverse",
+
+              }}
+              whileHover={{
+                scale: 1.08,
+                y: -5,
+              }}
+            >
+              <Code className="w-4 h-4 text-emerald-500" />
+              <span><Count end={15} />+ Tech</span>
+            </motion.div>
+
+            <motion.div
+              className="flex items-center gap-2 px-4 py-2 rounded-full
                border border-purple-500
                bg-purple-500/10
                text-purple-600 dark:text-purple-300
@@ -137,6 +182,12 @@ const About = () => {
               transition={{
                 duration: 4,
                 repeat: Infinity,
+                repeatType: "reverse",
+
+              }}
+              whileHover={{
+                scale: 1.08,
+                y: -5,
               }}
             >
               <FolderKanban className="w-4 h-4 text-purple-500" />
@@ -144,43 +195,33 @@ const About = () => {
             </motion.div>
 
             <motion.div
-              className="px-4 py-2 rounded-full
-               border border-pink-500
-               bg-pink-500/10
-               text-pink-600 dark:text-pink-300
-               text-sm font-medium"
+              className="flex items-center gap-2 px-5 py-3 min-h-[52px] rounded-full
+             border border-pink-500 bg-pink-500/10
+             text-pink-600 dark:text-pink-300 text-sm font-medium"
               animate={{
-                y: [0, -10, 0],
-                rotate: [3, -3, 3],
+                y: [0, -8, 0],
+                rotate: [2, -2, 2],
+              }}
+              whileHover={{
+                scale: 1.08,
+                y: -5,
               }}
               transition={{
                 duration: 5,
                 repeat: Infinity,
+                repeatType: "reverse",
               }}
             >
-              <Briefcase className="w-4 h-4 text-pink-500" />
-              <span><Count end={7} />+ Months of Experience</span>
+              <Briefcase className="w-4 h-4 text-pink-500 flex-shrink-0" />
+
+              <span>
+                <span className="font-semibold text-pink-500">
+                  <Count end={experienceMonths} />+
+                </span>{" "}
+                Months • Executive Trainee @ TVS Motor Company
+              </span>
             </motion.div>
 
-
-            <motion.div
-              className="px-4 py-2 rounded-full
-               border border-emerald-500
-               bg-emerald-500/10
-               text-emerald-600 dark:text-emerald-300
-               text-sm font-medium"
-              animate={{
-                y: [0, -10, 0],
-                rotate: [-2, 2, -2],
-              }}
-              transition={{
-                duration: 4.5,
-                repeat: Infinity,
-              }}
-            >
-              <Code className="w-4 h-4 text-emerald-500" />
-              <span><Count end={15} />+ Tech</span>
-            </motion.div>
           </div>
         </div>
 
