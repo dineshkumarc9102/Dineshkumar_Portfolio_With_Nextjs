@@ -165,7 +165,12 @@ const About = () => {
               }}
             >
               <Code className="w-4 h-4 text-emerald-500" />
-              <span><Count end={15} />+ Tech</span>
+              <span>
+                <span className="font-semibold text-lg">
+                  <Count end={15} />+
+                </span>{" "}
+                Tech
+              </span>
             </motion.div>
 
             <motion.div
@@ -191,7 +196,12 @@ const About = () => {
               }}
             >
               <FolderKanban className="w-4 h-4 text-purple-500" />
-              <span><Count end={5} />+ Projects</span>
+              <span>
+                <span className="font-semibold text-lg">
+                  <Count end={5} />+
+                </span>{" "}
+                Projects
+              </span>
             </motion.div>
 
             <motion.div
@@ -215,7 +225,7 @@ const About = () => {
               <Briefcase className="w-4 h-4 text-pink-500 flex-shrink-0" />
 
               <span>
-                <span className="font-semibold text-pink-500">
+                <span className="font-semibold text-lg">
                   <Count end={experienceMonths} />+
                 </span>{" "}
                 Months • Executive Trainee @ TVS Motor Company
