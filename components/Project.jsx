@@ -51,120 +51,79 @@ const TechIcon = ({ tech }) => {
 }
 
 const ProjectCard = ({ item, index }) => {
-  const cardRef = useRef(null)
-
-  // ✅ 3D tilt controls
-  const x = useMotionValue(0)
-  const y = useMotionValue(0)
-
-  const rotateX = useTransform(y, [-100, 100], [10, -10])
-  const rotateY = useTransform(x, [-100, 100], [-10, 10])
-
-  const handleMouseMove = (e) => {
-    const rect = cardRef.current.getBoundingClientRect()
-    const centerX = rect.left + rect.width / 2
-    const centerY = rect.top + rect.height / 2
-
-    x.set(e.clientX - centerX)
-    y.set(e.clientY - centerY)
-  }
-
-  const handleMouseLeave = () => {
-    x.set(0)
-    y.set(0)
-  }
 
   return (
     <motion.div
-      ref={cardRef}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-      style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
-
-      whileHover={{ scale: 1.05 }}
-
-      className="group relative rounded-3xl overflow-hidden
-                 bg-gradient-to-br from-white/60 to-white/20
-                dark:from-white/10 dark:to-white/5
-                 backdrop-blur-2xl border border-white/20 dark:border-white/10
-                 shadow-[0_15px_40px_rgba(0,0,0,0.15)]
-                 hover:shadow-[0_30px_80px_rgba(0,0,0,0.35)] transition duration-500"
+      whileHover={{ y: -6,  scale: 1.01, }}
+      transition={{ duration: 0.4 }}
+      className="relative h-[480px] sm:h-[550px] lg:h-[580px] overflow-hidden rounded-[32px] bg-black group border border-black dark:border-white shadow-[0_10px_40px_rgba(0,0,0,0.08)] hover:shadow-[0_20px_60px_rgba(0,0,0,0.12)]"
     >
+      {/* Background Image */}
+      <Image
+        src={item.bgImage}
+        alt={item.title}
+        fill
+        priority={index === 0}
+        sizes="(max-width: 768px) 100vw, 50vw"
+        className={`
+    object-cover
+    transition-transform
+    duration-1000
+    group-hover:scale-105
+   : item.imagePosition === "bottom"
+        ? "object-bottom"
+        : item.imagePosition === "left"
+        ? "object-left"
+        : item.imagePosition === "right"
+        ? "object-right"
+        : "object-center"
+    }
+  `}
+      />
 
-      {/* ✅ Glow Layer */}
-      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition">
-        <div className="absolute inset-0 bg-gradient-to-tr from-indigo-500/10 via-transparent to-purple-500/10" />
-      </div>
+      <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/10 to-transparent z-[1]" />
 
-      {/* ✅ Image */}
-      <div className="relative w-full h-48">
-        <motion.div
-          whileHover={{ scale: 1.1 }}
-          transition={{ duration: 0.4 }}
-          className="absolute inset-0"
-        >
-          <Image
-            src={item.bgImage}
-            alt={item.title}
-            fill
-            className="object-cover"
-          />
-        </motion.div>
-      </div>
+      {/* Content */}
+      <div className="absolute top-8 sm:top-10 left-0 w-full z-10">
+        <div className="max-w-xl mx-auto px-6 text-center">
+          <p className="text-xs tracking-[0.25em] uppercase text-white/75">
+            {item.domain}
+          </p>
 
-      {/* ✅ Content */}
-      <div className="p-4">
-        <h3 className="font-semibold text-gray-800 dark:text-white">
-          {item.title}
-        </h3>
+          <h3 className="mt-2 text-2xl sm:text-3xl lg:text-5xl font-semibold tracking-[-0.03em] leading-tight text-white ">
+            {item.title}
+          </h3>
 
-        <p className="text-sm text-gray-600 dark:text-white/70">
-          {item.domain}
-        </p>
+          <p className="mt-3 text-base sm:text-lg max-w-md text-white/90 mx-auto leading-relaxed line-clamp-2">
+            {item.description}
+          </p>
 
-        <div className="flex items-center gap-2 text-xs mt-2 text-gray-500">
-          <Calendar className="w-3.5 h-3.5" />
-          {item.date}
-        </div>
-      </div>
-
-      {/* ✅ Overlay */}
-      <div className="absolute inset-0 opacity-0 group-hover:opacity-100
-        translate-y-4 group-hover:translate-y-0
-        transition-all duration-300
-        bg-white/95 dark:bg-black/90 p-5 flex flex-col"
-      >
-
-        <p className="text-sm text-gray-700 dark:text-white mb-4">
-          {item.description}
-        </p>
-
-        {/* ✅ Full Tech */}
-        <div className="flex flex-wrap gap-2">
-          {item.tech?.map((tech, i) => (
-            <div
-              key={i}
-              className="flex items-center gap-2 px-2 py-1 rounded-full
-              bg-white/40 dark:bg-white/30"
+          <div className="flex gap-3 justify-center mt-6 flex-wrap">
+            <Link
+              href={item.link}
+              target="_blank"
+              className=" inline-flex items-center px-5 py-2.5 text-sm font-medium rounded-full bg-[#0071E3] text-white hover:bg-[#0077ED] transition"
             >
-              <TechIcon tech={tech} />
-              <span className="text-xs">{tech}</span>
-            </div>
-          ))}
+              View Project
+            </Link>
+          </div>
+
+          {/* <div className="flex justify-center gap-2 mt-6 flex-wrap">
+            {item.tech?.slice(0, 5).map((tech, i) => (
+              <div
+                key={i}
+                className=" w-10 h-10 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center "
+                title={tech}
+              >
+                <TechIcon tech={tech} />
+              </div>
+            ))}
+          </div> */}
+
+          
+
         </div>
 
-        {/* ✅ Button */}
-        <div className="mt-auto">
-          <Link
-            href={item.link}
-            target="_blank"
-            className="inline-flex items-center gap-2 px-4 py-2
-            bg-black text-white dark:bg-white dark:text-black
-            rounded-lg hover:scale-105 transition"
-          >
-            View Project <ExternalLink className="w-3.5 h-3.5 group-hover:translate-x-1 transition" />
-          </Link>
-        </div>
       </div>
     </motion.div>
   )
@@ -179,14 +138,14 @@ const Project = () => {
       whileInView={{ opacity: 1 }}
     >
 
-      <h4 className="text-center text-lg mb-2 font-Ovo">Work & Experience</h4>
+      <h4 className="text-center text-lg mb-2 font-Ovo">Featured Work</h4>
       <h2 className="text-center text-3xl sm:text-5xl font-Ovo">My Projects</h2>
 
       <p className="text-center max-w-2xl mx-auto mt-5 mb-12 text-gray-600 dark:text-white/70">
         Explore my projects showcasing real-world applications.
       </p>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:col-span-1">
         {projectData.map((item, index) => (
           <ProjectCard key={index} item={item} index={index} />
         ))}
