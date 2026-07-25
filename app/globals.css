@@ -2,12 +2,50 @@
 @tailwind components;
 @tailwind utilities;
 
-*{
+* {
   font-family: Outfit;
 }
-html, body {
+
+html,
+body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
 }
 
+.achievement-swiper {
+  padding-bottom: 50px;
+}
+
+.achievement-swiper .swiper-slide {
+  transform: scale(0.82);
+  opacity: 0.55;
+  transition: all 0.5s ease;
+}
+
+.achievement-swiper .swiper-slide-prev,
+.achievement-swiper .swiper-slide-next {
+  transform: scale(0.9);
+  opacity: 0.8;
+}
+
+.achievement-swiper .swiper-slide-active {
+  transform: scale(1);
+  opacity: 1;
+  z-index: 20;
+}
+
+
+/* Pagination */
+.achievement-swiper .swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  background: #888;
+  opacity: 1;
+}
+
+.achievement-swiper .swiper-pagination-bullet-active {
+  width: 18px;
+  border-radius: 999px;
+  background: #fff;
+}
