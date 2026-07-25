@@ -4,7 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { assets } from "@/assets/assets";
 import Image from "next/image";
-import { FolderKanban, Briefcase, Code } from "lucide-react";
+import { FolderKanban, Briefcase, Code, Award } from "lucide-react";
 
 import dynamic from "next/dynamic";
 
@@ -198,9 +198,40 @@ const About = () => {
               <FolderKanban className="w-4 h-4 text-purple-500" />
               <span>
                 <span className="font-semibold text-lg">
-                  <Count end={5} />+
+                  <Count end={10} />+
                 </span>{" "}
                 Projects
+              </span>
+            </motion.div>
+
+            <motion.div
+              className="flex items-center gap-2 px-4 py-2 rounded-full
+               border border-sky-500
+               bg-sky-500/10
+               text-sky-600 dark:text-sky-300
+               text-sm font-medium"
+              animate={{
+                y: [0, -10, 0],
+                rotate: [-3, 3, -3],
+              }}
+
+              transition={{
+                duration: 4,
+                repeat: Infinity,
+                repeatType: "reverse",
+
+              }}
+              whileHover={{
+                scale: 1.08,
+                y: -5,
+              }}
+            >
+              <Award className="w-4 h-4 text-sky-500" />
+              <span>
+                <span className="font-semibold text-lg">
+                  <Count end={10} />+
+                </span>{" "}
+                Certifications
               </span>
             </motion.div>
 
