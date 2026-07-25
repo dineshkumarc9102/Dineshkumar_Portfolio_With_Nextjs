@@ -2,7 +2,7 @@ import React, { useRef } from 'react'
 import { motion, useMotionValue, useTransform } from "framer-motion"
 import Image from 'next/image'
 import Link from 'next/link'
-import { Calendar, ExternalLink } from "lucide-react"
+import { ArrowUpRight, CodeXml, ArrowRight, Calendar } from "lucide-react";
 import { projectData } from '@/assets/assets'
 import { assets } from "@/assets/assets"
 
@@ -54,7 +54,7 @@ const ProjectCard = ({ item, index }) => {
 
   return (
     <motion.div
-      whileHover={{ y: -6,  scale: 1.01, }}
+      whileHover={{ y: -6, scale: 1.01, }}
       transition={{ duration: 0.4 }}
       className="relative h-[480px] sm:h-[550px] lg:h-[580px] overflow-hidden rounded-[32px] bg-black group border border-black dark:border-white shadow-[0_10px_40px_rgba(0,0,0,0.08)] hover:shadow-[0_20px_60px_rgba(0,0,0,0.12)]"
     >
@@ -66,65 +66,103 @@ const ProjectCard = ({ item, index }) => {
         priority={index === 0}
         sizes="(max-width: 768px) 100vw, 50vw"
         className={`
-    object-cover
-    transition-transform
-    duration-1000
-    group-hover:scale-105
-   : item.imagePosition === "bottom"
-        ? "object-bottom"
-        : item.imagePosition === "left"
-        ? "object-left"
-        : item.imagePosition === "right"
-        ? "object-right"
-        : "object-center"
-    }
-  `}
+          object-cover
+          transition-transform
+          duration-1000
+          group-hover:scale-105}`}
+        style={{ objectPosition: item.imagePosition || "center", }}
       />
 
-      <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/10 to-transparent z-[1]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-black/20 to-transparent z-[1] opacity-90 group-hover:opacity-100 transition-opacity duration-500" />
 
       {/* Content */}
       <div className="absolute top-8 sm:top-10 left-0 w-full z-10">
-        <div className="max-w-xl mx-auto px-6 text-center">
+        <div className="max-w-[700px] mx-auto px-6 text-center cursor-pointer">
           <p className="text-xs tracking-[0.25em] uppercase text-white/75">
             {item.domain}
           </p>
 
-          <h3 className="mt-2 text-2xl sm:text-3xl lg:text-5xl font-semibold tracking-[-0.03em] leading-tight text-white ">
+          <h3 className="mt-2 text-xl sm:text-3xl lg:text-5xl font-semibold tracking-[-0.03em] leading-tight text-white ">
             {item.title}
           </h3>
 
-          <p className="mt-3 text-base sm:text-lg max-w-md text-white/90 mx-auto leading-relaxed line-clamp-2">
+          <p className="mt-3 text-xs sm:text-lg max-w-md text-white/90 mx-auto leading-relaxed line-clamp-2">
             {item.description}
           </p>
 
-          <div className="flex gap-3 justify-center mt-6 flex-wrap">
+          <div className="flex justify-center gap-3 mt-6 flex-wrap">
+            {item.demolink && (
+              <Link
+                href={item.demolink}
+                target="_blank"
+                className=" inline-flex items-center gap-2 px-5 py-2.5 rounded-full  bg-white/15 backdrop-blur-xl border border-white/20 text-white text-sm font-medium hover:bg-white/25 transition-all duration-300 ">
+                <ArrowUpRight size={18} />
+                <span>Live</span>
+              </Link>
+            )}
+
             <Link
-              href={item.link}
+              href={item.gitlink}
               target="_blank"
-              className=" inline-flex items-center px-5 py-2.5 text-sm font-medium rounded-full bg-[#0071E3] text-white hover:bg-[#0077ED] transition"
-            >
-              View Project
+              className=" inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/15 backdrop-blur-xl border border-white/20 text-white text-sm font-medium hover:bg-white/25 transition-all duration-300 ">
+              <CodeXml size={18} />
+              <span>Source</span>
             </Link>
           </div>
 
-          {/* <div className="flex justify-center gap-2 mt-6 flex-wrap">
-            {item.tech?.slice(0, 5).map((tech, i) => (
-              <div
-                key={i}
-                className=" w-10 h-10 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center "
-                title={tech}
-              >
-                <TechIcon tech={tech} />
-              </div>
-            ))}
-          </div> */}
-
-          
-
         </div>
-
       </div>
+
+
+      <div className="absolute bottom-5 left-5 z-20">
+        <div className="flex items-center gap-2">
+          {/* Always visible icons */}
+          {item.tech?.slice(0, 3).map((tech, i) => (
+            <div
+              key={i}
+              className="w-7 h-7  sm:w-9 sm:h-9 rounded-full bg-white/30 backdrop-blur-md border border-white/20 flex items-center justify-center"
+              title={tech}
+            >
+              <TechIcon tech={tech} />
+            </div>
+          ))}
+
+          {/* Remaining icons */}
+          {item.tech?.length > 3 && (
+            <div className="relative group/more flex items-center">
+              {/* +N Badge */}
+              <div
+                className="w-7 h-7  sm:w-9 sm:h-9 rounded-full  bg-white/20 backdrop-blur-md border border-white/20 flex items-center justify-center  text-white text-xs font-medium transition-all duration-300 group-hover/more:opacity-0">
+                +{item.tech.length - 3}
+              </div>
+
+              {/* Hidden Icons */}
+              <div
+                className=" absolute left-0 flex items-center gap-2 opacity-0 pointer-events-none transition-all duration-300 group-hover/more:opacity-100 group-hover/more:pointer-events-auto">
+                {item.tech.slice(3).map((tech, i) => (
+                  <div
+                    key={i}
+                    className="w-7 h-7 sm:w-9 sm:h-9 rounded-full bg-white/30 backdrop-blur-md border border-white/20 flex items-center justify-center"
+                    title={tech}
+                  >
+                    <TechIcon tech={tech} />
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+
+      <div className="absolute bottom-5 right-4 z-20 text-right">
+        <p className="text-[9px] sm:text-[10px] uppercase tracking-[0.2em] text-white/40">
+          Year
+        </p>
+        <p className="text-xs sm:text-xl font-semibold text-white/80">
+          {item.date}
+        </p>
+      </div>
+
     </motion.div>
   )
 }
@@ -159,7 +197,9 @@ const Project = () => {
           className="px-6 py-3 rounded-full border
           hover:bg-indigo-500/10 transition "
         >
-          View More Projects →
+          <span>Explore GitHub <ArrowRight size={18} />
+          </span>
+
         </a>
       </div>
 
