@@ -189,19 +189,36 @@ const Project = () => {
         ))}
       </div>
 
-      {/* ✅ GitHub */}
-      <div className="text-center mt-16">
-        <a
-          href="https://github.com/dineshkumarc9102"
-          target="_blank"
-          className="px-6 py-3 rounded-full border
-          hover:bg-indigo-500/10 transition "
-        >
-          <span>Explore GitHub <ArrowRight size={18} />
-          </span>
+     {/* GitHub */}
+<div className="text-center mt-16">
+  <a
+    href="https://github.com/dineshkumarc9102"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="
+      inline-flex items-center gap-2
+      px-6 py-3
+      rounded-full
+      border border-gray-300 dark:border-white/20
+      bg-white/5
+      backdrop-blur-md
+      hover:bg-indigo-500/10
+      hover:border-indigo-400/40
+      transition-all duration-300
+      hover:scale-105
+      group
+    "
+  >
+    <span className="font-medium">
+      Explore GitHub
+    </span>
 
-        </a>
-      </div>
+    <ArrowRight
+      size={18}
+      className="transition-transform duration-300 group-hover:translate-x-1"
+    />
+  </a>
+</div>
 
     </motion.div>
   )
