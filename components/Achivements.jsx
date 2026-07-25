@@ -1,170 +1,157 @@
-import React, { useRef } from 'react';
+"use client";
+
+import React, { useRef } from "react";
 import { motion } from "framer-motion";
-import { certificateData } from '@/assets/assets';
+import { certificateData } from "@/assets/assets";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination } from "swiper/modules";
 
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Pagination } from 'swiper/modules';
-
-import { 
-  ChevronLeft, 
-  ChevronRight, 
-  Building2, 
-  Calendar, 
-  ExternalLink 
+import {
+  Building2,
+  Calendar,
+  ArrowUpRight,
 } from "lucide-react";
 
-import Image from 'next/image';
+import Image from "next/image";
 
-import 'swiper/css';
-import 'swiper/css/pagination';
-
+import "swiper/css";
+import "swiper/css/pagination";
 
 const Achivements = () => {
-
   const swiperRef = useRef(null);
 
   return (
-    <motion.div
-      id='achivements'
-      className='w-full px-[6%] sm:px-[10%] md:px-[12%] py-16 scroll-mt-20'
+    <motion.section
+      id="achivements"
+      className="w-full px-[6%] sm:px-[10%] py-20 scroll-mt-20"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
     >
+      {/* Heading */}
 
-      {/* ✅ Heading */}
-      <h4 className='text-center mb-2 text-lg font-Ovo'>
+      <h4 className="text-center text-lg font-Ovo mb-2">
         Achievements
       </h4>
 
-      <h2 className='text-center text-3xl sm:text-4xl md:text-5xl font-Ovo'>
+      <h2 className="text-center text-4xl md:text-5xl font-Ovo">
         Certifications
       </h2>
 
-      <p className="text-center text-gray-500 dark:text-white/60 mt-2">
+      <p className="text-center text-gray-500 dark:text-white/60 mt-3">
         Certifications and achievements I’ve earned
       </p>
 
+      {/* Slider */}
 
-      {/* ✅ Wrapper */}
-      <div className="relative mt-12">
+      <div className="relative mt-14">
 
-        {/* LEFT ARROW */}
-        <button
-          onClick={() => swiperRef.current?.slidePrev()}
-          className="hidden md:flex absolute -left-10 top-1/2 -translate-y-1/2 z-10 
-          p-2 rounded-full 
-          bg-black dark:bg-white/10 backdrop-blur-md
-          border border-gray-200 dark:border-white/10
-          shadow-md hover:scale-110 transition"
-        >
-          <ChevronLeft className="w-5 h-5 text-white" />
-        </button>
-
-
-        {/* RIGHT ARROW */}
-        <button
-          onClick={() => swiperRef.current?.slideNext()}
-          className="hidden md:flex absolute -right-10 top-1/2 -translate-y-1/2 z-10 
-          p-2 rounded-full 
-          bg-black dark:bg-white/10 backdrop-blur-md
-          border border-gray-200 dark:border-white/10
-          shadow-md hover:scale-110 transition"
-        >
-          <ChevronRight className="w-5 h-5 text-white" />
-        </button>
-
-
-        {/* ✅ Swiper */}
         <Swiper
           modules={[Autoplay, Pagination]}
           onSwiper={(swiper) => (swiperRef.current = swiper)}
-          spaceBetween={24}
-          slidesPerView={1}
-          pagination={{ clickable: true }}
-          autoplay={{ delay: 5000 }}
-          breakpoints={{
-            640: { slidesPerView: 1.2 },
-            768: { slidesPerView: 2 },
-            1024: { slidesPerView: 3 },
+          centeredSlides
+          watchSlidesProgress
+          loop
+          spaceBetween={14}
+           slidesPerView={1.8}
+          autoplay={{
+            delay: 4500,
+            pauseOnMouseEnter: true,
+            disableOnInteraction: false,
           }}
-          className="!pb-10"
+          pagination={{ clickable: true }}
+          breakpoints={{
+            0: {
+              slidesPerView: 1.05,
+              spaceBetween: 12,
+            },
+            768: {
+              slidesPerView: 1.4,
+              spaceBetween: 16,
+            },
+            1024: {
+              slidesPerView: 2.2,
+              spaceBetween: 20,
+            }
+          }}
+          className="achievement-swiper"
         >
+          {certificateData.map(
+            (
+              { title, issuer, date, link, bgImage, imagePosition },
+              index
+            ) => (
+              <SwiperSlide key={index}>
+                <motion.div
+                  whileHover={{ y: -8 }}
+                  transition={{ duration: 0.3 }}
+                  className=" group relative overflow-hidden rounded-[24px] h-[500px] sm:h-[550px] lg:h-[650px] border border-gray-200 dark:border-white/10  hover:border-black/20 dark:hover:border-white transition-all duration-500 achievement-card"
+                >
+                  {/* Background Image */}
 
-          {certificateData.map(({ title, issuer, date, link, bgImage }, index) => (
-
-            <SwiperSlide key={index}>
-
-              <motion.div
-                whileHover={{ y: -6 }}
-                className="group rounded-2xl overflow-hidden 
-                backdrop-blur-xl bg-white/50 dark:bg-white/5
-                border border-gray-200 dark:border-white/10
-                shadow-lg hover:shadow-xl
-                transition duration-300"
-              >
-
-                {/* ✅ Image */}
-                <div className="relative w-full h-[180px] bg-gray-100 dark:bg-white/5 overflow-hidden">
-                  <Image
-                    src={bgImage}
-                    alt={title}
-                    fill
-                    className="object-contain p-4 transition duration-300 group-hover:scale-105"
-                  />
-                </div>
-
-
-                {/* ✅ Content */}
-                <div className="p-5 flex flex-col gap-2">
-
-                  <h3 className="text-base font-semibold text-gray-800 dark:text-white">
-                    {title}
-                  </h3>
-
-
-                  {/* ✅ Issuer */}
-                  <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-white/70">
-                    <Building2 className="w-4 h-4" />
-                    {issuer}
+                  <div className="absolute inset-0">
+                    <Image
+                      src={bgImage}
+                      alt={title}
+                      fill
+                      quality={100}
+                      priority={index === 0}
+                      sizes="(max-width:768px) 90vw, (max-width:1024px) 60vw, 40vw"
+                      className=" object-cover lg:group-hover:blur-0 brightness-90 sm:brightness-80 lg:brightness-75 transition-all duration-700 group-hover:blur-0 group-hover:brightness-100 "
+                      style={{
+                        objectPosition: imagePosition || "center",
+                      }}
+                    />
                   </div>
 
+                  {/* Overlay */}
 
-                  {/* ✅ Date */}
-                  <div className="flex items-center gap-2 text-xs text-gray-500">
-                    <Calendar className="w-3.5 h-3.5" />
-                    {date}
-                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent " />
 
+                  {/* Content */}
 
-                  {/* ✅ Button */}
-                  <a
-                    href={link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-2 inline-flex items-center justify-center gap-1
-                    px-3 py-1.5 rounded-md text-xs font-medium 
-                    bg-gray-200 dark:bg-white/10
-                    text-gray-800 dark:text-white
-                    hover:bg-lightHover dark:hover:bg-darkHover
-                    transition"
+                  <div
+                    className=" absolute bottom-3 left-3 right-3 rounded-2xl bg-white/5 dark:bg-white/5 backdrop-blur-2xl border border-white/20 shadow-xl p-4 sm:p-5 text-white"
                   >
-                    View
-                    <ExternalLink className="w-3.5 h-3.5" />
-                  </a>
+                    
+                    <h3 className="text-lg sm:text-xl lg:text-2xl line-clamp-2 font-semibold leading-tight">
+                      {title}
+                    </h3>
 
-                </div>
+                    <div className="mt-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                      <div>
+                        <div className="flex items-center gap-2 text-white/80">
+                          <Building2 size={16} />
+                          <span className="text-sm">{issuer}</span>
+                        </div>
 
-              </motion.div>
+                        <div className="mt-1 flex items-center gap-2 text-white/60">
+                          <Calendar size={15} />
+                          <span className="text-xs">{date}</span>
+                        </div>
+                      </div>
 
-            </SwiperSlide>
+                      {link && (
+                        <a
+                          href={link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="w-full sm:w-auto justify-center shrink-0 inline-flex items-center gap-2 px-5 py-3 rounded-full bg-white/15 border border-white/20 backdrop-blur-lg hover:bg-white/25 text-white font-medium hover:scale-105 transition-all duration-300"
+                        >
+                          View
+                          <ArrowUpRight size={16} />
+                        </a>
+                      )}
+                    </div>
+                  </div>
+                </motion.div>
 
-          ))}
-
+              </SwiperSlide>
+            )
+          )}
         </Swiper>
-
       </div>
-
-    </motion.div>
+    </motion.section>
   );
 };
 
