@@ -2,7 +2,7 @@ import React, { useRef } from 'react'
 import { motion, useMotionValue, useTransform } from "framer-motion"
 import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowUpRight, CodeXml, ArrowRight, Calendar } from "lucide-react";
+import { ArrowUpRight, CodeXml, ArrowRight } from "lucide-react";
 import { projectData } from '@/assets/assets'
 import { assets } from "@/assets/assets"
 
@@ -77,7 +77,7 @@ const ProjectCard = ({ item, index }) => {
 
       {/* Content */}
       <div className="absolute top-8 sm:top-10 left-0 w-full z-10">
-        <div className="max-w-[700px] mx-auto px-6 text-center cursor-pointer">
+        <div className="max-w-[700px] mx-auto px-6 text-center cursor-pointer flex flex-col items-center">
           <p className="text-xs tracking-[0.25em] uppercase text-white/75">
             {item.domain}
           </p>
@@ -85,10 +85,6 @@ const ProjectCard = ({ item, index }) => {
           <h3 className="mt-2 text-xl sm:text-3xl lg:text-5xl font-semibold tracking-[-0.03em] leading-tight text-white ">
             {item.title}
           </h3>
-
-          <p className="mt-3 text-xs sm:text-lg max-w-md text-white/90 mx-auto leading-relaxed line-clamp-2">
-            {item.description}
-          </p>
 
           <div className="flex justify-center gap-3 mt-6 flex-wrap">
             {item.demolink && (
@@ -109,6 +105,14 @@ const ProjectCard = ({ item, index }) => {
               <span>Source</span>
             </Link>
           </div>
+
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            whileHover={{ opacity: 1, y: 0 }}
+            className="mt-3 text-white/80 line-clamp-2 min-h-[48px]"
+          >
+            {item.description}
+          </motion.p>
 
         </div>
       </div>
@@ -189,13 +193,14 @@ const Project = () => {
         ))}
       </div>
 
-     {/* GitHub */}
-<div className="text-center mt-16">
-  <a
-    href="https://github.com/dineshkumarc9102"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="
+
+      {/* GitHub */}
+      <div className="text-center mt-16">
+        <a
+          href="https://github.com/dineshkumarc9102"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="
       inline-flex items-center gap-2
       px-6 py-3
       rounded-full
@@ -208,17 +213,17 @@ const Project = () => {
       hover:scale-105
       group
     "
-  >
-    <span className="font-medium">
-      Explore GitHub
-    </span>
+        >
+          <span className="font-medium">
+            Explore GitHub
+          </span>
 
-    <ArrowRight
-      size={18}
-      className="transition-transform duration-300 group-hover:translate-x-1"
-    />
-  </a>
-</div>
+          <ArrowRight
+            size={18}
+            className="transition-transform duration-300 group-hover:translate-x-1"
+          />
+        </a>
+      </div>
 
     </motion.div>
   )
