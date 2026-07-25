@@ -259,8 +259,10 @@ export const projectData = [
         tech: ["ReactJS", "NodeJS", "ExpressJS", "JWT", "Power BI"],
         date: 'May - 2026',
         description: 'Financial dashboard for salary tracking, investments, and portfolio analytics with interactive reports.',
-        bgImage: '/dashboard_project.png',
-        link: 'https://dineshkumar-dashboard-website.netlify.app/'
+        bgImage: '/dashboard_project.avif',
+        imagePosition: "center",
+        gitlink: 'https://github.com/dineshkumarc9102/Dineshkumar_Dashboard_Website',
+        demolink: 'https://dineshkumar-dashboard-website.netlify.app/'
     },
     // {
     //     title: 'Scribbly',
@@ -277,8 +279,10 @@ export const projectData = [
         tech: ["Python", "Flask", "ReactJS", "NodeJS", "Scikit-learn"],
         date: 'Mar - 2025',
         description: 'ML-powered web application for Parkinson’s disease prediction with real-time analysis.',
-        bgImage: '/ml_project.png',
-        link: 'https://github.com/dineshkumarc9102/Dineshkumar_Parkinson-s_Disease_Prediction'
+        bgImage: '/aip.avif',
+        imagePosition: "center",
+        gitlink: 'https://github.com/dineshkumarc9102/Dineshkumar_Parkinson-s_Disease_Prediction',
+        demolink: ''
     },
     {
         title: 'Chat App',
@@ -287,7 +291,9 @@ export const projectData = [
         date: 'Feb - 2025',
         description: 'Real-time chat application with messaging, image sharing, and customizable themes.',
         bgImage: '/chatapp-project.png',
-        link: 'https://dineshkumar-chat-app-using-mern.onrender.com/'
+        imagePosition: "center",
+        gitlink: 'https://github.com/dineshkumarc9102/Dineshkumar_Chat_App_Using_MERN',
+        demolink: 'https://dineshkumar-chat-app-using-mern.onrender.com/'
     },
     {
         title: 'Crypto Tracker',
@@ -296,7 +302,9 @@ export const projectData = [
         date: 'Jan - 2025',
         description: 'Cryptocurrency tracker displaying live prices, market trends, and coin statistics.',
         bgImage: '/cryptotracker_project.png',
-        link: 'https://dineshkumarc-crypto-tracker.netlify.app/'
+        imagePosition: "center",
+        gitlink: 'https://github.com/dineshkumarc9102/Dineshkumar_Cryptoplace',
+        demolink: 'https://dineshkumarc-crypto-tracker.netlify.app/'
     },
     {
         title: 'YouTube Clone',
@@ -305,7 +313,9 @@ export const projectData = [
         date: 'Jan - 2025',
         description: 'Video streaming platform with search, recommendations, and embedded playback.',
         bgImage: '/youtube_project.png',
-        link: 'https://dineshkumarc-youtube-clone.netlify.app/'
+        imagePosition: "center",
+        gitlink: 'https://github.com/dineshkumarc9102/Dineshkumar_YouTube_Clone',
+        demolink: 'https://dineshkumarc-youtube-clone.netlify.app/'
     },
     {
         title: 'Netflix Clone',
@@ -314,7 +324,9 @@ export const projectData = [
         date: 'Jan - 2025',
         description: 'Movie streaming application featuring authentication and dynamic content browsing.',
         bgImage: '/netflix_project.png',
-        link: 'https://dineshkumarc-cloneflix.netlify.app/'
+        imagePosition: "center",
+        gitlink: 'https://github.com/dineshkumarc9102/Dineshkumar_Netflix_Clone',
+        demolink: 'https://dineshkumarc-cloneflix.netlify.app/'
     },
     {
         title: 'Study on Data Breach Detection using NLP and ML Methods ',
@@ -322,8 +334,10 @@ export const projectData = [
         tech: ["Pandas", "Scikit-learn", "NLP", "Machine Learning"],
         date: 'Nov - 2024',
         description: 'Analyzed breach datasets and achieved 90.48% prediction accuracy using NLP techniques.',
-        bgImage: '/nlp_project.png',
-        link: 'https://github.com/dineshkumarc9102/Dineshkumar_Study_on_Data_Breach_Detection_using_NLP_and_ML_Methods'
+        bgImage: '/nlp.avif',
+        imagePosition: "center",
+        gitlink: 'https://github.com/dineshkumarc9102/Dineshkumar_Study_on_Data_Breach_Detection_using_NLP_and_ML_Methods',
+        demolink: ''
     },
 
     {
@@ -333,7 +347,9 @@ export const projectData = [
         date: 'Jul - 2024',
         description: 'Salon website showcasing services, pricing, and customer-focused design.',
         bgImage: '/menslook_project.png',
-        link: 'https://dineshkumarc-mens-look.netlify.app/'
+        imagePosition: "center",
+        gitlink: 'https://github.com/dineshkumarc9102/Dineshkumar_Mens_Look',
+        demolink: 'https://dineshkumarc-mens-look.netlify.app/'
     },
     {
         title: 'My Portfolio Website',
@@ -341,8 +357,10 @@ export const projectData = [
         tech: ["NextJS", "Tailwind CSS", "Framer Motion"],
         date: 'Apr - 2024',
         description: 'Personal portfolio highlighting projects, skills, and professional achievements.',
-        bgImage: '/portfolio_project.png',
-        link: 'https://dineshkumar-portfolio-website.netlify.app/'
+        bgImage: '/DK logo.svg',
+        imagePosition: "center",
+        gitlink: 'https://github.com/dineshkumarc9102/Dineshkumar_Portfolio_With_Nextjs',
+        demolink: 'https://dineshkumar-portfolio-website.netlify.app/'
     },
     {
         title: 'Feature Selection and Classification Model for Cancer',
@@ -350,8 +368,10 @@ export const projectData = [
         tech: ["Python", "Scikit-learn", "Pandas", "NumPy"],
         date: 'Mar - 2023',
         description: 'Cancer prediction model using feature selection and classification techniques.',
-        bgImage: '/ml_project.png',
-        link: 'https://github.com/dineshkumarc9102/Dineshkumar_Feature_Selection_And_Classification_Model_For_Cancer'
+        bgImage: '/aip.avif',
+        imagePosition: "center",
+        gitlink: 'https://github.com/dineshkumarc9102/Dineshkumar_Feature_Selection_And_Classification_Model_For_Cancer',
+        demolink: ''
     },
 ]
 
