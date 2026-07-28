@@ -73,14 +73,14 @@ import TVSmotor from "./TVS.svg";
 // =======================
 // ✅ CERTIFICATES
 // =======================
-import dlc from "./dlc.png";
-import aic from "./aic.png";
-import mlc from "./mlc.png";
-import networkc from "./networkc.png";
-import webc from "./webc.png";
-import pythonc from "./pythonc.png";
-import excelc from "./excelc.png";
-import gitc from "./gitc.png";
+import dlc from "./Nvidia.svg";
+import aic from "./IBM.svg";
+import mlc from "./IBM.svg";
+import networkc from "./vit.svg";
+import webc from "./IBM.svg";
+import pythonc from "./vit.svg";
+import excelc from "./ms.svg";
+import gitc from "./google.svg";
 
 // =======================
 // ✅ BRANDING
@@ -383,7 +383,6 @@ export const certificateData = [
         issuer: 'NVIDIA',
         date: '2024',
         bgImage: assets.dlc,
-        imagePosition: "center",
         link: 'https://drive.google.com/file/d/1L9HDH4-ruS9d2U8PPDaiZik9k8qFlS0G/view?usp=drive_link'
     },
     {
@@ -391,7 +390,6 @@ export const certificateData = [
         issuer: 'Microsoft - Coursera',
         date: '2024',
         bgImage: assets.excelc,
-        imagePosition: "center",
         link: 'https://drive.google.com/file/d/1V1nIJEtPskZnyiHuosmBVZjbacCFUKpC/view?usp=drive_link'
     },
     {
@@ -399,7 +397,6 @@ export const certificateData = [
         issuer: 'IBM - Coursera',
         date: '2024',
         bgImage: assets.aic,
-        imagePosition: "center",
         link: 'https://drive.google.com/file/d/1uRh2dSZUsitapaXUIqdjkQxLZNa0d9K7/view?usp=drive_link'
     },
     {
@@ -407,7 +404,6 @@ export const certificateData = [
         issuer: 'Google - Coursera',
         date: '2024',
         bgImage: assets.gitc,
-        imagePosition: "center",
         link: 'https://drive.google.com/file/d/1mOOHNiqPaFNXyZSG77DHS25nOWj_lR3Y/view?usp=drive_link'
     },
     {
@@ -415,7 +411,6 @@ export const certificateData = [
         issuer: 'IBM - Coursera',
         date: '2023',
         bgImage: assets.mlc,
-        imagePosition: "center",
         link: 'https://drive.google.com/file/d/1vSPOUdL4QUkPSrWXM6ZBEDjpQYRRnxSS/view?usp=drive_link'
     },
     {
@@ -423,7 +418,6 @@ export const certificateData = [
         issuer: 'VIT',
         date: '2023',
         bgImage: assets.networkc,
-        imagePosition: "center",
         link: 'https://drive.google.com/file/d/1C31zURnNN2gJDcimWStHwYWD82eY5q5f/view?usp=drive_link'
     },
     {
@@ -431,7 +425,6 @@ export const certificateData = [
         issuer: 'IBM - Coursera',
         date: '2023',
         bgImage: assets.webc,
-        imagePosition: "center",
         link: 'https://drive.google.com/file/d/1NJCT7I2-nj1GboYJZFuKw95D0oIoEIS7/view?usp=drive_link'
     },
     {
@@ -439,7 +432,6 @@ export const certificateData = [
         issuer: 'VIT',
         date: 'June - 2022',
         bgImage: assets.pythonc,
-        imagePosition: "center",
         link: 'https://drive.google.com/file/d/1A--lMjqnbiWoMyJ3cU3m87dNUQA5a-Xh/view?usp=drive_link'
     },
 ]
