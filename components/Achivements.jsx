@@ -1,8 +1,9 @@
 "use client";
 
 import React, { useRef } from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
-import { certificateData } from "@/assets/assets";
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 
@@ -12,147 +13,168 @@ import {
   ArrowUpRight,
 } from "lucide-react";
 
-import Image from "next/image";
+import { certificateData } from "@/assets/assets";
 
 import "swiper/css";
 import "swiper/css/pagination";
 
-const Achivements = () => {
+const Achievements = () => {
   const swiperRef = useRef(null);
 
   return (
-    <motion.section
+    <section
       id="achivements"
-      className="w-full px-[6%] sm:px-[10%] py-20 scroll-mt-20"
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      viewport={{ once: true }}
+      className="relative w-full py-24 px-[6%] lg:px-[10%]"
     >
       {/* Heading */}
 
-      <h4 className="text-center text-lg font-Ovo mb-2">
-        Achievements
-      </h4>
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: .6 }}
+        className="text-center"
+      >
+        <p className="text-lg font-Ovo text-gray-500">
+          Achievements
+        </p>
 
-      <h2 className="text-center text-4xl md:text-5xl font-Ovo">
-        Certifications
-      </h2>
+        <h2 className="mt-2 text-4xl md:text-5xl font-Ovo">
+          Certifications
+        </h2>
 
-      <p className="text-center text-gray-500 dark:text-white/60 mt-3">
-        Certifications and achievements I’ve earned
-      </p>
+        <p className="mt-4 text-gray-500 dark:text-white/60 max-w-xl mx-auto">
+          A showcase of my certifications and achievements.
+        </p>
+      </motion.div>
 
       {/* Slider */}
 
-      <div className="relative mt-14">
+      <div className="mt-16">
 
         <Swiper
           modules={[Autoplay, Pagination]}
           onSwiper={(swiper) => (swiperRef.current = swiper)}
           centeredSlides
-          watchSlidesProgress
           loop
-          spaceBetween={14}
-           slidesPerView={1.8}
-          autoplay={{
-            delay: 4500,
-            pauseOnMouseEnter: true,
-            disableOnInteraction: false,
+          watchSlidesProgress
+          pagination={{
+            clickable: true,
           }}
-          pagination={{ clickable: true }}
+          autoplay={{
+            delay: 4000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+          }}
           breakpoints={{
             0: {
-              slidesPerView: 1.05,
-              spaceBetween: 12,
+              slidesPerView: 1.08,
+              spaceBetween: 14,
             },
-            768: {
-              slidesPerView: 1.4,
+            480: {
+              slidesPerView: 1.18,
               spaceBetween: 16,
             },
-            1024: {
-              slidesPerView: 2.2,
+            768: {
+              slidesPerView: 1.45,
               spaceBetween: 20,
-            }
+            },
+            1024: {
+              slidesPerView: 1.8,
+              spaceBetween: 24,
+            },
+            1280: {
+              slidesPerView: 2.15,
+              spaceBetween: 28,
+            },
           }}
           className="achievement-swiper"
         >
-          {certificateData.map(
-            (
-              { title, issuer, date, link, bgImage, imagePosition },
-              index
-            ) => (
-              <SwiperSlide key={index}>
-                <motion.div
-                  whileHover={{ y: -8 }}
-                  transition={{ duration: 0.3 }}
-                  className=" group relative overflow-hidden rounded-[24px] h-[500px] sm:h-[550px] lg:h-[650px] border border-gray-200 dark:border-white/10  hover:border-black/20 dark:hover:border-white transition-all duration-500 achievement-card"
-                >
-                  {/* Background Image */}
-
-                  <div className="absolute inset-0">
-                    <Image
-                      src={bgImage}
-                      alt={title}
-                      fill
-                      quality={100}
-                      priority={index === 0}
-                      sizes="(max-width:768px) 90vw, (max-width:1024px) 60vw, 40vw"
-                      className=" object-cover lg:group-hover:blur-0 brightness-90 sm:brightness-80 lg:brightness-75 transition-all duration-700 group-hover:blur-0 group-hover:brightness-100 "
-                      style={{
-                        objectPosition: imagePosition || "center",
-                      }}
-                    />
-                  </div>
-
-                  {/* Overlay */}
-
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent " />
-
-                  {/* Content */}
-
-                  <div
-                    className=" absolute bottom-3 left-3 right-3 rounded-2xl bg-white/5 dark:bg-white/5 backdrop-blur-2xl border border-white/20 shadow-xl p-4 sm:p-5 text-white"
-                  >
-                    
-                    <h3 className="text-lg sm:text-xl lg:text-2xl line-clamp-2 font-semibold leading-tight">
-                      {title}
-                    </h3>
-
-                    <div className="mt-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-                      <div>
-                        <div className="flex items-center gap-2 text-white/80">
-                          <Building2 size={16} />
-                          <span className="text-sm">{issuer}</span>
-                        </div>
-
-                        <div className="mt-1 flex items-center gap-2 text-white/60">
-                          <Calendar size={15} />
-                          <span className="text-xs">{date}</span>
-                        </div>
-                      </div>
-
-                      {link && (
-                        <a
-                          href={link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="w-full sm:w-auto justify-center shrink-0 inline-flex items-center gap-2 px-5 py-3 rounded-full bg-white/15 border border-white/20 backdrop-blur-lg hover:bg-white/25 text-white font-medium hover:scale-105 transition-all duration-300"
-                        >
-                          View
-                          <ArrowUpRight size={16} />
-                        </a>
-                      )}
-                    </div>
-                  </div>
-                </motion.div>
-
-              </SwiperSlide>
-            )
-          )}
+          {certificateData.map((item, index) => (
+            <SwiperSlide key={index}>
+              <CertificateCard {...item} index={index} />
+            </SwiperSlide>
+          ))}
         </Swiper>
+
       </div>
-    </motion.section>
+    </section>
   );
 };
 
-export default Achivements;
+export default Achievements;
+
+
+
+function CertificateCard({
+  title,
+  issuer,
+  date,
+  link,
+  bgImage,
+}) {
+  return (
+    <motion.article
+      whileHover={{
+        y: -10,
+      }}
+      transition={{
+        duration: .35,
+      }}
+      className=" group relative overflow-hidden rounded-2xl h-[430px] sm:h-[500px] md:h-[580px] lg:h-[650px] border border-gray-200dark:bg-white/10 dark:border-white/10 shadow-lg dark:shadow-none transition-all duration-500 "
+    >
+      {/* Image */}
+
+      <div className="relative h-[220px] sm:h-[300px] lg:h-[320px] overflow-hidden">
+        <Image
+          src={bgImage}
+          alt={title}
+          fill
+          className="object-cover transition duration-500 group-hover:scale-105"
+        />
+      </div>
+
+      {/* Overlay */}
+
+      <div
+        className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-transparent dark:from-black dark:via-black/30"
+      />
+
+      {/* Bottom Glass */}
+
+      <div
+        className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 right-3 sm:right-4 rounded-2xl bg-white/80 dark:bg-white/30 backdrop-blur-2xl border border-white/60 dark:border-white/20 text-gray-900 dark:text-white shadow-xl p-4 sm:p-6"
+      >
+        <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold leading-tight line-clamp-2">
+          {title}
+        </h3>
+
+        <div className="mt-5 space-y-2">
+
+          <div className="flex items-center gap-2 text-sm sm:text-base text-gray-700 dark:text-white/80">
+            <Building2 size={17} />
+            <span>{issuer}</span>
+          </div>
+
+          <div className="flex items-center gap-2 text-xs sm:text-sm  text-gray-500 dark:text-white/60">
+            <Calendar size={16} />
+            <span>{date}</span>
+          </div>
+
+        </div>
+
+        {link && (
+          <a
+            href={link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className=" mt-5 inline-flex items-center justify-center w-full sm:w-auto gap-2 rounded-full bg-gray-900 text-white dark:bg-white dark:text-black px-5 sm:px-5 py-3 sm:py-3 text-sm sm:text-base font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg"
+          >
+            View Certificate
+            <ArrowUpRight size={18} />
+          </a>
+        )}
+      </div>
+    </motion.article>
+  );
+}
