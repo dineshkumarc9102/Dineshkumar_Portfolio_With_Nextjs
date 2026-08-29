@@ -46,10 +46,9 @@ const OrbitSkills = ({ isDarkMode }) => {
             w-9 h-9 sm:w-20 sm:h-20 rounded-full
             backdrop-blur-lg
             border shadow-md cursor-pointer
-            ${
-              isDarkMode
-                ? "bg-white/10 border-white/10"
-                : "bg-white border-purple-200"
+            ${isDarkMode
+              ? "bg-white/10 border-white/10"
+              : "bg-white border-purple-200"
             }
           `}
           initial={{ x, y, scale }}
@@ -70,8 +69,13 @@ const OrbitSkills = ({ isDarkMode }) => {
               ease: "easeOut",
             },
           }}
-          onHoverStart={() => setActiveSkill(skill.name)}
+          onHoverStart={() => setActiveSkill(skill)}
           onHoverEnd={() => setActiveSkill(null)}
+          onTap={() =>
+            setActiveSkill(
+              activeSkill?.name === skill.name ? null : skill
+            )
+          }
         >
           <Image
             src={isDarkMode ? skill.iconDark : skill.iconLight}
@@ -101,50 +105,85 @@ const OrbitSkills = ({ isDarkMode }) => {
       "
     >
       {/* Rings */}
-      <div className="absolute w-[110px] h-[110px] sm:w-[300px] sm:h-[300px] border border-white/10 rounded-full" />
-      <div className="absolute w-[190px] h-[190px] sm:w-[450px] sm:h-[450px] border border-white/10 rounded-full" />
-      <div className="absolute w-[270px] h-[270px] sm:w-[600px] sm:h-[600px] border border-white/10 rounded-full" />
+      <div className="absolute w-[110px] h-[110px] sm:w-[300px] sm:h-[300px] border border-white/100 rounded-full" />
+      <div className="absolute w-[190px] h-[190px] sm:w-[480px] sm:h-[480px] border border-white/100 rounded-full" />
+      <div className="absolute w-[270px] h-[270px] sm:w-[650px] sm:h-[650px] border border-white/100 rounded-full" />
 
       {/* Center Circle */}
       <motion.div
         className={`
-          w-[90px] h-[90px] sm:w-[100px] sm:h-[100px]
-          rounded-full
-          flex items-center justify-center
-          backdrop-blur
-          border
-          ${
-            isDarkMode
-              ? "bg-gradient-to-r from-violet-500/20 to-fuchsia-500/20 border-purple-400/30"
-              : "bg-white border-purple-300 shadow-lg"
+    w-[70px] h-[70px] sm:w-[140px] sm:h-[140px]
+    rounded-full
+    flex items-center justify-center
+    backdrop-blur-xl
+    border
+    text-center
+    px-2
+    ${isDarkMode
+            ? "bg-gradient-to-br from-violet-500/20 via-purple-500/10 to-fuchsia-500/20 border-purple-400/30"
+            : "bg-white border-purple-300 shadow-xl"
           }
-        `}
+  `}
         animate={{
-          scale: [1, 1.08, 1],
+          scale: [1, 1.05, 1],
+          boxShadow: activeSkill
+            ? [
+              "0 0 10px rgba(168,85,247,0.2)",
+              "0 0 30px rgba(168,85,247,0.5)",
+              "0 0 10px rgba(168,85,247,0.2)",
+            ]
+            : undefined,
         }}
         transition={{
-          repeat: Infinity,
           duration: 2,
+          repeat: Infinity,
         }}
       >
-        <motion.span
-          key={activeSkill || "TECH STACK"}
+        <motion.div
+          key={activeSkill?.name || "TECH STACK"}
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.25 }}
-          className={`
-            text-[9px] sm:text-lg
-            font-semibold
-            px-1
-            ${
-              isDarkMode
-                ? "text-purple-300"
-                : "text-purple-700"
-            }
-          `}
+          className="flex flex-col items-center justify-center leading-tight"
         >
-          {activeSkill || "TECH STACK"}
-        </motion.span>
+          {!activeSkill ? (
+            <>
+              <p
+                className={`font-bold text-[10px] sm:text-lg leading-tight ${isDarkMode ? "text-purple-300" : "text-purple-700"
+                  }`}
+              >
+                TECH STACK
+              </p>
+            </>
+          ) : (
+            <>
+              <p
+                className={`font-bold text-[9px] sm:text-base text-center leading-tight break-words max-w-[80px] sm:max-w-none ${isDarkMode ? "text-white" : "text-gray-800"
+                  }`}
+              >
+                {activeSkill.name}
+              </p>
+
+              <p className="text-[7px] sm:text-xs text-purple-400 font-medium">
+                {activeSkill.category}
+              </p>
+
+              <span
+                className={`
+            mt-1 px-2 py-0.5 rounded-full
+            text-[6px] sm:text-[10px]
+            font-semibold
+            ${activeSkill.level === "Advanced"
+                    ? "bg-red-500/20 text-red-400"
+                    : "bg-green-500/20 text-green-400"
+                  }
+          `}
+              >
+                {activeSkill.level}
+              </span>
+            </>
+          )}
+        </motion.div>
       </motion.div>
 
       {/* Skill Layers */}
