@@ -17,7 +17,7 @@ const ParticleVoid = dynamic(() => import("./ParticleVoid"), {
 });
 
 
-// ✅ Counter Component
+// Counter Component
 const Count = ({ end, duration = 1000 }) => {
   const [count, setCount] = useState(0);
   const ref = useRef(null);
@@ -87,27 +87,40 @@ const About = () => {
       id="about"
       className="relative w-full px-6 sm:px-[12%] py-10 scroll-mt-20"
       initial={{ opacity: 0 }}
+      viewport={{ once: false, amount: 0.2 }}
       whileInView={{ opacity: 1 }}
     >
 
-      {/* ✅ Title */}
-      <motion.h4 className="text-center mb-2 text-lg font-Ovo">
+      {/* Title */}
+      <motion.h4
+        className='text-center mb-2 text-lg font-Ovo'
+        initial={{ y: -20, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ delay: 0.3, duration: 0.5 }}
+      >
         Introduction
       </motion.h4>
 
-      <motion.h2 className="text-center text-3xl sm:text-5xl font-Ovo">
+      <motion.h2
+        className='text-center text-3xl sm:text-5xl font-Ovo'
+        initial={{ y: -20, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ delay: 0.5, duration: 0.5 }}
+      >
         About Me
       </motion.h2>
 
 
-      {/* ✅ MAIN LAYOUT */}
+      {/* MAIN LAYOUT */}
       <motion.div
         className="flex flex-col lg:flex-row gap-12 items-start my-20"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
+        transition={{ delay: 0.9, duration: 0.6 }}
+        viewport={{ once: false, amount: 0.2 }}
       >
 
-        {/* ✅ LEFT → IMAGE */}
+        {/* LEFT → IMAGE */}
         <div className="w-full lg:w-[40%] flex justify-center">
           <div className="relative group max-w-xs sm:max-w-sm">
 
@@ -123,7 +136,7 @@ const About = () => {
         </div>
 
 
-        {/* ✅ RIGHT → TEXT + QUICK OVERVIEW */}
+        {/* RIGHT → TEXT + QUICK OVERVIEW */}
         <div className="flex-1">
 
           {/* ✅ About Text */}
@@ -138,7 +151,7 @@ const About = () => {
           </p>
 
 
-          {/* ✅ Quick Overview */}
+          {/* Quick Overview */}
 
 
           <div className="flex flex-wrap justify-center gap-6 mt-8 min-h-[52px]">
@@ -163,6 +176,8 @@ const About = () => {
                 scale: 1.08,
                 y: -5,
               }}
+
+              viewport={{ once: false, amount: 0.2 }}
             >
               <Code className="w-4 h-4 text-emerald-500" />
               <span>
@@ -194,6 +209,8 @@ const About = () => {
                 scale: 1.08,
                 y: -5,
               }}
+
+              viewport={{ once: false, amount: 0.2 }}
             >
               <FolderKanban className="w-4 h-4 text-purple-500" />
               <span>
@@ -225,6 +242,8 @@ const About = () => {
                 scale: 1.08,
                 y: -5,
               }}
+
+              viewport={{ once: false, amount: 0.2 }}
             >
               <Award className="w-4 h-4 text-sky-500" />
               <span>
@@ -252,11 +271,13 @@ const About = () => {
                 repeat: Infinity,
                 repeatType: "reverse",
               }}
+
+              viewport={{ once: false, amount: 0.2 }}
             >
-              <Briefcase className="w-4 h-4 text-pink-500 flex-shrink-0" />
+              <Briefcase className="w-4 h-4 sm:w-2 text-pink-500 flex-shrink-0" />
 
               <span>
-                <span className="font-semibold text-lg">
+                <span className="font-semibold text-sm">
                   <Count end={experienceMonths} />+
                 </span>{" "}
                 Months • Executive Trainee @ TVS Motor Company
@@ -270,16 +291,42 @@ const About = () => {
 
       </motion.div >
 
-      {/* ✅ Skills Section */}
+      {/* Skills Section */}
       < div className="text-center mt-16" >
-        <h3 className="text-2xl font-Ovo mb-10">
+        <motion.h3
+          className="text-2xl font-Ovo mb-2"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false, amount: 0.2 }}
+          transition={{
+            duration: 0.8,
+            ease: "easeOut",
+          }}
+        >
           Skills & Tools
-        </h3>
+        </motion.h3>
 
-        {/* ✅ ORBIT WRAPPER FIX */}
-        <div className="relative flex justify-center items-center h-[450px] sm:h-[850px] overflow-hidden">
-
-          <div className="absolute inset-0">
+        {/* ORBIT WRAPPER FIX */}
+        <motion.div
+          className="relative flex justify-center items-center h-[450px] sm:h-[850px] overflow-hidden"
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{
+            duration: 1,
+            ease: "easeOut",
+          }}
+        >
+          <motion.div
+            className="absolute inset-0"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: false, amount: 0.2 }}
+            transition={{
+              duration: 1.5,
+              delay: 0.5,
+            }}
+          >
             <ParticleVoid
               style={{
                 width: "100%",
@@ -295,14 +342,29 @@ const About = () => {
               direction="inside"
               speed={2}
             />
-          </div>
+          </motion.div>
 
-          {/* Orbit Skills */}
-          <div className="relative z-10">
+          <motion.div
+            className="relative z-10"
+            initial={{
+              opacity: 0,
+              scale: 0.7,
+              rotate: -10,
+            }}
+            whileInView={{
+              opacity: 1,
+              scale: 1,
+              rotate: 0,
+            }}
+            viewport={{ once: false, amount: 0.2 }}
+            transition={{
+              duration: 1.2,
+              ease: "easeOut",
+            }}
+          >
             <OrbitSkills />
-          </div>
-
-        </div>
+          </motion.div>
+        </motion.div>
       </div >
 
     </motion.div >
