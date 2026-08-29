@@ -171,37 +171,204 @@ export const assets = {
 // -----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 export const skills = [
-    { iconLight: assets.html, iconDark: assets.html, name: "HTML" },
-    { iconLight: assets.css, iconDark: assets.css, name: "CSS" },
-    { iconLight: assets.js, iconDark: assets.js, name: "JavaScript" },
-    { iconLight: assets.reactjs, iconDark: assets.reactjs, name: "React" },
-    { iconLight: assets.nextjs, iconDark: assets.nextjs, name: "Next.js" },
-    { iconLight: assets.tailwindcss, iconDark: assets.tailwindcss, name: "Tailwind CSS" },
-    { iconLight: assets.motion, iconDark: assets.motion, name: "Framer Motion" },
-    { iconLight: assets.vite, iconDark: assets.vite, name: "Vite" },
-    
-    { iconLight: assets.nodejs, iconDark: assets.nodejs, name: "Node.js" },
-    { iconLight: assets.restapi, iconDark: assets.restapi, name: "Rest API" },
-    { iconLight: assets.python, iconDark: assets.python, name: "Python" },
+  // Frontend
+  {
+    iconLight: assets.html,
+    iconDark: assets.html,
+    name: "HTML5",
+    category: "Frontend",
+    level: "Advanced",
+  },
+  {
+    iconLight: assets.css,
+    iconDark: assets.css,
+    name: "CSS3",
+    category: "Frontend",
+    level: "Advanced",
+  },
+  {
+    iconLight: assets.js,
+    iconDark: assets.js,
+    name: "JavaScript",
+    category: "Frontend",
+    level: "Advanced",
+  },
+  {
+    iconLight: assets.reactjs,
+    iconDark: assets.reactjs,
+    name: "React.js",
+    category: "Frontend",
+    level: "Intermediate",
+  },
+  {
+    iconLight: assets.nextjs,
+    iconDark: assets.nextjs,
+    name: "Next.js",
+    category: "Frontend",
+    level: "Intermediate",
+  },
+  {
+    iconLight: assets.tailwindcss,
+    iconDark: assets.tailwindcss,
+    name: "Tailwind CSS",
+    category: "Frontend",
+    level: "Intermediate",
+  },
+  {
+    iconLight: assets.motion,
+    iconDark: assets.motion,
+    name: "Framer Motion",
+    category: "Frontend",
+    level: "Intermediate",
+  },
+  {
+    iconLight: assets.vite,
+    iconDark: assets.vite,
+    name: "Vite",
+    category: "Frontend",
+    level: "Intermediate",
+  },
 
-    { iconLight: assets.excel, iconDark: assets.excel, name: "Excel" },
-    { iconLight: assets.powerbi, iconDark: assets.powerbi, name: "Power BI" },
-    { iconLight: assets.sql, iconDark: assets.sql, name: "SQL" },
+  // Backend
+  {
+    iconLight: assets.nodejs,
+    iconDark: assets.nodejs,
+    name: "Node.js",
+    category: "Backend",
+    level: "Intermediate",
+    project: "Backend"
+  },
+  {
+    iconLight: assets.restapi,
+    iconDark: assets.restapi,
+    name: "REST API",
+    category: "Backend",
+    level: "Intermediate",
+  },
+  {
+    iconLight: assets.mongodb,
+    iconDark: assets.mongodb,
+    name: "MongoDB",
+    category: "Database",
+    level: "Intermediate",
+  },
+  {
+    iconLight: assets.firebase,
+    iconDark: assets.firebase,
+    name: "Firebase",
+    category: "Database",
+    level: "Intermediate",
+  },
 
-    { iconLight: assets.xd, iconDark: assets.xd, name: "Adobe XD" },
-    { iconLight: assets.figma, iconDark: assets.figma, name: "Figma" },
-    { iconLight: assets.canva, iconDark: assets.canva, name: "Canva" },
+  // Programming
+  {
+    iconLight: assets.python,
+    iconDark: assets.python,
+    name: "Python",
+    category: "Programming",
+    level: "Intermediate",
+  },
+  {
+    iconLight: assets.sql,
+    iconDark: assets.sql,
+    name: "SQL",
+    category: "Programming",
+    level: "Intermediate",
+  },
 
-    { iconLight: assets.github, iconDark: assets.github, name: "GitHub" },
-    { iconLight: assets.sap, iconDark: assets.sap, name: "SAP" },
-    { iconLight: assets.netlify, iconDark: assets.netlify, name: "Netlify" },
-    { iconLight: assets.render, iconDark: assets.render, name: "Render" },
-    { iconLight: assets.postman, iconDark: assets.postman, name: "Postman" },
-    { iconLight: assets.mongodb, iconDark: assets.mongodb, name: "MongoDB" },
-    { iconLight: assets.firebase, iconDark: assets.firebase, name: "Firebase" },
-    { iconLight: assets.colab, iconDark: assets.colab, name: "Google Colab" },
-    { iconLight: assets.jupyter, iconDark: assets.jupyter, name: "Jupyter Notbook" },
+  // Analytics
+  {
+    iconLight: assets.excel,
+    iconDark: assets.excel,
+    name: "Excel",
+    category: "Analytics",
+    level: "Advanced",
+  },
+  {
+    iconLight: assets.powerbi,
+    iconDark: assets.powerbi,
+    name: "Power BI",
+    category: "Analytics",
+    level: "Intermediate",
+  },
 
+  // Design
+  {
+    iconLight: assets.xd,
+    iconDark: assets.xd,
+    name: "Adobe XD",
+    category: "Design",
+    level: "Intermediate",
+  },
+  {
+    iconLight: assets.figma,
+    iconDark: assets.figma,
+    name: "Figma",
+    category: "Design",
+    level: "Intermediate",
+  },
+  {
+    iconLight: assets.canva,
+    iconDark: assets.canva,
+    name: "Canva",
+    category: "Design",
+    level: "Intermediate",
+  },
+
+  // Tools
+  {
+    iconLight: assets.github,
+    iconDark: assets.github,
+    name: "GitHub",
+    category: "Tools",
+    level: "Intermediate",
+  },
+  {
+    iconLight: assets.postman,
+    iconDark: assets.postman,
+    name: "Postman",
+    category: "Tools",
+    level: "Intermediate",
+  },
+  {
+    iconLight: assets.netlify,
+    iconDark: assets.netlify,
+    name: "Netlify",
+    category: "Deployment",
+    level: "Intermediate",
+  },
+  {
+    iconLight: assets.render,
+    iconDark: assets.render,
+    name: "Render",
+    category: "Deployment",
+    level: "Intermediate",
+  },
+
+  // Enterprise
+  {
+    iconLight: assets.sap,
+    iconDark: assets.sap,
+    name: "SAP QM",
+    category: "Enterprise Systems",
+    level: "Intermediate",
+  },
+
+  // Learning
+  {
+    iconLight: assets.colab,
+    iconDark: assets.colab,
+    name: "Google Colab",
+    category: "Data Science",
+    level: "Intermediate",
+  },
+  {
+    iconLight: assets.jupyter,
+    iconDark: assets.jupyter,
+    name: "Jupyter Notebook",
+    category: "Data Science",
+    level: "Intermediate",
+  }
 ];
 
 
