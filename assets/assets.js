@@ -256,7 +256,7 @@ export const projectData = [
     {
         title: 'FinSight',
         domain: 'Power BI & ReactJS',
-        tech: ["ReactJS", "NodeJS", "ExpressJS", "JWT", "Power BI"],
+        tech: ["ReactJS", "Tailwind CSS", "NodeJS", "ExpressJS", "Power BI"],
         date: 'May - 2026',
         description: 'Financial Intelligence Dashboard for salary tracking, investments, and portfolio analytics with interactive reports.',
         bgImage: '/dashboard_project.avif',
@@ -276,7 +276,7 @@ export const projectData = [
     {
         title: 'Parkinson Disease Prediction using Machine Learning',
         domain: 'Machine Learning & MERN Stack',
-        tech: ["Python", "Flask", "ReactJS", "NodeJS", "Scikit-learn"],
+        tech: ["ReactJS","Tailwind CSS", "NodeJS", "Python", "Flask", "Scikit-learn"],
         date: 'Mar - 2025',
         description: 'ML-powered web application for Parkinson’s disease prediction with real-time analysis.',
         bgImage: '/aip.avif',
@@ -287,7 +287,7 @@ export const projectData = [
     {
         title: 'Chat App',
         domain: 'MERN Stack',
-        tech: ["MongoDB", "ExpressJS", "ReactJS", "NodeJS", "Socket.IO"],
+        tech: ["ReactJS", "Tailwind CSS", "NodeJS", "ExpressJS", "MongoDB", "Socket.IO"],
         date: 'Feb - 2025',
         description: 'Real-time chat application with messaging, image sharing, and customizable themes.',
         bgImage: '/chatapp-project.png',
@@ -298,7 +298,7 @@ export const projectData = [
     {
         title: 'Crypto Tracker',
         domain: 'Dynamic Web App',
-        tech: ["ReactJS", "JavaScript", "CoinGecko API", "CSS"],
+        tech: ["ReactJS", "CSS", "JavaScript", "CoinGecko API"],
         date: 'Jan - 2025',
         description: 'Cryptocurrency tracker displaying live prices, market trends, and coin statistics.',
         bgImage: '/cryptotracker_project.png',
@@ -309,7 +309,7 @@ export const projectData = [
     {
         title: 'YouTube Clone',
         domain: 'Dynamic Web App',
-        tech: ["ReactJS", "JavaScript", "YouTube Data API"],
+        tech: ["ReactJS", "CSS", "JavaScript", "YouTube Data API"],
         date: 'Jan - 2025',
         description: 'Video streaming platform with search, recommendations, and embedded playback.',
         bgImage: '/youtube_project.png',
@@ -320,7 +320,7 @@ export const projectData = [
     {
         title: 'Netflix Clone',
         domain: 'Dynamic Web App',
-        tech: ["ReactJS", "Firebase", "TMDB API"],
+        tech: ["ReactJS", "CSS", "JavaScript", "Firebase", "TMDB API"],
         date: 'Jan - 2025',
         description: 'Movie streaming application featuring authentication and dynamic content browsing.',
         bgImage: '/netflix_project.png',
@@ -331,7 +331,7 @@ export const projectData = [
     {
         title: 'Study on Data Breach Detection using NLP and ML Methods ',
         domain: 'Machine Learning & NLP',
-        tech: ["Pandas", "Scikit-learn", "NLP", "Machine Learning"],
+        tech: ["Python", "Machine Learning", "NLP", "Pandas", "Scikit-learn" ],
         date: 'Nov - 2024',
         description: 'Analyzed breach datasets and achieved 90.48% prediction accuracy using NLP techniques.',
         bgImage: '/nlp.avif',
@@ -343,7 +343,7 @@ export const projectData = [
     {
         title: 'Mens Look Website',
         domain: 'Static Website',
-        tech: ["HTML", "CSS", "JavaScript"],
+        tech: ["HTML", "CSS", "JavaScript", "Framer Motion"],
         date: 'Jul - 2024',
         description: 'Salon website showcasing services, pricing, and customer-focused design.',
         bgImage: '/menslook_project.png',
@@ -365,7 +365,7 @@ export const projectData = [
     {
         title: 'Feature Selection and Classification Model for Cancer',
         domain: 'Machine Learning',
-        tech: ["Python", "Scikit-learn", "Pandas", "NumPy"],
+        tech: ["Python", "Pandas", "NumPy", "Scikit-learn"],
         date: 'Mar - 2023',
         description: 'Cancer prediction model using feature selection and classification techniques.',
         bgImage: '/aip.avif',
