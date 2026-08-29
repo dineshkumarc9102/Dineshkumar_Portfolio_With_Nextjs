@@ -10,33 +10,33 @@ const Header = ({ isDarkMode }) => {
   return (
     <div className='relative w-full h-screen overflow-hidden'>
 
-      {/* ✅ Particle Background */}
-      {/* ✅ Glitter Warp Background */}
-{isDarkMode && (
-  <div className="absolute inset-0 z-0">
-    <GlitterWrap
-      particleCount={500}
-      color1="#ffffff"
-      color2="#ffffff"
-      color3="#ffffff"
-      speed={3}
-      density={100}
-      starSize={20}
-      focalDepth={10}
-      turbulence={0}
-      brightness={100}
-      glitterIntensity={3}
-      trailAmount={50}
-      reverse={false}
-    />
-  </div>
-)}
+      {/*Particle Background */}
+      {/*Glitter Warp Background */}
+      {isDarkMode && (
+        <div className="absolute inset-0 z-0">
+          <GlitterWrap
+            particleCount={500}
+            color1="#ffffff"
+            color2="#ffffff"
+            color3="#ffffff"
+            speed={3}
+            density={100}
+            starSize={20}
+            focalDepth={10}
+            turbulence={0}
+            brightness={100}
+            glitterIntensity={3}
+            trailAmount={50}
+            reverse={false}
+          />
+        </div>
+      )}
 
 
-      {/* ✅ Header Content */}
+      {/* Header Content */}
       <div className='relative z-10 w-11/12 max-w-3xl text-center mx-auto h-full flex flex-col items-center justify-center gap-4'>
 
-        {/* ✅ Profile Image */}
+        {/* Profile Image */}
         <motion.div
           initial={{ scale: 0 }}
           whileInView={{ scale: 1 }}
@@ -50,7 +50,7 @@ const Header = ({ isDarkMode }) => {
         </motion.div>
 
 
-        {/* ✅ Intro */}
+        {/* Intro */}
         <motion.h3
           initial={{ y: -20, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
@@ -61,30 +61,32 @@ const Header = ({ isDarkMode }) => {
         </motion.h3>
 
 
-        {/* ✅ Name */}
-        <motion.h2
+        {/* Name */}
+        <motion.h1
           initial={{ y: -25, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.5 }}
           className='text-2xl sm:text-3xl md:text-5xl font-Ovo'
         >
-          <ShinyText text="Dinesh Kumar" speed={4} isDarkMode={isDarkMode} />
-        </motion.h2>
+          <ShinyText text="DINESH KUMAR" speed={5} isDarkMode={isDarkMode} />
+        </motion.h1>
 
 
-        {/* ✅ Role */}
-        <motion.h1
+        {/* Role */}
+        
+        <motion.p
           initial={{ y: -30, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.7 }}
           className='text-xl sm:text-3xl lg:text-5xl font-Ovo'
         >
           <ShinyText
-            text="Product Engineer"
-            className="text-xl sm:text-3xl lg:text-5xl"
+            text="Data Analyst | FrontEnd Developer | Digital Transformation | SAP Business Processes"
+            className="text-sm sm:text-xl lg:text-xl"
+            speed={5} isDarkMode={isDarkMode} 
           />
-        </motion.h1>
-
+        </motion.p>
+{/* 
         <motion.h1
           initial={{ y: -30, opacity: 0.6 }}
           whileInView={{ y: 0, opacity: 1 }}
@@ -95,10 +97,10 @@ const Header = ({ isDarkMode }) => {
             text="Building Data-Driven Web Applications"
             className="text-xs sm:text-base lg:text-lg text-gray-500 dark:text-white/60"
           />
-        </motion.h1>
+        </motion.h1> */}
 
 
-        {/* ✅ Resume Button */}
+        {/* Resume Button */}
         <motion.a
           initial={{ y: 30, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
