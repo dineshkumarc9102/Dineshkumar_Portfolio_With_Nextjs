@@ -3,7 +3,7 @@ const ShinyText = ({ text, disabled = false, speed = 5, className = '', isDarkMo
   const animationDuration = `${speed}s`;
 
   return (
-    <div
+    <span
       className={`text-[#000000] dark:text-[#ffffffa4]
       bg-clip-text inline-block font-Ovo
       ${!disabled && isDarkMode ? 'animate-shine' : ''} ${className}`} style={{
@@ -15,7 +15,7 @@ const ShinyText = ({ text, disabled = false, speed = 5, className = '', isDarkMo
       }}
     >
       {text}
-    </div>
+    </span>
   );
 };
 
