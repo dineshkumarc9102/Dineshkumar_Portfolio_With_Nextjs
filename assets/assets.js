@@ -254,11 +254,11 @@ export const educationData = [
 
 export const projectData = [
     {
-        title: 'Financial Intelligence Dashboard',
+        title: 'FinSight',
         domain: 'Power BI & ReactJS',
         tech: ["ReactJS", "NodeJS", "ExpressJS", "JWT", "Power BI"],
         date: 'May - 2026',
-        description: 'Financial dashboard for salary tracking, investments, and portfolio analytics with interactive reports.',
+        description: 'Financial Intelligence Dashboard for salary tracking, investments, and portfolio analytics with interactive reports.',
         bgImage: '/dashboard_project.avif',
         imagePosition: "center",
         gitlink: 'https://github.com/dineshkumarc9102/Dineshkumar_Dashboard_Website',
