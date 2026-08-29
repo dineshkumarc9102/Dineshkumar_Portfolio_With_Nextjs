@@ -21,16 +21,27 @@ const Experience = () => {
             className='w-full px-[6%] sm:px-[8%] md:px-[12%] py-16 scroll-mt-20'
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
+            transition={{ duration: 1 }}
         >
 
             {/* Heading */}
-            <h4 className='text-center mb-2 text-lg font-Ovo'>
+            <motion.h4
+                    className='text-center mb-2 text-lg font-Ovo'
+                    initial={{ y: -20, opacity: 0 }}
+                    whileInView={{ y: 0, opacity: 1 }}
+                    transition={{ delay: 0.3, duration: 0.5 }}
+                  >
                 Career Path
-            </h4>
+            </motion.h4>
 
-            <h2 className='text-center text-3xl sm:text-4xl md:text-5xl font-Ovo'>
+            <motion.h2
+                    className='text-center text-3xl sm:text-5xl font-Ovo'
+                    initial={{ y: -20, opacity: 0 }}
+                    whileInView={{ y: 0, opacity: 1 }}
+                    transition={{ delay: 0.5, duration: 0.5 }}
+                  >
                 My Experience
-            </h2>
+            </motion.h2>
 
             <p className='text-center text-gray-500 dark:text-white/60 mt-2'>
                 My professional journey so far
