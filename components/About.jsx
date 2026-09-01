@@ -277,7 +277,7 @@ const About = () => {
               <Briefcase className="w-4 h-4 sm:w-2 text-pink-500 flex-shrink-0" />
 
               <span>
-                <span className="font-semibold text-sm">
+                <span className="font-semibold text-lg">
                   <Count end={experienceMonths} />+
                 </span>{" "}
                 Months • Executive Trainee @ TVS Motor Company
