@@ -462,39 +462,39 @@ export const projectData = [
         gitlink: 'https://github.com/dineshkumarc9102/Dineshkumar_Chat_App_Using_MERN',
         demolink: 'https://dineshkumar-chat-app-using-mern.onrender.com/'
     },
-    {
-        title: 'Crypto Tracker',
-        domain: 'Dynamic Web App',
-        tech: ["ReactJS", "CSS", "JavaScript", "CoinGecko API"],
-        date: 'Jan - 2025',
-        description: 'Cryptocurrency tracker displaying live prices, market trends, and coin statistics.',
-        bgImage: '/cryptotracker_project.png',
-        imagePosition: "center",
-        gitlink: 'https://github.com/dineshkumarc9102/Dineshkumar_Cryptoplace',
-        demolink: 'https://dineshkumarc-crypto-tracker.netlify.app/'
-    },
-    {
-        title: 'YouTube Clone',
-        domain: 'Dynamic Web App',
-        tech: ["ReactJS", "CSS", "JavaScript", "YouTube Data API"],
-        date: 'Jan - 2025',
-        description: 'Video streaming platform with search, recommendations, and embedded playback.',
-        bgImage: '/youtube_project.png',
-        imagePosition: "center",
-        gitlink: 'https://github.com/dineshkumarc9102/Dineshkumar_YouTube_Clone',
-        demolink: 'https://dineshkumarc-youtube-clone.netlify.app/'
-    },
-    {
-        title: 'Netflix Clone',
-        domain: 'Dynamic Web App',
-        tech: ["ReactJS", "CSS", "JavaScript", "Firebase", "TMDB API"],
-        date: 'Jan - 2025',
-        description: 'Movie streaming application featuring authentication and dynamic content browsing.',
-        bgImage: '/netflix_project.png',
-        imagePosition: "center",
-        gitlink: 'https://github.com/dineshkumarc9102/Dineshkumar_Netflix_Clone',
-        demolink: 'https://dineshkumarc-cloneflix.netlify.app/'
-    },
+    // {
+    //     title: 'Crypto Tracker',
+    //     domain: 'Dynamic Web App',
+    //     tech: ["ReactJS", "CSS", "JavaScript", "CoinGecko API"],
+    //     date: 'Jan - 2025',
+    //     description: 'Cryptocurrency tracker displaying live prices, market trends, and coin statistics.',
+    //     bgImage: '/cryptotracker_project.png',
+    //     imagePosition: "center",
+    //     gitlink: 'https://github.com/dineshkumarc9102/Dineshkumar_Cryptoplace',
+    //     demolink: 'https://dineshkumarc-crypto-tracker.netlify.app/'
+    // },
+    // {
+    //     title: 'YouTube Clone',
+    //     domain: 'Dynamic Web App',
+    //     tech: ["ReactJS", "CSS", "JavaScript", "YouTube Data API"],
+    //     date: 'Jan - 2025',
+    //     description: 'Video streaming platform with search, recommendations, and embedded playback.',
+    //     bgImage: '/youtube_project.png',
+    //     imagePosition: "center",
+    //     gitlink: 'https://github.com/dineshkumarc9102/Dineshkumar_YouTube_Clone',
+    //     demolink: 'https://dineshkumarc-youtube-clone.netlify.app/'
+    // },
+    // {
+    //     title: 'Netflix Clone',
+    //     domain: 'Dynamic Web App',
+    //     tech: ["ReactJS", "CSS", "JavaScript", "Firebase", "TMDB API"],
+    //     date: 'Jan - 2025',
+    //     description: 'Movie streaming application featuring authentication and dynamic content browsing.',
+    //     bgImage: '/netflix_project.png',
+    //     imagePosition: "center",
+    //     gitlink: 'https://github.com/dineshkumarc9102/Dineshkumar_Netflix_Clone',
+    //     demolink: 'https://dineshkumarc-cloneflix.netlify.app/'
+    // },
     {
         title: 'Study on Data Breach Detection using NLP and ML Methods ',
         domain: 'Machine Learning & NLP',
@@ -507,39 +507,39 @@ export const projectData = [
         demolink: ''
     },
 
-    {
-        title: 'Mens Look Website',
-        domain: 'Static Website',
-        tech: ["HTML", "CSS", "JavaScript", "Framer Motion"],
-        date: 'Jul - 2024',
-        description: 'Salon website showcasing services, pricing, and customer-focused design.',
-        bgImage: '/menslook_project.png',
-        imagePosition: "center",
-        gitlink: 'https://github.com/dineshkumarc9102/Dineshkumar_Mens_Look',
-        demolink: 'https://dineshkumarc-mens-look.netlify.app/'
-    },
-    {
-        title: 'My Portfolio Website',
-        domain: 'Static Website',
-        tech: ["NextJS", "Tailwind CSS", "Framer Motion"],
-        date: 'Apr - 2024',
-        description: 'Personal portfolio highlighting projects, skills, and professional achievements.',
-        bgImage: '/DK logo.svg',
-        imagePosition: "center",
-        gitlink: 'https://github.com/dineshkumarc9102/Dineshkumar_Portfolio_With_Nextjs',
-        demolink: 'https://dineshkumar-portfolio-website.netlify.app/'
-    },
-    {
-        title: 'Feature Selection and Classification Model for Cancer',
-        domain: 'Machine Learning',
-        tech: ["Python", "Pandas", "NumPy", "Scikit-learn"],
-        date: 'Mar - 2023',
-        description: 'Cancer prediction model using feature selection and classification techniques.',
-        bgImage: '/aip.avif',
-        imagePosition: "center",
-        gitlink: 'https://github.com/dineshkumarc9102/Dineshkumar_Feature_Selection_And_Classification_Model_For_Cancer',
-        demolink: ''
-    },
+    // {
+    //     title: 'Mens Look Website',
+    //     domain: 'Static Website',
+    //     tech: ["HTML", "CSS", "JavaScript", "Framer Motion"],
+    //     date: 'Jul - 2024',
+    //     description: 'Salon website showcasing services, pricing, and customer-focused design.',
+    //     bgImage: '/menslook_project.png',
+    //     imagePosition: "center",
+    //     gitlink: 'https://github.com/dineshkumarc9102/Dineshkumar_Mens_Look',
+    //     demolink: 'https://dineshkumarc-mens-look.netlify.app/'
+    // },
+    // {
+    //     title: 'My Portfolio Website',
+    //     domain: 'Static Website',
+    //     tech: ["NextJS", "Tailwind CSS", "Framer Motion"],
+    //     date: 'Apr - 2024',
+    //     description: 'Personal portfolio highlighting projects, skills, and professional achievements.',
+    //     bgImage: '/DK logo.svg',
+    //     imagePosition: "center",
+    //     gitlink: 'https://github.com/dineshkumarc9102/Dineshkumar_Portfolio_With_Nextjs',
+    //     demolink: 'https://dineshkumar-portfolio-website.netlify.app/'
+    // },
+    // {
+    //     title: 'Feature Selection and Classification Model for Cancer',
+    //     domain: 'Machine Learning',
+    //     tech: ["Python", "Pandas", "NumPy", "Scikit-learn"],
+    //     date: 'Mar - 2023',
+    //     description: 'Cancer prediction model using feature selection and classification techniques.',
+    //     bgImage: '/aip.avif',
+    //     imagePosition: "center",
+    //     gitlink: 'https://github.com/dineshkumarc9102/Dineshkumar_Feature_Selection_And_Classification_Model_For_Cancer',
+    //     demolink: ''
+    // },
 ]
 
 
