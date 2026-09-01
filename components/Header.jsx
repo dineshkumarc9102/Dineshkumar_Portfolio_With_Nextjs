@@ -73,7 +73,7 @@ const Header = ({ isDarkMode }) => {
 
 
         {/* Role */}
-        
+
         <motion.p
           initial={{ y: -30, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
@@ -83,10 +83,10 @@ const Header = ({ isDarkMode }) => {
           <ShinyText
             text="Data Analyst | FrontEnd Developer | Digital Transformation | SAP Business Processes"
             className="text-sm sm:text-xl lg:text-xl"
-            speed={5} isDarkMode={isDarkMode} 
+            speed={5} isDarkMode={isDarkMode}
           />
         </motion.p>
-{/* 
+        {/* 
         <motion.h1
           initial={{ y: -30, opacity: 0.6 }}
           whileInView={{ y: 0, opacity: 1 }}
@@ -100,9 +100,100 @@ const Header = ({ isDarkMode }) => {
         </motion.h1> */}
 
 
+        {/* ================= Social Links ================= */}
+        <motion.div
+          initial={{ y: 30, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.6, delay: 1.4 }}
+          className="flex justify-center items-center gap-8 sm:gap-10 flex-wrap mt-10"
+        >
+
+          {/* Gmail */}
+          <div className="relative w-14 h-16 group overflow-hidden text-center">
+            <div
+              className="absolute top-0 left-0 w-14 h-14 rounded-full
+                        bg-[#CEB3DB] flex items-center justify-center
+                        transition-all duration-300
+                        group-hover:scale-75 group-hover:origin-top"
+            >
+              <a href="mailto:dineshkumarc9102@gmail.com">
+                <Image src={assets.gmail} alt="Gmail" className="w-6" />
+              </a>
+            </div>
+
+            <span
+              className="absolute -bottom-8 left-1/2 -translate-x-1/2
+                        text-xs font-medium whitespace-nowrap
+                        text-gray-700 dark:text-white/70
+                        transition-all duration-300
+                        group-hover:bottom-0"
+            >
+              Gmail
+            </span>
+          </div>
+
+          {/* LinkedIn */}
+          <div className="relative w-14 h-16 group overflow-hidden text-center">
+            <div
+              className="absolute top-0 left-0 w-14 h-14 rounded-full
+                        bg-[#0077B5] flex items-center justify-center
+                        transition-all duration-300
+                        group-hover:scale-75 group-hover:origin-top"
+            >
+              <a
+                href="https://www.linkedin.com/in/dinesh-kumarc/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Image src={assets.linkedin} alt="LinkedIn" className="w-6" />
+              </a>
+            </div>
+
+            <span
+              className="absolute -bottom-8 left-1/2 -translate-x-1/2
+                        text-xs font-medium whitespace-nowrap
+                        text-gray-700 dark:text-white/70
+                        transition-all duration-300
+                        group-hover:bottom-0"
+            >
+              LinkedIn
+            </span>
+          </div>
+
+          {/* GitHub */}
+          <div className="relative w-14 h-16 group overflow-hidden text-center">
+            <div
+              className="absolute top-0 left-0 w-14 h-14 rounded-full
+                        bg-gray-200 dark:bg-gray-200 flex items-center justify-center
+                        transition-all duration-300
+                        group-hover:scale-75 group-hover:origin-top"
+            >
+              <a
+                href="https://github.com/dineshkumarc9102"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Image src={assets.github} alt="GitHub" className="w-6" />
+              </a>
+            </div>
+
+            <span
+              className="absolute -bottom-8 left-1/2 -translate-x-1/2
+                        text-xs font-medium whitespace-nowrap
+                        text-gray-700 dark:text-white/70
+                        transition-all duration-300
+                        group-hover:bottom-0"
+            >
+              GitHub
+            </span>
+          </div>
+        </motion.div>
+
+        
+
         {/* Resume Button */}
         <motion.a
-          initial={{ y: 30, opacity: 0 }}
+          initial={{ y: 20, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6, delay: 1.2 }}
           href="/Dinesh_Kumar_Resume.pdf"
@@ -120,10 +211,10 @@ const Header = ({ isDarkMode }) => {
           <Download className="w-4 h-4 group-hover:translate-y-1 transition" />
 
         </motion.a>
+      </div >
 
-      </div>
+    </div >
 
-    </div>
   )
 }
 
