@@ -35,16 +35,16 @@ const Achievements = () => {
         transition={{ duration: .6 }}
         className="text-center"
       >
-        <p className="text-lg font-Ovo text-gray-500">
+        <p className="text-center text-lg mb-2 font-Ovo">
           Achievements
         </p>
 
-        <h2 className="mt-2 text-4xl md:text-5xl font-Ovo">
+        <h2 className="text-center text-3xl sm:text-5xl font-Ovo">
           Certifications
         </h2>
 
-        <p className="mt-4 text-gray-500 dark:text-white/60 max-w-xl mx-auto">
-          A showcase of my certifications and achievements.
+        <p className="text-center max-w-2xl mx-auto mt-5 mb-12 text-gray-600 dark:text-white/70">
+          Industry Certifications & Credentials
         </p>
       </motion.div>
 
@@ -121,7 +121,7 @@ function CertificateCard({
       transition={{
         duration: .35,
       }}
-      className=" group relative overflow-hidden rounded-2xl h-[430px] sm:h-[500px] md:h-[580px] lg:h-[650px] border border-gray-200dark:bg-white/10 dark:border-white/10 shadow-lg dark:shadow-none transition-all duration-500 "
+      className=" group relative overflow-hidden rounded-2xl h-[430px] sm:h-[500px] md:h-[580px] lg:h-[650px] border border-gray-200 dark:bg-white/10 dark:border-white/10 shadow-lg dark:shadow-none transition-all duration-500 "
     >
       {/* Image */}
 
