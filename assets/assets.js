@@ -371,6 +371,54 @@ export const skills = [
   }
 ];
 
+export const journeyData = [
+  {
+    type: "Experience",
+    icon: assets.TVSmotor,
+    title: "Executive Trainee",
+    organization: "TVS Motor Company",
+    duration: "2025 - Present",
+    description: "Driving digital transformation initiatives by working on SAP operations, data analysis using Excel, and UI/UX design with Adobe XD to convert business processes into efficient digital solutions.",
+    skills: [
+      { icon: assets.excel, name: "Excel" },
+      { icon: assets.sap, name: "SAP" },
+      { icon: assets.xd, name: "Adobe XD" },
+    ]
+  },
+  {
+    type: "Education",
+    icon: assets.vit,
+    title: 'Master of Computer Applications',
+    organization: 'Vellore Institute of Technology - Vellore',
+    duration: '2023 - 2025',
+    score: '8.43/10'
+  },
+  {
+    type: "Education",
+    icon: assets.vit,
+    title: 'Bachelor of Computer Applications',
+    organization: 'Vellore Institute of Technology - Vellore',
+    duration: '2020 - 2023',
+    score: '8.49/10'
+  },
+  {
+    type: "Education",
+    icon: assets.rbm,
+    title: 'Higher Secondary',
+    organization: 'Rathinagiri Bageerathan Matriculation Higher Secondary School - Ranipet',
+    duration: '2019 - 2020',
+    score: '71%'
+  },
+  {
+    type: "Education",
+    icon: assets.rbm,
+    title: 'Secondary Education',
+    organization: 'Rathinagiri Bageerathan Matriculation Higher Secondary School - Ranipet',
+    duration: '2017 - 2018',
+    score: '84%'
+  },
+  
+]
 
 export const experienceData = [
     {
