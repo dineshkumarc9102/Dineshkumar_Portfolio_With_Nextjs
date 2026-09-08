@@ -6,6 +6,8 @@ import {
   User,
   Briefcase,
   GraduationCap,
+  Route,
+  Milestone,
   Folder,
   Award,
   Mail,
@@ -71,10 +73,11 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
             }`}
         >
           <li><a className="font-Ovo hover:border-b-2 border-darkHover dark:hover:text-purple-300 transition" href="#about">About</a></li>
-          <li><a className="font-Ovo hover:border-b-2 border-darkHover dark:hover:text-purple-300 transition" href="#experience">Experience</a></li>
-          <li><a className="font-Ovo hover:border-b-2 border-darkHover dark:hover:text-purple-300 transition" href="#education">Education</a></li>
-          <li><a className="font-Ovo hover:border-b-2 border-darkHover dark:hover:text-purple-300 transition" href="#project">Project</a></li>
-          <li><a className="font-Ovo hover:border-b-2 border-darkHover dark:hover:text-purple-300 transition" href="#achivements">Certification</a></li>
+          {/* <li><a className="font-Ovo hover:border-b-2 border-darkHover dark:hover:text-purple-300 transition" href="#experience">Experience</a></li>
+          <li><a className="font-Ovo hover:border-b-2 border-darkHover dark:hover:text-purple-300 transition" href="#education">Education</a></li> */}
+          <li><a className="font-Ovo hover:border-b-2 border-darkHover dark:hover:text-purple-300 transition" href="#journy">Journey</a></li>
+          <li><a className="font-Ovo hover:border-b-2 border-darkHover dark:hover:text-purple-300 transition" href="#project">Projects</a></li>
+          <li><a className="font-Ovo hover:border-b-2 border-darkHover dark:hover:text-purple-300 transition" href="#achivements">Certifications</a></li>
           <li><a className="font-Ovo hover:border-b-2 border-darkHover dark:hover:text-purple-300 transition" href="#contact">Contact</a></li>
         </ul>
 
@@ -128,8 +131,9 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
           {[
             { id: 'top', label: 'Home', icon: <Home className="w-5 h-5" /> },
             { id: 'about', label: 'About', icon: <User className="w-5 h-5" /> },
-            { id: 'experience', label: 'Experience', icon: <Briefcase className="w-5 h-5" /> },
-            { id: 'education', label: 'Education', icon: <GraduationCap className="w-5 h-5" /> },
+            // { id: 'experience', label: 'Experience', icon: <Briefcase className="w-5 h-5" /> },
+            // { id: 'education', label: 'Education', icon: <GraduationCap className="w-5 h-5" /> },
+            { id: 'journy', label: 'Journey', icon: <Milestone className="w-5 h-5" /> },
             { id: 'project', label: 'Project', icon: <Folder className="w-5 h-5" /> },
             { id: 'achivements', label: 'Certification', icon: <Award className="w-5 h-5" /> },
             { id: 'contact', label: 'Contact', icon: <Mail className="w-5 h-5" /> },
