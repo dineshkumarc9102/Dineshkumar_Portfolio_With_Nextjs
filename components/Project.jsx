@@ -180,18 +180,36 @@ const Project = () => {
       whileInView={{ opacity: 1 }}
     >
 
-      <h4 className="text-center text-lg mb-2 font-Ovo">Featured Work</h4>
-      <h2 className="text-center text-3xl sm:text-5xl font-Ovo">My Projects</h2>
+      <motion.h4
+        className='text-center mb-2 text-lg font-Ovo'
+        initial={{ y: -20, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ delay: 0.3, duration: 0.5 }}
+      >
+        Featured Work
+      </motion.h4>
+      <motion.h2
+        className='text-center text-3xl sm:text-5xl font-Ovo'
+        initial={{ y: -20, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ delay: 0.5, duration: 0.5 }}
+      >
+        My Projects
+      </motion.h2>
 
       <p className="text-center max-w-2xl mx-auto mt-5 mb-12 text-gray-600 dark:text-white/70">
         Explore my projects showcasing real-world applications.
       </p>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:col-span-1">
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+        className="grid grid-cols-1 md:grid-cols-2 gap-4 md:col-span-1">
         {projectData.map((item, index) => (
           <ProjectCard key={index} item={item} index={index} />
         ))}
-      </div>
+      </motion.div>
 
 
       {/* GitHub */}
