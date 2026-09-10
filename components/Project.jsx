@@ -175,26 +175,26 @@ const Project = () => {
   return (
     <motion.div
       id="project"
-      className="w-full px-[6%] sm:px-[10%] md:px-[12%] py-16"
+      className="w-full px-[6%] sm:px-[10%] md:px-[12%] py-10 scroll-mt-20"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
     >
 
-      <motion.h4
+      {/* <motion.h4
         className='text-center mb-2 text-lg font-Ovo'
         initial={{ y: -20, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.3, duration: 0.5 }}
       >
         Featured Work
-      </motion.h4>
+      </motion.h4> */}
       <motion.h2
         className='text-center text-3xl sm:text-5xl font-Ovo'
         initial={{ y: -20, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.5, duration: 0.5 }}
       >
-        My Projects
+        What I Built
       </motion.h2>
 
       <p className="text-center max-w-2xl mx-auto mt-5 mb-12 text-gray-600 dark:text-white/70">
