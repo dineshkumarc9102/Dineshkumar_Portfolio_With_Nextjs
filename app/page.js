@@ -7,6 +7,7 @@ import Journey from "@/components/Journey"
 import Header from "@/components/Header";
 import Navbar from "@/components/Navbar";
 import Project from "@/components/Project";
+import WhatDo from "@/components/WhatDo";
 import Achivements from "@/components/Achivements";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
@@ -39,6 +40,7 @@ export default function Home() {
     <Navbar isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
     <Header isDarkMode={isDarkMode} />
     <About isDarkMode={isDarkMode} />
+    <WhatDo isDarkMode={isDarkMode} />
     {/* <Experience isDarkMode={isDarkMode} />
     <Education isDarkMode={isDarkMode} /> */}
     <Journey isDarkMode={isDarkMode} />
