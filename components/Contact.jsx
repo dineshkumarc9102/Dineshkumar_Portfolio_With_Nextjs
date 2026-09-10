@@ -68,14 +68,22 @@ const Contact = () => {
 
       </div>
 
-      {/* ✅ Heading */}
-      <h4 className='text-center mb-2 text-lg font-Ovo'>
-        Connect with me
-      </h4>
-
-      <h2 className='text-center text-3xl sm:text-5xl font-Ovo'>
-        Get In Touch
-      </h2>
+      {/* <motion.h4
+                      className='text-center mb-2 text-lg font-Ovo'
+                      initial={{ y: -20, opacity: 0 }}
+                      whileInView={{ y: 0, opacity: 1 }}
+                      transition={{ delay: 0.3, duration: 0.5 }}
+                    >
+                      Featured Work
+                    </motion.h4> */}
+      <motion.h2
+        className='text-center text-3xl sm:text-5xl font-Ovo'
+        initial={{ y: -20, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ delay: 0.5, duration: 0.5 }}
+      >
+        Where to Find Me
+      </motion.h2>
 
       <p className='text-center max-w-2xl mx-auto mt-5 mb-12 text-gray-600 dark:text-white/70'>
         If you have any questions, feel free to reach out using the form below.
@@ -148,12 +156,7 @@ const Contact = () => {
         {/* ✅ Submit Button */}
         <button
           type='submit'
-          className='group mx-auto flex items-center gap-2 px-6 py-3 rounded-full
-          bg-gray-200 dark:bg-white/10
-          border border-gray-200 dark:border-white/10
-          text-gray-800 dark:text-white
-          hover:bg-gradient-to-r hover:from-indigo-500/10 hover:to-purple-500/10
-          transition duration-300'
+          className='group mx-auto flex items-center gap-2 px-6 py-3 rounded-full border border-gray-300 dark:border-white/20  bg-white/5 backdrop-blur-md  hover:bg-indigo-500/10  hover:border-indigo-400/40 transition-all duration-300 hover:scale-105 group'
         >
           Submit
           <Send className="w-4 h-4 group-hover:translate-x-1 transition" />
@@ -171,12 +174,12 @@ const Contact = () => {
             Or connect with me
           </p>
 
-          <div className="flex justify-center items-center gap-8 sm:gap-10 flex-wrap">
+          <div className="flex justify-center items-center gap-3 sm:gap-10 flex-wrap">
 
             {/* Gmail */}
             <div className="relative w-14 h-16 group overflow-hidden text-center">
               <div
-                className="absolute top-0 left-0 w-14 h-14 rounded-full
+                className="absolute top-0 left-0 w-10 h-10 sm:w-14 sm:h-14 rounded-full
                 bg-[#CEB3DB] flex items-center justify-center
                 transition-all duration-300
                 group-hover:scale-75 group-hover:origin-top"
@@ -200,7 +203,7 @@ const Contact = () => {
             {/* LinkedIn */}
             <div className="relative w-14 h-16 group overflow-hidden text-center">
               <div
-                className="absolute top-0 left-0 w-14 h-14 rounded-full
+                className="absolute top-0 left-0 w-10 h-10 sm:w-14 sm:h-14  rounded-full
                 bg-[#0077B5] flex items-center justify-center
                 transition-all duration-300
                 group-hover:scale-75 group-hover:origin-top"
@@ -228,7 +231,7 @@ const Contact = () => {
             {/* GitHub */}
             <div className="relative w-14 h-16 group overflow-hidden text-center">
               <div
-                className="absolute top-0 left-0 w-14 h-14 rounded-full
+                className="absolute top-0 left-0 w-10 h-10 sm:w-14 sm:h-14 rounded-full
                 bg-gray-200 dark:bg-gray-200 flex items-center justify-center
                 transition-all duration-300
                 group-hover:scale-75 group-hover:origin-top"
