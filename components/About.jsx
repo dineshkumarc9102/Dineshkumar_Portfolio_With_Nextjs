@@ -6,17 +6,6 @@ import { assets } from "@/assets/assets";
 import Image from "next/image";
 import { FolderKanban, Briefcase, Code, Award } from "lucide-react";
 
-import dynamic from "next/dynamic";
-
-const OrbitSkills = dynamic(() => import("./OrbitSkills"), {
-  ssr: false,
-});
-
-const ParticleVoid = dynamic(() => import("./ParticleVoid"), {
-  ssr: false,
-});
-
-
 // Counter Component
 const Count = ({ end, duration = 1000 }) => {
   const [count, setCount] = useState(0);
@@ -92,14 +81,14 @@ const About = () => {
     >
 
       {/* Title */}
-      <motion.h4
+      {/* <motion.h4
         className='text-center mb-2 text-lg font-Ovo'
         initial={{ y: -20, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.3, duration: 0.5 }}
       >
         Introduction
-      </motion.h4>
+      </motion.h4> */}
 
       <motion.h2
         className='text-center text-3xl sm:text-5xl font-Ovo'
@@ -107,7 +96,7 @@ const About = () => {
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.5, duration: 0.5 }}
       >
-        About Me
+       Who I Am
       </motion.h2>
 
 
@@ -287,85 +276,7 @@ const About = () => {
           </div>
         </div>
 
-
-
       </motion.div >
-
-      {/* Skills Section */}
-      < div className="text-center mt-16" >
-        <motion.h3
-          className="text-2xl font-Ovo mb-2"
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, amount: 0.2 }}
-          transition={{
-            duration: 0.8,
-            ease: "easeOut",
-          }}
-        >
-          Skills & Tools
-        </motion.h3>
-
-        {/* ORBIT WRAPPER FIX */}
-        <motion.div
-          className="relative flex justify-center items-center h-[450px] sm:h-[850px] overflow-hidden"
-          initial={{ opacity: 0, scale: 0.8 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{
-            duration: 1,
-            ease: "easeOut",
-          }}
-        >
-          <motion.div
-            className="absolute inset-0"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: false, amount: 0.2 }}
-            transition={{
-              duration: 1.5,
-              delay: 0.5,
-            }}
-          >
-            <ParticleVoid
-              style={{
-                width: "100%",
-                height: "100%",
-              }}
-              x={50}
-              y={50}
-              radius={40}
-              density={30}
-              gap={40}
-              particleSize={4}
-              colors={["#ffffff"]}
-              direction="inside"
-              speed={2}
-            />
-          </motion.div>
-
-          <motion.div
-            className="relative z-10"
-            initial={{
-              opacity: 0,
-              scale: 0.7,
-              rotate: -10,
-            }}
-            whileInView={{
-              opacity: 1,
-              scale: 1,
-              rotate: 0,
-            }}
-            viewport={{ once: false, amount: 0.2 }}
-            transition={{
-              duration: 1.2,
-              ease: "easeOut",
-            }}
-          >
-            <OrbitSkills />
-          </motion.div>
-        </motion.div>
-      </div >
 
     </motion.div >
   );
