@@ -9,7 +9,7 @@ import {
 import { journeyData } from "@/assets/assets"
 import { motion, useScroll, useTransform } from "motion/react"
 
-const Experience = () => {
+const Journy = () => {
 
     const timelineRef = React.useRef(null);
 
@@ -30,14 +30,14 @@ const Experience = () => {
         >
 
             {/* Heading */}
-            <motion.h4
+            {/* <motion.h4
                 className='text-center mb-2 text-lg font-Ovo'
                 initial={{ y: -20, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.3, duration: 0.5 }}
             >
                 Career Path
-            </motion.h4>
+            </motion.h4> */}
 
             <motion.h2
                 className='text-center text-3xl sm:text-5xl font-Ovo'
@@ -45,7 +45,7 @@ const Experience = () => {
                 whileInView={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.5, duration: 0.5 }}
             >
-                Journey Timeline
+                How I Grew
             </motion.h2>
 
             <p className='text-center text-gray-500 dark:text-white/60 mt-2'>
@@ -61,12 +61,12 @@ const Experience = () => {
                 {/* Vertical Line */}
                 {/* Base Line */}
                 <div
-                    className="absolute left-2 sm:left-4 md:left-1/2 -translate-x-1/2 top-0 w-[2px] h-full bg-gray-300 dark:bg-purple-900/40 md:-translate-x-1/2"
+                    className="absolute left-2 sm:left-4 md:left-1/2 -translate-x-1/2 top-0 w-[2px] h-full bg-gray-300 dark:bg-purple-900/40 md:-translate-x-1/2 z-0"
                 />
 
                 {/* Progress Line */}
                 <motion.div
-                    className=" absolute left-2 sm:left-2 md:left-1/2  md:-translate-x-1/2 rounded-full bg-black dark:bg-purple-500 shadow-[0_0_15px_rgba(107,114,128,0.6)] dark:shadow-[0_0_25px_rgba(168,85,247,0.8)] z-20"
+                    className=" absolute left-2 sm:left-2 md:left-1/2  md:-translate-x-1/2 rounded-full bg-black dark:bg-purple-500 shadow-[0_0_15px_rgba(107,114,128,0.6)] dark:shadow-[0_0_25px_rgba(168,85,247,0.8)] z-20 transition-all duration-300"
                     style={{
                         height: progressY,
                     }}
@@ -139,7 +139,7 @@ const Experience = () => {
                                 absolute top-4
                                 ${index % 2 === 0 ? "right-[55%]" : "left-[55%]"}
                                 text-sm font-medium
-                                text-gray-500 dark:text-gray-400
+                               text-black dark:text-white/60 
                                 whitespace-nowrap
                               `}
                             >
@@ -206,7 +206,7 @@ const Experience = () => {
                                     <div className="px-5 py-6 sm:px-6 sm:py-8 md:px-8 md:py-10 pb-14 flex flex-col items-start">
 
                                         {/* Company Logo */}
-                                       <div className="w-14 h-14 md:w-16 md:h-16 flex items-center justify-center rounded-xl bg-white p-2 mb-4 shadow-sm">
+                                       <div className="w-14 h-14 md:w-16 md:h-16 flex items-center justify-center rounded-xl border border-black/10 bg-white p-2 mb-4 shadow-sm">
                                             <Image
                                                 src={item.icon}
                                                 alt={item.title}
@@ -299,4 +299,4 @@ const Experience = () => {
     )
 }
 
-export default Experience
+export default Journy
