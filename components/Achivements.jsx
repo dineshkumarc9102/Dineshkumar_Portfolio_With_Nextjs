@@ -1,180 +1,244 @@
-"use client";
-
-import React, { useRef } from "react";
-import Image from "next/image";
-import { motion } from "framer-motion";
-
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination } from "swiper/modules";
-
-import {
-  Building2,
-  Calendar,
-  ArrowUpRight,
-} from "lucide-react";
-
-import { certificateData } from "@/assets/assets";
-
-import "swiper/css";
-import "swiper/css/pagination";
+import Image from 'next/image'
+import React, { useRef, useEffect, useState } from 'react'
+import { GraduationCap, ChevronLeft, ChevronRight, ExternalLink, CheckCircle } from "lucide-react"
+import { certificateData } from "@/assets/assets"
+import { motion, useScroll, useTransform } from "motion/react"
 
 const Achievements = () => {
-  const swiperRef = useRef(null);
+  const sliderRef = useRef(null);
+
+  const handleScroll = (direction) => {
+    if (sliderRef.current) {
+      const { scrollLeft, clientWidth } = sliderRef.current;
+      const scrollAmount = clientWidth * 0.75;
+
+      sliderRef.current.scrollTo({
+        left: direction === 'left' ? scrollLeft - scrollAmount : scrollLeft + scrollAmount,
+        behavior: 'smooth',
+      });
+    }
+  };
+  const handleWheel = (e) => {
+    if (sliderRef.current) {
+      e.preventDefault();
+      sliderRef.current.scrollLeft += e.deltaY;
+    }
+  };
+
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === "ArrowRight") handleScroll("right");
+      if (e.key === "ArrowLeft") handleScroll("left");
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () =>
+      window.removeEventListener("keydown", handleKeyDown);
+  }, []);
+
+  const [progress, setProgress] = useState(0);
+  useEffect(() => {
+    const slider = sliderRef.current;
+
+    const updateProgress = () => {
+      if (!slider) return;
+
+      const maxScroll =
+        slider.scrollWidth - slider.clientWidth;
+
+      const current =
+        maxScroll > 0
+          ? (slider.scrollLeft / maxScroll) * 100
+          : 0;
+
+      setProgress(current);
+    };
+
+    slider?.addEventListener("scroll", updateProgress);
+
+    updateProgress();
+
+    return () =>
+      slider?.removeEventListener("scroll", updateProgress);
+  }, []);
 
   return (
-    <section
-      id="achivements"
-      className="relative w-full py-24 px-[6%] lg:px-[10%]"
+    <motion.div
+      id='achievements'
+      className='w-full px-[6%] sm:px-[8%] md:px-[12%] py-16 scroll-mt-20'
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 1 }}
     >
-      {/* Heading */}
-
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: .6 }}
-        className="text-center"
-      >
-        <p className="text-center text-lg mb-2 font-Ovo">
-          Achievements
-        </p>
-
-        <h2 className="text-center text-3xl sm:text-5xl font-Ovo">
-          Certifications
-        </h2>
-
-        <p className="text-center max-w-2xl mx-auto mt-5 mb-12 text-gray-600 dark:text-white/70">
+      {/* Header Layout */}
+      <div className="text-center mb-12">
+        <motion.h2
+          className='text-2xl sm:text-4xl md:text-5xl font-Ovo'
+          initial={{ y: -20, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.5, duration: 0.5 }}
+        >
+          What I Learn
+        </motion.h2>
+        <p className='text-gray-500 dark:text-white/60 mt-2'>
           Industry Certifications & Credentials
         </p>
-      </motion.div>
-
-      {/* Slider */}
-
-      <div className="mt-16">
-
-        <Swiper
-          modules={[Autoplay, Pagination]}
-          onSwiper={(swiper) => (swiperRef.current = swiper)}
-          centeredSlides
-          loop
-          watchSlidesProgress
-          pagination={{
-            clickable: true,
-          }}
-          autoplay={{
-            delay: 4000,
-            disableOnInteraction: false,
-            pauseOnMouseEnter: true,
-          }}
-          breakpoints={{
-            0: {
-              slidesPerView: 1.08,
-              spaceBetween: 14,
-            },
-            480: {
-              slidesPerView: 1.18,
-              spaceBetween: 16,
-            },
-            768: {
-              slidesPerView: 1.45,
-              spaceBetween: 20,
-            },
-            1024: {
-              slidesPerView: 1.8,
-              spaceBetween: 24,
-            },
-            1280: {
-              slidesPerView: 2.15,
-              spaceBetween: 28,
-            },
-          }}
-          className="achievement-swiper"
-        >
-          {certificateData.map((item, index) => (
-            <SwiperSlide key={index}>
-              <CertificateCard {...item} index={index} />
-            </SwiperSlide>
-          ))}
-        </Swiper>
-
       </div>
-    </section>
-  );
-};
 
-export default Achievements;
+      {/* Horizontal Carousel Timeline */}
+      <div className="relative w-full">
 
+        {/* Base Timeline */}
+        <div className="absolute top-[50px] left-0 right-0 h-[2px] bg-gray-300 dark:bg-purple-900/40  z-0" />
 
-
-function CertificateCard({
-  title,
-  issuer,
-  date,
-  link,
-  bgImage,
-}) {
-  return (
-    <motion.article
-      whileHover={{
-        y: -10,
-      }}
-      transition={{
-        duration: .35,
-      }}
-      className=" group relative overflow-hidden rounded-2xl h-[430px] sm:h-[500px] md:h-[580px] lg:h-[650px] border border-gray-200 dark:bg-white/10 dark:border-white/10 shadow-lg dark:shadow-none transition-all duration-500 "
-    >
-      {/* Image */}
-
-      <div className="relative h-[220px] sm:h-[300px] lg:h-[320px] overflow-hidden">
-        <Image
-          src={bgImage}
-          alt={title}
-          fill
-          className="object-cover transition duration-500 group-hover:scale-105"
+        {/* Animated Progress Line */}
+        <div
+          className="absolute top-[50px] left-0 h-[2px] bg-black dark:bg-purple-500 shadow-[0_0_15px_rgba(107,114,128,0.6)] dark:shadow-[0_0_25px_rgba(168,85,247,0.8)] z-20 transition-all duration-300"
+          style={{
+            width: `${progress}%`,
+          }}
         />
-      </div>
-
-      {/* Overlay */}
-
-      <div
-        className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-transparent dark:from-black dark:via-black/30"
-      />
-
-      {/* Bottom Glass */}
-
-      <div
-        className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 right-3 sm:right-4 rounded-2xl bg-white/80 dark:bg-white/30 backdrop-blur-2xl border border-white/60 dark:border-white/20 text-gray-900 dark:text-white shadow-xl p-4 sm:p-6"
-      >
-        <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold leading-tight line-clamp-2">
-          {title}
-        </h3>
-
-        <div className="mt-5 space-y-2">
-
-          <div className="flex items-center gap-2 text-sm sm:text-base text-gray-700 dark:text-white/80">
-            <Building2 size={17} />
-            <span>{issuer}</span>
-          </div>
-
-          <div className="flex items-center gap-2 text-xs sm:text-sm  text-gray-500 dark:text-white/60">
-            <Calendar size={16} />
-            <span>{date}</span>
-          </div>
-
+        <div
+          className=" absolute top-[41px] w-5 h-5 rounded-full  bg-black
+                        dark:bg-purple-500
+                        shadow-[0_0_20px_rgba(107,114,128,0.8)]
+                        dark:shadow-[0_0_35px_rgba(168,85,247,1)] z-20 transition-all duration-300 "
+          style={{
+            left: `${progress}%`,
+            transform: "translateX(-50%)"
+          }}
+        >
+          <span className="absolute inset-0 rounded-full bg-gray-500 dark:bg-purple-500 animate-ping opacity-50" />
         </div>
 
-        {link && (
-          <a
-            href={link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className=" mt-5 inline-flex items-center justify-center w-full sm:w-auto gap-2 rounded-full bg-gray-900 text-white dark:bg-white dark:text-black px-5 sm:px-5 py-3 sm:py-3 text-sm sm:text-base font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg"
+        {/* Horizontal Container */}
+        <div
+          ref={sliderRef}
+          onWheel={handleWheel}
+          className="flex gap-6 overflow-x-auto md:overflow-x-hidden scroll-smooth pt-28 pb-6 snap-x snap-mandatory scrollbar-none"
+          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+        >
+          {certificateData.map((item, index) => {
+            return (
+              <motion.div
+                key={index}
+                className="relative flex-shrink-0 w-[85vw] max-w-[340px] sm:w-[360px] snap-start"
+                initial={{ opacity: 0, x: 40 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: Math.min(index * 0.05, 0.5) }}
+              >
+
+                {/* Year */}
+                <div className="absolute -top-[100px] left-1/2 -translate-x-1/2 text-sm font-semibold text-black dark:text-white/60 whitespace-nowrap">
+                  {item.date.split(" ").pop()}
+                </div>
+
+                {/* Vertical Connector */}
+                <div className="absolute -top-[48px] left-1/2 -translate-x-1/2 h-8 w-[2px] bg-gray-400 dark:bg-gray-600" />
+
+                {/* Timeline Node */}
+                <div className="absolute -top-[70px] left-1/2 -translate-x-1/2 w-5 h-5 rounded-full flex items-center justify-center bg-white dark:bg-gray-800 border-2 border-blue-500 dark:border-blue-400 shadow-md z-20">
+                  <GraduationCap size={14} className="text-blue-500 dark:text-blue-400" />
+                </div>
+
+                {/* Certificate Structure Card Template */}
+                <motion.div
+                  whileHover={{ scale: 1.02, y: -4 }}
+                  className="relative group w-full rounded-2xl backdrop-blur-xl bg-white/50 dark:bg-white/5
+                                        border border-gray-200 dark:border-purple-500/20
+                                        shadow-lg
+                                        hover:shadow-2xl
+                                        hover:border-purple-400/50
+                                        dark:hover:border-purple-500/40  hover:bg-lightHover
+                                        dark:hover:bg-darkHover transition-all duration-500 overflow-hidden"
+                >
+                  {/* Outer Safety Margin Lining Accent */}
+                  <div className="absolute inset-2 border border-gray-300/40 dark:border-white/10 rounded-xl pointer-events-none" />
+
+                  {/* Main Inner Wrapper */}
+                  <div className="relative p-6 sm:p-7 flex flex-col items-start min-h-[290px] pb-20">
+
+                    {/* Top Row Header Block */}
+                    <div className="w-full flex items-center justify-between mb-5 border-b border-gray-200/60 dark:border-white/10 pb-3">
+
+                      {/* Image  */}
+                      <div className="w-16 h-16 flex items-center justify-center rounded-xl bg-white p-2 shadow-sm border border-gray-100 dark:border-white/5 transition-transform group-hover:scale-105 duration-300">
+                        <Image
+                          src={item.bgImage}
+                          alt={item.title}
+                          width={44}
+                          height={44}
+                          className="object-contain"
+                        />
+                      </div>
+
+                      {/* Verified Badge Layout with Icon */}
+                      <div className="flex items-center gap-1.5 bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200/60 dark:border-emerald-500/20 px-2.5 py-1 rounded-full">
+                        <CheckCircle size={13} className="text-emerald-600 dark:text-emerald-400 fill-emerald-100/30 dark:fill-none animate-pulse" />
+                        <span className="text-[10px] font-semibold tracking-wider uppercase text-emerald-700 dark:text-emerald-400">
+                          Verified
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Course/Degree Title Area */}
+                    <h3 className="text-base sm:text-lg font-semibold text-gray-800 dark:text-white line-clamp-2 leading-snug mb-3">
+                      {item.title}
+                    </h3>
+
+                    {/* Issuing Authority / Institution Row */}
+                    <div className="flex items-center gap-2 text-xs sm:text-sm text-gray-600 dark:text-white/70 w-full mb-4">
+                      <GraduationCap size={15} className="text-blue-500 dark:text-blue-400 flex-shrink-0" />
+                      <span className="truncate">{item.issuer}</span>
+                    </div>
+
+                    {/* Styled Link Verification Button Anchor */}
+                    {item.link && (
+                      <a
+                        href={item.link}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="text-sm inline-flex items-center gap-2 p-3 rounded-full border border-gray-300 dark:border-white/20  bg-white/5 backdrop-blur-md  hover:bg-indigo-500/10  hover:border-indigo-400/40 transition-all duration-300 hover:scale-105 group"
+                      >
+                        Verify Credential <ExternalLink size={12} />
+                      </a>
+                    )}
+
+                    {/* Bottom Left Date Positioning Requirement */}
+                    <div className="absolute bottom-5 right-6 text-xs text-gray-400 dark:text-white/40 font-medium">
+                      Issued: {item.date}
+                    </div>
+
+                  </div>
+                </motion.div>
+              </motion.div>
+            )
+          })}
+        </div>
+
+        {/* Carousel Controller Buttons - Placed Below Cards */}
+        <div className="flex justify-center gap-4 mt-8">
+          <button
+            onClick={() => handleScroll('left')}
+            className="p-3 rounded-full border border-gray-300 dark:border-white/20  bg-white/5 backdrop-blur-md  hover:bg-indigo-500/10  hover:border-indigo-400/40 transition-all duration-300 hover:scale-105 group"
+            aria-label="Scroll Left"
           >
-            View Certificate
-            <ArrowUpRight size={18} />
-          </a>
-        )}
+            <ChevronLeft size={20} />
+          </button>
+          <button
+            onClick={() => handleScroll('right')}
+            className="p-3 rounded-full border border-gray-300 dark:border-white/20  bg-white/5 backdrop-blur-md  hover:bg-indigo-500/10  hover:border-indigo-400/40 transition-all duration-300 hover:scale-105 group"
+            aria-label="Scroll Right"
+          >
+            <ChevronRight size={20} />
+          </button>
+        </div>
+
       </div>
-    </motion.article>
-  );
+    </motion.div>
+  )
 }
+
+export default Achievements
