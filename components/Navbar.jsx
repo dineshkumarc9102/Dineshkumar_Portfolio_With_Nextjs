@@ -72,13 +72,14 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
               : "bg-white shadow-sm bg-opacity-50 dark:border dark:border-white/50 dark:bg-transparent"
             }`}
         >
-          <li><a className="font-Ovo hover:border-b-2 border-darkHover dark:hover:text-purple-300 transition" href="#about">About</a></li>
+          <li><a className="font-Ovo hover:border-b-2 border-darkHover dark:hover:text-purple-300 transition" href="#about">Who</a></li>
           {/* <li><a className="font-Ovo hover:border-b-2 border-darkHover dark:hover:text-purple-300 transition" href="#experience">Experience</a></li>
           <li><a className="font-Ovo hover:border-b-2 border-darkHover dark:hover:text-purple-300 transition" href="#education">Education</a></li> */}
-          <li><a className="font-Ovo hover:border-b-2 border-darkHover dark:hover:text-purple-300 transition" href="#journy">Journey</a></li>
-          <li><a className="font-Ovo hover:border-b-2 border-darkHover dark:hover:text-purple-300 transition" href="#project">Projects</a></li>
-          <li><a className="font-Ovo hover:border-b-2 border-darkHover dark:hover:text-purple-300 transition" href="#achivements">Certifications</a></li>
-          <li><a className="font-Ovo hover:border-b-2 border-darkHover dark:hover:text-purple-300 transition" href="#contact">Contact</a></li>
+          <li><a className="font-Ovo hover:border-b-2 border-darkHover dark:hover:text-purple-300 transition" href="#whatdo">Do</a></li>
+          <li><a className="font-Ovo hover:border-b-2 border-darkHover dark:hover:text-purple-300 transition" href="#journy">How</a></li>
+          <li><a className="font-Ovo hover:border-b-2 border-darkHover dark:hover:text-purple-300 transition" href="#project">Build</a></li>
+          <li><a className="font-Ovo hover:border-b-2 border-darkHover dark:hover:text-purple-300 transition" href="#achievements">Learn</a></li>
+          <li><a className="font-Ovo hover:border-b-2 border-darkHover dark:hover:text-purple-300 transition" href="#contact">Where </a></li>
         </ul>
 
 
@@ -130,13 +131,14 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
           {/* Links */}
           {[
             { id: 'top', label: 'Home', icon: <Home className="w-5 h-5" /> },
-            { id: 'about', label: 'About', icon: <User className="w-5 h-5" /> },
+            { id: 'about', label: 'Who', icon: <User className="w-5 h-5" /> },
+            { id: 'Whatdo', label: 'Do', icon: <Milestone className="w-5 h-5" /> },
             // { id: 'experience', label: 'Experience', icon: <Briefcase className="w-5 h-5" /> },
             // { id: 'education', label: 'Education', icon: <GraduationCap className="w-5 h-5" /> },
-            { id: 'journy', label: 'Journey', icon: <Milestone className="w-5 h-5" /> },
-            { id: 'project', label: 'Project', icon: <Folder className="w-5 h-5" /> },
-            { id: 'achivements', label: 'Certification', icon: <Award className="w-5 h-5" /> },
-            { id: 'contact', label: 'Contact', icon: <Mail className="w-5 h-5" /> },
+            { id: 'journy', label: 'How', icon: <Milestone className="w-5 h-5" /> },
+            { id: 'project', label: 'Build', icon: <Folder className="w-5 h-5" /> },
+            { id: 'achievements', label: 'Learn', icon: <Award className="w-5 h-5" /> },
+            { id: 'contact', label: 'Where', icon: <Mail className="w-5 h-5" /> },
           ].map(({ id, label, icon }) => (
 
             <li
