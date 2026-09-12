@@ -6,6 +6,7 @@ import { assets } from "@/assets/assets";
 import Image from "next/image";
 import { FolderKanban, Briefcase, Code, Award } from "lucide-react";
 
+
 // Counter Component
 const Count = ({ end, duration = 1000 }) => {
   const [count, setCount] = useState(0);
@@ -90,14 +91,19 @@ const About = () => {
         Introduction
       </motion.h4> */}
 
+      {/* Header Layout */}
       <motion.h2
         className='text-center text-3xl sm:text-5xl font-Ovo'
         initial={{ y: -20, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.5, duration: 0.5 }}
       >
-       Who I Am
+        Who I Am
       </motion.h2>
+
+      <p className='text-center text-gray-500 dark:text-white/60 mt-2'>
+        Introducation
+      </p>
 
 
       {/* MAIN LAYOUT */}
@@ -108,6 +114,7 @@ const About = () => {
         transition={{ delay: 0.9, duration: 0.6 }}
         viewport={{ once: false, amount: 0.2 }}
       >
+        
 
         {/* LEFT → IMAGE */}
         <div className="w-full lg:w-[40%] flex justify-center">
@@ -128,15 +135,15 @@ const About = () => {
         {/* RIGHT → TEXT + QUICK OVERVIEW */}
         <div className="flex-1">
 
-          {/* ✅ About Text */}
+          {/* About Text */}
           <p className="mb-6 text-sm sm:text-base text-justify font-Ovo leading-relaxed text-gray-700 dark:text-white/80">
-            I’m a Front-End Developer and Product Enthusiast currently working as an Executive Trainee at TVS Motor Company, where I contribute to digital transformation by turning business requirements into scalable digital solutions.
+            I am a Data Analyst, Digital Transformation Professional, and Technology Enthusiast currently working as an Executive Trainee at TVS Motor Company. I specialize in transforming business requirements into impactful digital solutions by combining data analytics, enterprise systems knowledge, and modern application technologies.
             <br /><br />
-            I work at the intersection of business, data, and technology, collaborating with stakeholders, designers, and developers to build dashboards and enterprise applications that streamline workflows and improve efficiency. From requirement analysis and workflow design to UAT validation and release, I’m actively involved throughout the product lifecycle.
+            At TVS Motor Company, I contribute to digital transformation initiatives by collaborating with business stakeholders, UI designers, and development teams to streamline workflows and convert manual processes into efficient digital solutions. My responsibilities span requirement analysis, process improvement, SAP operations, user access management, master data maintenance, dashboard reporting, testing, and solution delivery.
             <br /><br />
-            I specialize in React, Node.js, and Tailwind CSS, with hands-on experience building data-driven dashboards and integrating tools like Power BI. Alongside development, I have experience in SAP operations (user access, role management, data maintenance), which gives me a strong understanding of enterprise systems.
+            I have hands-on experience in Python, SQL, Power BI, React.js, Node.js, and SAP, enabling me to work across both data and application domains. My interests lie in building data-driven dashboards, analyzing business performance, automating processes, and creating user-centric digital products that drive operational excellence and informed decision-making.
             <br /><br />
-            I’m passionate about building user-centric, data-driven products and continuously exploring ways to create intuitive, scalable, and impactful digital experiences.
+            With a strong foundation in analytics, enterprise systems, and web technologies, I am passionate about leveraging data and technology to solve real-world business challenges. I continuously explore emerging technologies, machine learning, and digital innovation to create scalable, impactful, and business-focused solutions.
           </p>
 
 
