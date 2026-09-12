@@ -72,19 +72,19 @@ const Achievements = () => {
       transition={{ duration: 1 }}
     >
       {/* Header Layout */}
-      <div className="text-center mb-12">
-        <motion.h2
-          className='text-2xl sm:text-4xl md:text-5xl font-Ovo'
-          initial={{ y: -20, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.5, duration: 0.5 }}
-        >
-          What I Learn
-        </motion.h2>
-        <p className='text-gray-500 dark:text-white/60 mt-2'>
-          Industry Certifications & Credentials
-        </p>
-      </div>
+
+      <motion.h2
+        className='text-center text-3xl sm:text-5xl font-Ovo'
+        initial={{ y: -20, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ delay: 0.5, duration: 0.5 }}
+      >
+        What I Learn
+      </motion.h2>
+
+      <p className='text-center text-gray-500 dark:text-white/60 mt-2 mb-3'>
+        Industry Certifications & Credentials
+      </p>
 
       {/* Horizontal Carousel Timeline */}
       <div className="relative w-full">
