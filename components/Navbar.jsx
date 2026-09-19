@@ -1,39 +1,31 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 
 import {
   Home,
   User,
   Briefcase,
-  GraduationCap,
-  Route,
   Milestone,
   Folder,
   Award,
   Mail,
   Menu,
-  X
+  X,
+  Sun,
+  Moon
 } from "lucide-react"
 
 import { assets } from '@/assets/assets'
 
-
 const Navbar = ({ isDarkMode, setIsDarkMode }) => {
-
   const [isScroll, setIsScroll] = useState(false)
-  const sideMenuRef = useRef(null)
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
-  // ✅ Open Menu
-  const openMenu = () => {
-    sideMenuRef.current.style.transform = 'translateX(-16rem)'
-  }
+  // * Open/Close Handlers
+  const openMenu = () => setIsMenuOpen(true)
+  const closeMenu = () => setIsMenuOpen(false)
 
-  // ✅ Close Menu
-  const closeMenu = () => {
-    sideMenuRef.current.style.transform = 'translateX(16rem)'
-  }
-
-  // ✅ Scroll Effect
+  // * Scroll Listener
   useEffect(() => {
     const handleScroll = () => {
       setIsScroll(window.scrollY > 50)
@@ -43,124 +35,125 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-
   return (
     <>
       <nav
-        className={`w-full fixed px-5 lg:px-8 xl:px-[8%] py-4 flex items-center justify-between z-50 
+        className={`w-full fixed px-5 lg:px-8 xl:px-[8%] py-4 flex items-center justify-between z-50 transition-all duration-300
         ${isScroll
-            ? "bg-white bg-opacity-50 backdrop-blur-lg shadow-sm dark:bg-darkTheme dark:shadow-white/20"
-            : ""
+            ? "bg-white/80 dark:bg-[#111111]/90 backdrop-blur-lg shadow-sm border-b border-gray-200/20 dark:border-white/5"
+            : "bg-transparent border-b border-transparent"
           }`}
       >
-
-        {/* ✅ Logo */}
-        <a href="#top">
+        {/* * Logo */}
+        <a href="#top" className="transition-transform hover:scale-105 active:scale-95">
           <Image
             src={isDarkMode ? assets.logo_white : assets.logo_black}
             alt="Logo"
-            className="w-20 h-16 cursor-pointer rounded-full"
+            className="w-16 h-12 sm:w-20 sm:h-16 cursor-pointer rounded-full object-contain"
           />
         </a>
 
-
-        {/* ✅ Desktop Menu */}
-        <ul
-          className={`hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3
-          ${isScroll
-              ? ""
-              : "bg-white shadow-sm bg-opacity-50 dark:border dark:border-white/50 dark:bg-transparent"
-            }`}
-        >
-          <li><a className="font-Ovo hover:border-b-2 border-darkHover dark:hover:text-purple-300 transition" href="#about">Who</a></li>
-          {/* <li><a className="font-Ovo hover:border-b-2 border-darkHover dark:hover:text-purple-300 transition" href="#experience">Experience</a></li>
-          <li><a className="font-Ovo hover:border-b-2 border-darkHover dark:hover:text-purple-300 transition" href="#education">Education</a></li> */}
-          <li><a className="font-Ovo hover:border-b-2 border-darkHover dark:hover:text-purple-300 transition" href="#whatdo">Do</a></li>
-          <li><a className="font-Ovo hover:border-b-2 border-darkHover dark:hover:text-purple-300 transition" href="#journy">How</a></li>
-          <li><a className="font-Ovo hover:border-b-2 border-darkHover dark:hover:text-purple-300 transition" href="#project">Build</a></li>
-          <li><a className="font-Ovo hover:border-b-2 border-darkHover dark:hover:text-purple-300 transition" href="#achievements">Learn</a></li>
-          <li><a className="font-Ovo hover:border-b-2 border-darkHover dark:hover:text-purple-300 transition" href="#contact">Where </a></li>
+        {/* * Desktop Menu */}
+        <ul className={`hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-10 py-2.5 transition-all duration-300 border ${
+          isScroll 
+            ? "bg-transparent border-transparent text-gray-900 dark:text-gray-100" 
+            : "bg-white/60 dark:bg-white/5 border-gray-200 dark:border-white/10 backdrop-blur-md text-gray-700 dark:text-gray-300"
+        }`}>
+          {[
+            { id: 'about', label: 'Who' },
+            { id: 'whatdo', label: 'Do' },
+            { id: 'journey', label: 'How' },
+            { id: 'project', label: 'Build' },
+            { id: 'achievements', label: 'Learn' },
+            { id: 'contact', label: 'Where' },
+          ].map(({ id, label }) => (
+            <li key={id}>
+              <a
+                href={`#${id}`}
+                className="font-Ovo text-sm font-medium relative block h-6 pt-0.5 overflow-hidden group tracking-wide"
+              >
+                {/* Original Text Layer sliding upward out of view */}
+                <span className="block transition-transform duration-300 ease-out group-hover:-translate-y-full">
+                  {label}
+                </span>
+                {/* Duplicate Accent Layer sliding up into position from below */}
+                <span className="absolute top-0.5 left-0 block transition-transform duration-300 ease-out translate-y-full group-hover:translate-y-0 text-purple-600 dark:text-purple-400 font-semibold">
+                  {label}
+                </span>
+              </a>
+            </li>
+          ))}
         </ul>
 
+        {/* * Right Action Section */}
+        <div className='flex items-center gap-2 sm:gap-4'>
 
-        {/* ✅ Right Section */}
-        <div className='flex items-center gap-4'>
-
-          {/* ✅ Theme Toggle */}
-          <label className="relative inline-flex items-center cursor-pointer">
-            <input
-              className="sr-only peer"
-              type="checkbox"
-              checked={isDarkMode}
-              onChange={() => setIsDarkMode((prev) => !prev)}
-            />
-            <div className="w-12 h-8 rounded-full ring-0 peer duration-500 outline-none bg-gray-200 overflow-hidden 
-              before:flex before:items-center before:justify-center after:flex after:items-center after:justify-center 
-              before:content-['🌑'] before:absolute before:h-6 before:w-6 before:top-1/2 before:bg-white before:rounded-full 
-              before:left-1 before:-translate-y-1/2 before:transition-all before:duration-700 
-              peer-checked:before:opacity-0 peer-checked:before:rotate-90 peer-checked:before:-translate-y-full 
-              shadow-gray-400 peer-checked:shadow-md  peer-checked:bg-[#383838] 
-              after:content-['☀️'] after:absolute after:bg-[#1d1d1d] after:rounded-full after:top-[3px] after:right-1 
-              after:translate-y-full after:w-6 after:h-6 after:opacity-0 after:transition-all after:duration-700 
-              peer-checked:after:opacity-100 peer-checked:after:rotate-180 peer-checked:after:translate-y-0">
-            </div>
-          </label>
-
-          {/* ✅ Mobile Menu Button */}
-          <button className='block md:hidden ml-3' onClick={openMenu}>
-            <Menu className="w-6 h-6" />
+          {/* * Modern Minimalist Theme Toggle Button */}
+          <button
+            onClick={() => setIsDarkMode(prev => !prev)}
+            className="p-2 rounded-full border border-gray-200 dark:border-white/10 bg-white/50 dark:bg-white/5 hover:bg-gray-100 dark:hover:bg-white/10 transition active:scale-95 text-gray-700 dark:text-gray-300 cursor-pointer"
+            aria-label="Toggle Theme"
+          >
+            {isDarkMode ? <Sun size={18} className="animate-spin-slow" /> : <Moon size={18} />}
           </button>
 
+          {/* * Mobile Menu Hamburger Toggle */}
+          <button
+            className='block md:hidden p-2 rounded-full hover:bg-gray-100 dark:hover:bg-white/5 text-gray-800 dark:text-white transition cursor-pointer'
+            onClick={openMenu}
+          >
+            <Menu className="w-6 h-6" />
+          </button>
         </div>
 
+        {/* * Mobile Drawer Overlay */}
+        <div
+          className={`fixed inset-0 bg-black/20 dark:bg-black/50 backdrop-blur-xs transition-opacity duration-300 md:hidden z-40 ${
+            isMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+          }`}
+          onClick={closeMenu}
+        />
 
-        {/* ✅ Mobile Menu */}
+        {/* * Mobile Sidebar Menu Panel */}
         <ul
-          ref={sideMenuRef}
-          className='flex md:hidden flex-col gap-4 py-20 px-10 fixed -right-64 top-0 bottom-0 w-64 z-50 h-screen
-          bg-white dark:bg-black/90 backdrop-blur-xl
-          text-gray-800 dark:text-white transition duration-500'
+          className={`flex md:hidden flex-col gap-2 py-24 px-6 fixed right-0 top-0 bottom-0 w-64 z-50 h-screen
+          bg-white/95 dark:bg-black/95 backdrop-blur-xl shadow-2xl transform transition-transform duration-300 ease-out ${
+            isMenuOpen ? "translate-x-0" : "translate-x-full"
+          }`}
         >
+          {/* Close Trigger Button */}
+          <button
+            className="absolute right-6 top-6 p-2 rounded-full hover:bg-gray-100 dark:hover:bg-white/10 text-gray-800 dark:text-white transition cursor-pointer"
+            onClick={closeMenu}
+          >
+            <X className="w-5 h-5" />
+          </button>
 
-          {/* Close */}
-          <div className="absolute right-6 top-6 cursor-pointer" onClick={closeMenu}>
-            <X className="w-6 h-6" />
-          </div>
-
-
-          {/* Links */}
+          {/* Mapping Fixed Section Anchors */}
           {[
-            { id: 'top', label: 'Home', icon: <Home className="w-5 h-5" /> },
-            { id: 'about', label: 'Who', icon: <User className="w-5 h-5" /> },
-            { id: 'Whatdo', label: 'Do', icon: <Milestone className="w-5 h-5" /> },
-            // { id: 'experience', label: 'Experience', icon: <Briefcase className="w-5 h-5" /> },
-            // { id: 'education', label: 'Education', icon: <GraduationCap className="w-5 h-5" /> },
-            { id: 'journy', label: 'How', icon: <Milestone className="w-5 h-5" /> },
-            { id: 'project', label: 'Build', icon: <Folder className="w-5 h-5" /> },
-            { id: 'achievements', label: 'Learn', icon: <Award className="w-5 h-5" /> },
-            { id: 'contact', label: 'Where', icon: <Mail className="w-5 h-5" /> },
+            { id: 'top', label: 'Home', icon: <Home className="w-4 h-4" /> },
+            { id: 'about', label: 'Who I Am', icon: <User className="w-4 h-4" /> },
+            { id: 'whatdo', label: 'What I Do', icon: <Briefcase className="w-4 h-4" /> },
+            { id: 'journey', label: 'How I Grew', icon: <Milestone className="w-4 h-4" /> },
+            { id: 'project', label: 'What I Built', icon: <Folder className="w-4 h-4" /> },
+            { id: 'achievements', label: 'What I Learn', icon: <Award className="w-4 h-4" /> },
+            { id: 'contact', label: 'Where To Connect', icon: <Mail className="w-4 h-4" /> },
           ].map(({ id, label, icon }) => (
-
-            <li
-              key={id}
-              className="flex items-center gap-4 p-4 font-semibold rounded-xl cursor-pointer
-              bg-transparent hover:bg-gray-100 dark:hover:bg-white/10
-              hover:scale-[1.02] active:scale-[0.98]
-              transition-all duration-300
-            text-gray-800 dark:text-white"
-            >
+            <li key={id} className="w-full">
               <a
                 href={`#${id}`}
                 onClick={closeMenu}
-                className="flex items-center gap-3 w-full"
+                className="flex items-center gap-4 px-4 py-3 font-medium rounded-xl
+                           text-gray-700 dark:text-gray-200 bg-transparent 
+                           hover:bg-purple-500/10 dark:hover:bg-purple-500/20 
+                           hover:text-purple-600 dark:hover:text-purple-400
+                           transition-all duration-200 w-full font-Ovo text-sm"
               >
-                <span className="text-purple-500">{icon}</span>
-                {label}
+                <span className="text-gray-400 dark:text-gray-500">{icon}</span>
+                <span>{label}</span>
               </a>
             </li>
-
           ))}
-
         </ul>
 
       </nav>
