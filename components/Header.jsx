@@ -80,11 +80,11 @@ const Header = ({ isDarkMode }) => {
             sequence={[
               "Data Analyst",
               1200,
-              "Data Analyst | Front-End Developer",
+              "UI / Front-End Developer",
               1200,
-              "Data Analyst | Front-End Developer | Digital Transformation",
+              "Digital Solutions Analyst",
               1200,
-              "Data Analyst | Front-End Developer | Digital Transformation | SAP Business Processes",
+              "SAP QM Consultant",
               2500,
             ]}
             speed={60}
