@@ -13,11 +13,21 @@ const ovo = Ovo({
 
 export const metadata = {
   title: {
-    default: "Dinesh Kumar | Full Stack Developer Portfolio",
+    default: "Dinesh Kumar Portfolio",
     template: "%s | Dinesh Kumar"
   },
-  description: "Portfolio of Dinesh Kumar, a passionate Full Stack Developer specializing in building modern, scalable, and responsive web applications.",
-  keywords: ["Dinesh Kumar", "Web Developer", "Full Stack Developer", "React Developer", "Next.js Portfolio", "Software Engineer"],
+  description: "Portfolio of Dinesh Kumar: A hybrid Digital Solutions Analyst, UI/Frontend (React) Developer, Data Analyst, and SAP QM Consultant.",
+  keywords: [
+    "Dinesh Kumar",
+    "Data Analyst",
+    "UI Developer",
+    "Frontend React Developer",
+    "Digital Solutions Analyst",
+    "SAP QM Consultant",
+    "SAP Quality Management",
+    "React Developer",
+    "Full Stack Developer"
+  ],
   authors: [{ name: "Dinesh Kumar" }],
   creator: "Dinesh Kumar",
   metadataBase: new URL("https://dineshkumar-portfolio-website.netlify.app"), 
