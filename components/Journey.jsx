@@ -22,7 +22,7 @@ const Journy = () => {
 
     return (
         <motion.div
-            id='journy'
+            id='journey'
             className='w-full px-[6%] sm:px-[8%] md:px-[12%] py-16 scroll-mt-20'
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
