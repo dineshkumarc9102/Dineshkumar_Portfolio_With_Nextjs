@@ -479,6 +479,18 @@ export const educationData = [
 ]
 
 export const services = [
+    {
+    icon: BarChart3,
+    title: "Dashboard & Analytics",
+    description:
+      "Creating interactive dashboards and business intelligence solutions using Power BI to transform data into meaningful insights.",
+  },
+    {
+    icon: Rocket,
+    title: "Product & Process Improvement",
+    description:
+      "Collaborating with business teams to analyze requirements, conduct UAT, and deliver scalable digital transformation solutions.",
+  },
   {
     icon: Monitor,
     title: "Front-End Development",
@@ -486,23 +498,12 @@ export const services = [
       "Building responsive and modern web applications using React, Next.js, and Tailwind CSS with a strong focus on performance and user experience.",
   },
   {
-    icon: BarChart3,
-    title: "Dashboard & Analytics",
-    description:
-      "Creating interactive dashboards and business intelligence solutions using Power BI to transform data into meaningful insights.",
-  },
-  {
     icon: Database,
     title: "SAP & Enterprise Systems",
     description:
       "Supporting SAP operations including user access management, role creation, master data maintenance, and process optimization.",
   },
-  {
-    icon: Rocket,
-    title: "Product & Process Improvement",
-    description:
-      "Collaborating with business teams to analyze requirements, conduct UAT, and deliver scalable digital transformation solutions.",
-  },
+  
 ];
 
 export const projectData = [
