@@ -22,20 +22,18 @@ const WhatDo = () => {
             transition={{ duration: 0.8 }}
         >
             {/* Heading */}
-            <motion.h2
-                className='text-center text-3xl sm:text-5xl font-Ovo'
-                initial={{ y: -20, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.2, duration: 0.5 }}
-            >
-                What I Do
-            </motion.h2>
+           <motion.h2
+        className='text-center text-3xl sm:text-5xl font-Ovo'
+        initial={{ y: -20, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ delay: 0.3, duration: 0.5 }}
+      >
+        What I Do
+      </motion.h2>
 
-            <p className="text-center max-w-2xl mx-auto mt-5 mb-12 text-gray-600 dark:text-white/70 font-Ovo">
-                Turning ideas into impactful digital solutions through technology, analytics, and innovation.
-            </p>
-
+      <p className='text-center text-gray-500 dark:text-white/60 mt-2 font-Ovo'>
+        Turning ideas into impactful digital solutions through technology, analytics, and innovation. 
+      </p>
             {/* Cards Grid */}
             <motion.div
                 className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 my-12'
